@@ -10,3 +10,5 @@
       [3, 8, 13, 18, 23],
       [4, 9, 14, 19, 24]
   ]
+
+  export default winningCombos;

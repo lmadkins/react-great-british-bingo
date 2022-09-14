@@ -1,109 +1,106 @@
 const jsonArr = [
 {
-  'prompt': "A bake collapses/breaks",
-}
+  "prompt": "A bake collapses/breaks",
+},
 {
-  'prompt': "Baker helps another baker",
-}
+  "prompt": "Baker helps another baker",
+},
 {
-  'prompt': "Bakers haven't heard of something before",
-}
+  "prompt": "Bakers haven't heard of something before",
+},
 {
-  'prompt': "Dry",
-}
+  "prompt": "Dry",
+},
 {
-  'prompt': "Even layering",
-}
+  "prompt": "Even layering",
+},
 {
-  'prompt':"Flavors are not coming through",
-}
+  "prompt":"Flavors are not coming through",
+},
 {
-  'prompt': "Flavors are too strong",
-}
+  "prompt": "Flavors are too strong",
+},
 {
-  'prompt': "Good/beautiful sponge",
-}
+  "prompt": "Good/beautiful sponge",
+},
 {
-  'prompt': "Handshake from Paul",
-}
+  "prompt": "Handshake from Paul",
+},
 {
-  'prompt': "Hosts wearing costumes",
-}
+  "prompt": "Hosts wearing costumes",
+},
 {
-  'prompt': "Hot day in the tent",
-}
+  "prompt": "Hot day in the tent",
+},
 {
-  'prompt': "I've never made this before",
-}
+  "prompt": "I've never made this before",
+},
 {
-  'prompt': "Innuendo",
-}
+  "prompt": "Innuendo",
+},
 {
-  'prompt': "It looks a mess/It could be neater", 
-}
+  "prompt": "It looks a mess/It could be neater", 
+},
 {
-  'prompt': "It looks bad but the flavors are good", 
-}
+  "prompt": "It looks bad but the flavors are good", 
+},
 {
-  'prompt': "It looks plain/ underwhelming",
-}
+  "prompt": "It looks plain/ underwhelming",
+},
 {
-  'prompt': "It tastes good but the textures are wrong",
-}
+  "prompt": "It tastes good but the textures are wrong",
+},
 {
-  'prompt': "I expected more",
-}
+  "prompt": "I expected more",
+},
 {
-  'prompt': "Joke about Paul",
-}
+  "prompt": "Joke about Paul",
+},
 {
-  'prompt': "Overproved",
-}
+  "prompt": "Overproved",
+},
 {
-  'prompt': "Paul questions someone's choice",
-}
+  "prompt": "Paul questions someone's choice",
+},
 {
-  'prompt': "Somebody cooks something in a flavor one of the judges hates",
-}
+  "prompt": "Somebody cooks something in a flavor one of the judges hates",
+},
 {
-  'prompt': "Raw",
-}
+  "prompt": "Raw",
+},
 {
-  'prompt': "Recipe from a relative",
-}
+  "prompt": "Recipe from a relative",
+},
 {
-  'prompt': "Rubbery",
-}
+  "prompt": "Rubbery",
+},
 {
-  'prompt': "Soggy bottom",
-}
+  "prompt": "Soggy bottom",
+},
 {
-  'prompt': "Someone makes a mistake and starts over",
-}
+  "prompt": "Someone makes a mistake and starts over",
+},
 {
-  'prompt': "Stodgy", 
-}
+  "prompt": "Stodgy", 
+},
 {
-  'prompt': "Textures are wrong",  
-}
+  "prompt": "Textures are wrong",  
+},
 {
-  'prompt': "Two or more people with same idea", 
-}
+  "prompt": "Two or more people with same idea", 
+},
 {
-  'prompt': "Underbaked",
-}
+  "prompt": "Underbaked",
+},
 {
-  'prompt': "Underproved",
-}
+  "prompt": "Underproved",
+},
 {
-  'prompt': "Uneven distribution of filling",
-}
+  "prompt": "Uneven distribution of filling",
+},
 {
-  'prompt': "Uneven layering"
-}
-
+  "prompt": "Uneven layering"
+},
 ]
 
-
-
-
+export default jsonArr;

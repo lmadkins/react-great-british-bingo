@@ -1,12 +1,15 @@
 import './App.css';
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 // import { Routes, Route, Link } from "react-router-dom"
-import GamePage from './components/GamePage';
-import Navbar from './components/Navbar';
-import GameIntro from './components/GameIntro'
-import winningCombos from './data/winningCombos'
+// import GamePage from './components/GamePage';
+// import Navbar from './components/Navbar';
+// import GameIntro from './components/GameIntro'
+import jsonArr from './data/promptList.js'
+import winningCombos from'./data/winningCombos'
 
 function App() {
+// console.log(jsonArr)
+// console.log(winningCombos)
 
 // PSEUDOCODE
 // initial game state, all squares are marked: false
@@ -40,14 +43,23 @@ function App() {
   return (
     <>
       <nav>
-        <Navbar />
+        {/* <Navbar /> */}
       </nav>
       <main>
+        {/* Game intro page */}
+      <h1>Welcome to the Great British Bakeoff Bingo</h1>
+      <p><strong>How to Play:</strong>
+      <br></br>
+        While watching, keep an eye out for when something happens matching one of your card prompts. When it does, click or tap to mark it off. When you get 3 in a row (horizontally or vertically), you win! </p>
+      <button>Ready?
+        On your mark, get set, PLAY!</button>
         {/* <Routes>
             <Route path="/" element={<GameIntro />}/>
             <Route path="/play" element={<GamePage />}/>
         </Routes> */}
-        <button>New Game</button>
+
+        {/* Game page */}
+        <button>Restart Game</button>
         <table role='grid'>
           <body>
             <tr role='row' className="row1" >
@@ -68,7 +80,7 @@ function App() {
             <tr role='row' className="row3" >
             <td role='gridcell' className='cell10'>Cell 10</td>
               <td role='gridcell' className='cell11'>Cell 11</td>
-              <td role='gridcell' className='cell12'>Cell 12</td>
+              <td role='gridcell' className='free cell12'>FREE</td>
               <td role='gridcell' className='cell13'>Cell 13</td>
               <td role='gridcell' className='cell14'>Cell 14</td>
             </tr>
@@ -78,8 +90,7 @@ function App() {
               <td role='gridcell' className='cell17'>Cell 17</td>
               <td role='gridcell' className='cell18'>Cell 18</td>
               <td role='gridcell' className='cell19'>Cell 19</td>
-              
-              {/* <!--- 4 more grid cells ---> */}
+
             </tr>
             <tr role='row' className="row5" >
               <td role='gridcell'className='cell20'>Cell 20</td>
@@ -87,14 +98,12 @@ function App() {
               <td role='gridcell' className='cell22'>Cell 22</td>
               <td role='gridcell' className='cell23'>Cell 23</td>
               <td role='gridcell' className='cell24'>Cell 24</td>
-              {/* <!--- 4 more grid cells ---> */}
             </tr>
-            {/* <!--- 4 more rows ---> */}
           </body>
-      </table>
+        </table>
       </main>
     </>
   );
-}
+};
 
 export default App;
