@@ -1,0 +1,11 @@
+/* Grid styles */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0 auto;
+}
+td {
+  border: 2px solid black;
+  padding: 4em;
+  width: 20%;
+}

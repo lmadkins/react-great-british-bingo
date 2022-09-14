@@ -7,6 +7,7 @@ import GameIntro from './components/GameIntro'
 import winningCombos from './data/winningCombos'
 
 function App() {
+
 // PSEUDOCODE
 // initial game state, all squares are marked: false
 // 
@@ -72,16 +73,20 @@ function App() {
               <td role='gridcell' className='cell14'>Cell 14</td>
             </tr>
             <tr role='row' className="row4" >
-            <td role='gridcell' className='cell15'>Cell 15</td>
-              <td role='gridcell'className='cell16'>Cell 16</td>
-              <td role='gridcell' className='cell7'>Cell 17</td>
+              <td role='gridcell' className='cell15'>Cell 15</td>
+              <td role='gridcell' className='cell16'>Cell 16</td>
+              <td role='gridcell' className='cell17'>Cell 17</td>
               <td role='gridcell' className='cell18'>Cell 18</td>
               <td role='gridcell' className='cell19'>Cell 19</td>
-              <td role='gridcell'>...</td>
+              
               {/* <!--- 4 more grid cells ---> */}
             </tr>
             <tr role='row' className="row5" >
-              <td role='gridcell'>...</td>
+              <td role='gridcell'className='cell20'>Cell 20</td>
+              <td role='gridcell' className='cell21'>Cell 21</td>
+              <td role='gridcell' className='cell22'>Cell 22</td>
+              <td role='gridcell' className='cell23'>Cell 23</td>
+              <td role='gridcell' className='cell24'>Cell 24</td>
               {/* <!--- 4 more grid cells ---> */}
             </tr>
             {/* <!--- 4 more rows ---> */}
