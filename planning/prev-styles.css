@@ -1,0 +1,160 @@
+/* BINGO CARD */
+/* Smartphones (portrait phones, less than 576px) */
+
+/* top of the page on both views of appcontaining welcome message, instructions (on entry page), and renderGameBtns   */
+
+body {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  /* place-items: center;   */
+}
+.header {
+  /* border: 5px solid #5bc8ffd6; */
+  border-radius: 5px;
+  padding: 10px 5px;
+  margin: 5px 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  display: block;
+  font-size: 16px;
+  /* margin: 0 auto;
+  justify-content: center; */
+  /* top: 200px; */
+}
+
+h1 {
+  margin: 5px;
+}
+
+/* styles for both new game and restart game button */
+.renderGameBtn {
+  text-align: center;
+  margin: 0 auto 5px auto;
+  /* flex-grow: none; */
+
+  /* width: 100px; */
+  background-color: rgba(213, 223, 227, 0.694);
+  /* border: 2px solid #5bc8ff; */
+  padding: 2px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.header p {
+  font-size: 22px;
+}
+
+#gameStart {
+  width: 270px;
+  font-size: 18px;
+  height: 60px;
+  /* padding: 5px; */
+}
+
+#gameRestart {
+  width: 120px;
+  height: 40px;
+  font-size: 16px;
+}
+
+/* #bingo-text {
+  font-size: 20px;
+  letter-spacing: 65px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+} */
+
+/* div container for squares */
+#grid-container {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 13vh);
+  grid-template-rows: repeat(3, 13vh);
+  /* justify-content: center; */
+}
+
+.square {
+  border: 1px solid #383838;
+  border-radius: 2px;
+  font-size: 16px;
+  text-align: center;
+  transition: .2s;
+  cursor: pointer;
+  padding: 2px;
+  overflow-wrap: break-word;
+  white-space: normal;
+  vertical-align: middle;
+}
+
+.square:hover {
+  background-color: #F4F4F4;
+}
+
+/* STYLE TO ADD WHEN A SQUARE IS MARKED */
+.marked, #sq5 {
+  background-image: url("/img/blackmarker50.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 80%;
+  z-index: -1;
+}
+
+.hidden {
+  display: none;
+}
+/* MEDIA QUERIES */
+
+/* Smartphones (portrait phones, less than 576px) */
+/* @media only screen 
+and (max-width : 575px) {
+} */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 480px) { 
+   /* div container for squares */
+  #grid-container {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 20vh);
+    grid-template-rows: repeat(3, 20vh);
+    justify-content: center;
+  }
+
+  .square {
+    font-size: 24px;
+  }
+
+  .marked, #sq5 {
+    background-image: url("/img/blackmarker100.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 80%;
+    z-index: -1;
+  }
+
+  
+ }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+  /* div container for squares */
+  #grid-container {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 25vh);
+    grid-template-rows: repeat(3, 25vh);
+    justify-content: center;
+  }
+
+  .square {
+    font-size: 30px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+/* @media (min-width: 992px) { ... } */
