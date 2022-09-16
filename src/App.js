@@ -46,7 +46,7 @@ function renderNew() {
   setRow3Part2(row3Part2Arr)
   row4Arr = shuffledArr.slice(19,24)
   setRow4(row4Arr)
-  row5Arr = shuffledArr.slice(25,29)
+  row5Arr = shuffledArr.slice(25,30)
   setRow5(row5Arr)
 }
 
@@ -113,35 +113,54 @@ const handleCellClick = (event) => {
               <Square 
               text={prompt.prompt} 
               key={prompt.id}
-              handleCellClick={handleCellClick}
               />
               ))}
           </tr>
 
-            {/* // <td role='gridcell' text={prompt.prompt} key={prompt.id}
-            // onClick={handleCellClick}
-            // >{prompt.prompt}</td> */}
-            
-      
-
           <tr role='row' className="row2" >
-            {row2.map(prompt => {return <td role='gridcell' text={prompt.prompt} key={prompt.id}>{prompt.prompt}</td> })}
+            {row2.map((prompt) => (
+              <Square 
+              text={prompt.prompt} 
+              key={prompt.id}
+              />
+              ))}
           </tr>
 
           <tr role='row' className="row3" >
-            {row3Part1.map(prompt => {return <td role='gridcell' text={prompt.prompt} key={prompt.id}>{prompt.prompt}</td> })}
+            {row3Part1.map((prompt) => (
+              <Square 
+              text={prompt.prompt} 
+              key={prompt.id}
+              />
+              ))}
 
-            <td role='gridcell' className='free cell12'>FREE</td>
+            <td role='gridcell' 
+                className='free marked cell12'>FREE</td>
             
-            {row3Part2.map(prompt => {return <td role='gridcell' text={prompt.prompt} key={prompt.id}>{prompt.prompt}</td> })}
+            {row3Part2.map((prompt) => (
+              <Square 
+              text={prompt.prompt} 
+              key={prompt.id}
+              />
+              ))}
           </tr>
 
           <tr role='row' className="row4" >
-              {row4.map(prompt => {return <td role='gridcell' text={prompt.prompt} key={prompt.id}>{prompt.prompt}</td> })}
+              {row4.map((prompt) => (
+              <Square 
+              text={prompt.prompt} 
+              key={prompt.id}
+              />
+              ))}
           </tr>
 
           <tr role='row' className="row5" >
-            {row5.map(prompt => {return <td role='gridcell' text={prompt.prompt} key={prompt.id}>{prompt.prompt}</td> })}
+            {row5.map((prompt) => (
+              <Square 
+              text={prompt.prompt} 
+              key={prompt.id}
+              />
+              ))}
           </tr>
         </table>
       </main>
