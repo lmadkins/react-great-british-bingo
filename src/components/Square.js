@@ -1,25 +1,35 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
+import { MarkedContext } from '../MarkedContext';
 
-const Square = (props, text, ) => {
+const Square = (props, id, text) => {
   // const [win, setWin]=(false)
-  const [marked, setMarked]= useState(false)
-// console.log(props)
+  const { marked, setMarked } = useContext(MarkedContext)
+  // const [restart, setRestart] = useState(false)
+// console.log(marked)
 // console.log(prompt.text)
+// console.log(restart)
 
+// useEffect(() => {
+//   setMarked(false)
+// }, [])
 
-const handleCellClick = (event, props) => {
-  // console.log('Clicked!')
+const handleCellClick = () => {
+  console.log('Clicked!')
   setMarked(true)
 }
 
   return (
     <>
+    
     <td role='gridcell'
-    className={marked? 'marked' :'unmarked'}
-
+    // className='marked'
+    className={
+    marked ? 'marked' : 'unmarked'}
+    id={props.id}
     onClick={handleCellClick}
     text={props.prompt}>
       {props.text}</td>
+    
     </>
   );
 };

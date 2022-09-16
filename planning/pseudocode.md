@@ -1,3 +1,63 @@
+PSEUDOCODE FROM TYPESCRIPT EXAMPLE
+in words.ts
+Importing wordlist (in ours it's jsonArr) to a js file that 
+shuffle and slice 
+export as new variable that is imported in curlies in App
+App 
+declare const newCellDataList which Map the words, word: word, stamped: false 
+ 
+ state or context?
+set state cellDataList, setCellDataList= useState
+
+set stamped function that passes in index and stamped boolean 
+  set state/or context to cellDataList.map maps 
+?
+cellclick handler returns setstamped 
+
+
+PSEUDOCODE FROM JS ICEBREAKER VERSION
+
+rende new game 
+shuffle function to new array, slice from that array, assign that to a new variable
+set to intiial state? on restart game
+
+sets initial state of marked, setMarked sq0: false, sq1: false, etc for all of them.
+
+handlemarked function event, 
+assign sqId to event .target.id
+setmarked state({[sqId]: true})
+
+if this.marked[sqId] is true, return Marked Square grid qirh  
+
+returning
+map of the shuffled & sliced array, 
+const variable for prompt id
+grid, 5 columns, key of prompt.id
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // 
 // new game: 
 // handle click/useeffect? state?
