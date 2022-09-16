@@ -1,3 +1,13 @@
+// 
+// new game: 
+// handle click/useeffect? state?
+  // import square options from json to an array
+  // function to shuffle array those square options
+  // extract first 25 from that new shuffled array
+  // render/map grid squares w/ those prompts (0-24)
+    // exclude middle 'free' square (square 13)
+    
+
 react router?
 see bitcoin example thing
 

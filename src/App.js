@@ -1,7 +1,7 @@
 import './App.css';
-// import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 // import { Routes, Route, Link } from "react-router-dom"
-// import GamePage from './components/GamePage';
+import Square from './components/Square';
 // import Navbar from './components/Navbar';
 // import GameIntro from './components/GameIntro'
 import jsonArr from './data/promptList.js'
@@ -9,41 +9,58 @@ import jsonArr from './data/promptList.js'
 
 function App() {
 
+  const [marked, setMarked] = useState(false)
   // const [restart, setRestart] = useState()
-
+  const [row1, setRow1] = useState([])
+  const [row2, setRow2] = useState([])
+  const [row3Part1, setRow3Part1] = useState([])
+  const [row3Part2, setRow3Part2] = useState([])
+  const [row4, setRow4] = useState([])
+  const [row5, setRow5] = useState([])
 // PSEUDOCODE
 // initial game state, all squares are marked: false
-// 
-// new game: 
-// handle click/useeffect? state?
-  // import square options from json to an array
-  // function to shuffle array those square options
-  // extract first 25 from that new shuffled array
-  // render/map grid squares w/ those prompts (0-24)
-    // exclude middle 'free' square (square 13)
+
   
-let row1 = []
-let row2 = []
-let row3 = []
-let row4 = []
-let row5 = []
+let row1Arr = []
+let row2Arr = []
+let row3Part1Arr = []
+let row3Part2Arr = []
+let row4Arr = []
+let row5Arr = []
 let shuffledArr = []
 
 function shuffleArr() {
   shuffledArr = jsonArr.sort(() => Math.random() - 0.5)
+  // return shuffledArr
 }
 
 function renderNew() {
   shuffleArr()
-  let row1 = shuffledArr.slice(0,5)
-  // console.log(row1)
-  // console.log('renderClick has run')
-  // return shuffledArr
+  row1Arr = shuffledArr.slice(0,5)
+  setRow1(row1Arr)
+  row2Arr = shuffledArr.slice(6,11)
+  setRow2(row2Arr)
+  row3Part1Arr = shuffledArr.slice(12,14)
+  setRow3Part1(row3Part1Arr)
+  row3Part2Arr = shuffledArr.slice(16,18)
+  setRow3Part2(row3Part2Arr)
+  row4Arr = shuffledArr.slice(19,24)
+  setRow4(row4Arr)
+  row5Arr = shuffledArr.slice(25,29)
+  setRow5(row5Arr)
 }
 
 const handleRestartClick = () => {
   // console.log('handleRestartClick has run')
+  // console.log(shuffledArr)
   renderNew()
+}
+const handleCellClick = (event) => {
+  const promptText = event.target
+  console.log('Clicked!')
+  console.log(promptText)
+  // setMarked(true)
+  // console.log(marked)
 }
 
 // restart game:
@@ -92,27 +109,39 @@ const handleRestartClick = () => {
       
         <table role='grid'>
           <tr role='row' className="row1" >
-            {jsonArr.slice(0,5).map(prompt => {return <td role='gridcell' text={prompt.prompt} key={prompt.id}>{prompt.prompt}</td> })}
+            {row1.map((prompt) => (
+              <Square 
+              text={prompt.prompt} 
+              key={prompt.id}
+              handleCellClick={handleCellClick}
+              />
+              ))}
           </tr>
 
+            {/* // <td role='gridcell' text={prompt.prompt} key={prompt.id}
+            // onClick={handleCellClick}
+            // >{prompt.prompt}</td> */}
+            
+      
+
           <tr role='row' className="row2" >
-            {jsonArr.slice(6,11).map(prompt => {return <td role='gridcell' text={prompt.prompt} key={prompt.id}>{prompt.prompt}</td> })}
+            {row2.map(prompt => {return <td role='gridcell' text={prompt.prompt} key={prompt.id}>{prompt.prompt}</td> })}
           </tr>
 
           <tr role='row' className="row3" >
-            {jsonArr.slice(12,14).map(prompt => {return <td role='gridcell' text={prompt.prompt} key={prompt.id}>{prompt.prompt}</td> })}
+            {row3Part1.map(prompt => {return <td role='gridcell' text={prompt.prompt} key={prompt.id}>{prompt.prompt}</td> })}
 
             <td role='gridcell' className='free cell12'>FREE</td>
             
-            {jsonArr.slice(15,17).map(prompt => {return <td role='gridcell' text={prompt.prompt} key={prompt.id}>{prompt.prompt}</td> })}
+            {row3Part2.map(prompt => {return <td role='gridcell' text={prompt.prompt} key={prompt.id}>{prompt.prompt}</td> })}
           </tr>
 
           <tr role='row' className="row4" >
-              {jsonArr.slice(18,23).map(prompt => {return <td role='gridcell' text={prompt.prompt} key={prompt.id}>{prompt.prompt}</td> })}
+              {row4.map(prompt => {return <td role='gridcell' text={prompt.prompt} key={prompt.id}>{prompt.prompt}</td> })}
           </tr>
 
           <tr role='row' className="row5" >
-            {jsonArr.slice(24,29).map(prompt => {return <td role='gridcell' text={prompt.prompt} key={prompt.id}>{prompt.prompt}</td> })}
+            {row5.map(prompt => {return <td role='gridcell' text={prompt.prompt} key={prompt.id}>{prompt.prompt}</td> })}
           </tr>
         </table>
       </main>

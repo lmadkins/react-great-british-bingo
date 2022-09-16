@@ -1,15 +1,23 @@
 import React, {useState} from 'react';
 
-const GamePage = () => {
-  const [win, setWin]=(false)
-  const [marked,setMarked]=(false)
+const Square = (props, text, ) => {
+  // const [win, setWin]=(false)
+  // const [marked,setMarked]=(false)
+// console.log(props)
+// console.log(prompt.text)
+
+// const handleCellClick = (event, props) => {
+//   console.log('Clicked!')
+// }
 
   return (
-    <div>
-      <h2>Hello from Game Page</h2>
-  
-    </div>
+    <>
+    <td role='gridcell'
+    // onClick={handleCellClick}
+    text={props.prompt}>
+      {props.text}</td>
+    </>
   );
 };
 
-export default GamePage;
+export default Square;
