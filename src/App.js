@@ -7,7 +7,9 @@ import Square from './components/Square';
 // import GameIntro from './components/GameIntro'
 import jsonArr from './data/promptList.js'
 // import winningCombos from'./data/winningCombos'
-
+import { styled } from '@mui/material/styles';
+import Grid from '@mui/material/Grid';
+import Card from '@mui/material/Card';
 
 function App() {
   const intitialState = {
@@ -48,10 +50,65 @@ function App() {
     34: false,
   }
   const [promptsArray, setPromptsArray] = useState([])
-  const [marked, setMarked]= useState(intitialState)
+  const [marked, setMarked]= useState({    
+    0: false,
+    1: false,
+    2: false,
+    3: false,
+    4: false,
+    5: false,
+    6: false,
+    7: false,
+    8: false,
+    9: false,
+    10: false,
+    11: false,
+    12: false,
+    13: false,
+    14: false,
+    15: false,
+    16: false,
+    17: false,
+    18: false,
+    19: false,
+    20: false,
+    21: false,
+    22: false,
+    23: false,
+    24: false,
+    25: false,
+    26: false,
+    27: false,
+    28: false,
+    29: false,
+    30: false,
+    31: false,
+    32: false,
+    33: false,
+    34: false,})
   const [restart, setRestart] = useState(false)
   const [row1, setRow1] = useState([])
   const [row2, setRow2] = useState([])
+
+  const BingoPrompt = styled(Card)( marked ? {
+    height: '15vh',
+    width: '15vw',
+    color: 'red', 
+    fontSize: '20px', 
+    border: '2px solid black',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+      } : {
+    height: '15vh',
+    width: '15vw',
+    color: 'black',
+    border: '2px solid black',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    })
+  
   // const [row3Part1, setRow3Part1] = useState([])
   // const [row3Part2, setRow3Part2] = useState([])
   // const [row4, setRow4] = useState([])
@@ -104,18 +161,22 @@ function renderNew() {
 const handleRestartClick = () => {
   // console.log('handleRestartClick has run')
   // console.log(shuffledArr)
-  // setMarked(false)
+  setMarked(false)
   // setRestart(true)
   // console.log(restart)
+  // const id= marked({...})
   renderNew()
-  if(marked === true){
-  setMarked(false)
- }
+  // if (marked === true){
+  // setMarked(intitialState)
+  // }
 }
 const handleCellClick = (event) => {
   const id = event.target.id
+  // console.log(marked.id)
   console.log(id)
-  setMarked(true)
+  setMarked({id: true})
+  // const newState = {...setMarked, id : true }
+  // setMarked({[event.target.id]: true})
 }
 
 // restart game:
@@ -163,25 +224,43 @@ const handleCellClick = (event) => {
           onClick={handleRestartClick}
         >Restart Game</button>
       
-        <table role='grid'>
+        {/* <table role='grid'>
         
-          <tr role='row' className="row1" >
-          {promptsArray.map((prompt) => (
+          <tr role='row' className="row1" > */}
+            <Grid container 
+            justify="center" alignItems="center" alignContent="center"
+            spacing={0}>
+          {promptsArray.map(prompt => {
+            const id = prompt.id
+            return (
+              <>
+              <Grid item xs={2} key={prompt.id}>
+                <BingoPrompt
+                onClick={handleCellClick}
+                id={id}
+                >{prompt.prompt}</BingoPrompt>    
+            </Grid>
+            </>
+          )}
+
               // <MarkedContext.Provider
               // value={{marked, setMarked}}>
-              <div 
-              text={prompt.prompt} 
-              key={prompt.id}
-              id={prompt.id}
-              restart={restart}
-              setRestart={setRestart}
-              onClick={handleCellClick}
-              // className='unmarked'
-              className={!marked ? 'unmarked' : 'marked'}
-              >{prompt.prompt}</div>
-              // </MarkedContext.Provider>
-              ))}
-          </tr>
+
+              // <div 
+              // text={prompt.prompt} 
+              // key={prompt.id}
+              // id={prompt.id}
+              // restart={restart}
+              // setRestart={setRestart}
+              // onClick={handleCellClick}
+              // // className='unmarked'
+              // className={!marked ? 'unmarked' : 'marked'}
+              // >{prompt.prompt}</div>
+
+              )}
+              </Grid>
+          {/* </tr> */}
+          
           {/* <tr role='row' className="row2" >
           {row2.map((prompt) => (
             <MarkedContext.Provider
@@ -258,7 +337,7 @@ const handleCellClick = (event) => {
               />
               ))}
           </tr> */}
-        </table>
+        {/* </table> */}
         
       </main>
     </>
