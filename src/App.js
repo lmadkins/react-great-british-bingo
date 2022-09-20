@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState, useContext} from 'react';
-import { MarkedContext } from './MarkedContext';
+import { MarkedContext } from './context/MarkedArrContext';
 // import { Routes, Route, Link } from "react-router-dom"
 import Square from './components/Square';
 // import Navbar from './components/Navbar';
@@ -252,7 +252,7 @@ const handleClick = (event) => {
           )}
  
               // <MarkedContext.Provider
-              // value={{marked, setMarked}}>
+              // value={{markedArr, setMarkedArr}}>
 
               // <div 
               // text={prompt.prompt} 

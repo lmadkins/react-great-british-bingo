@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState, useContext} from 'react';
-import { MarkedContext } from './MarkedContext';
+import { MarkedArrContext } from './context/MarkedArrContext';
+import { MarkedContext } from './context/MarkedContext';
 // import { Routes, Route, Link } from "react-router-dom"
 // import Square from './components/Square';
 // import Navbar from './components/Navbar';
@@ -21,17 +22,18 @@ const App2 = () => {
 
   function shuffleSlicePrompts() {
     shuffledArr = jsonArr.sort(() => Math.random() - 0.5)
-    let slicedPrompts = shuffledArr.slice(0, 5)
+    let slicedPrompts = shuffledArr.slice(0, 25)
     setNewPrompts(slicedPrompts)
     // return newPrompts
   }
 
   function renderNewGame() {
     shuffleSlicePrompts()
+    setMarked(false)
+    setMarkedArr([])
   }
   
   const handleRestartClick = () => {
-    setMarked(false)
     renderNewGame()
   }
 
@@ -39,32 +41,34 @@ const App2 = () => {
     const id = event.target.id
     console.log(id)
     // markedArr.push(event.target.id)
-    // console.log(markedArr)
+    console.log(markedArr)
   }
 
   return (
     <>
-    <button
-    onClick={handleRestartClick}
-  >Restart</button>
+    <MarkedArrContext.Provider
+        value={{markedArr, setMarkedArr}}>
+    <MarkedContext.Provider
+        value={{marked, setMarked}}>
+      
+      <button
+      onClick={handleRestartClick}>Restart</button>
     
-    <Grid container 
-      justify="center" alignItems="center" alignContent="center"
+      <Grid container 
+      justify="center" 
+      alignItems="center" 
+      alignContent="center"
       spacing={0}>
         {newPrompts.map((v, k) => {
-          const id= prompt.id
           return (
-          //   <BingoPrompt key={`${k}${v.id}`}  id={v.id} onClick={handleCellClick}>
-          //   <Square key={`${k}${v.prompt}`}  prompt={v.prompt}  id={v.id}
-          //   />
-          // </BingoPrompt>
-          
-          <Square key={`${k}${v.prompt}`}  prompt={v.prompt}  id={v.id} onClick={handleCellClick}
-      
-          />
-          )
-        })}    
-    </Grid>     
+            <Square 
+              key={`${k}${v.prompt}`}  
+              prompt={v.prompt}  id={v.id} onClick={handleCellClick}
+          />)
+        })}     
+      </Grid>    
+    </MarkedContext.Provider> 
+    </MarkedArrContext.Provider>
     </>
   );
 };
