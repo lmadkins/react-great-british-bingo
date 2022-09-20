@@ -1,3 +1,23 @@
+Rendering new:
+- Prompts are imported from file
+- Store in a prompts usestate?
+- Set var shuffled prompts
+- shuffle prompt state 
+- set var of the slice 0, 25, set newprompts state 
+- STATE board initial state (empty)
+- 0
+onclick event of start/restart button, 
+handle above render new, set boardstate to intitial 
+
+have container for grid
+square component
+
+- pass in text to each 
+
+to clear prompts
+set state unmarked 
+
+
 PSEUDOCODE FROM TYPESCRIPT EXAMPLE
 in words.ts
 Importing wordlist (in ours it's jsonArr) to a js file that 

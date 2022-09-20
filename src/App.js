@@ -10,6 +10,7 @@ import jsonArr from './data/promptList.js'
 import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
+import App2 from './App2'
 
 function App() {
   const intitialState = {
@@ -158,7 +159,7 @@ function renderNew() {
 
 }
 
-const handleRestartClick = () => {
+const handleRestart = () => {
   // console.log('handleRestartClick has run')
   // console.log(shuffledArr)
   setMarked(false)
@@ -170,7 +171,7 @@ const handleRestartClick = () => {
   // setMarked(intitialState)
   // }
 }
-const handleCellClick = (event) => {
+const handleClick = (event) => {
   const id = event.target.id
   // console.log(marked.id)
   console.log(id)
@@ -202,6 +203,7 @@ const handleCellClick = (event) => {
       <nav>
         {/* <Navbar /> */}
       </nav>
+    
       <main>
         {/* Game intro page */}
       <div>
@@ -213,6 +215,8 @@ const handleCellClick = (event) => {
           Ready?
           On your mark, get set, PLAY!</button>
       </div>  
+
+      <App2 />
         {/* <Routes>
             <Route path="/" element={<GameIntro />}/>
             <Route path="/play" element={<GamePage />}/>
@@ -221,7 +225,7 @@ const handleCellClick = (event) => {
         {/* Game page */}
         
         <button
-          onClick={handleRestartClick}
+          onClick={handleRestart}
         >Restart Game</button>
       
         {/* <table role='grid'>
@@ -230,19 +234,23 @@ const handleCellClick = (event) => {
             <Grid container 
             justify="center" alignItems="center" alignContent="center"
             spacing={0}>
-          {promptsArray.map(prompt => {
+          {promptsArray.map((prompt, i) => {
             const id = prompt.id
+            // console.log(i)
             return (
               <>
-              <Grid item xs={2} key={prompt.id}>
+              <Grid item xs={2} 
+              // key={prompt.id}
+              key={`${i}, ${prompt.prompt}`}
+              >
                 <BingoPrompt
-                onClick={handleCellClick}
-                id={id}
+                onClick={handleClick}
+                key={`${i}, ${prompt.prompt}`}
                 >{prompt.prompt}</BingoPrompt>    
             </Grid>
             </>
           )}
-
+ 
               // <MarkedContext.Provider
               // value={{marked, setMarked}}>
 

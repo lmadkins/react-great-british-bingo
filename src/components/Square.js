@@ -1,7 +1,7 @@
 import React, {useEffect, useState, useContext} from 'react';
 import { MarkedContext } from '../MarkedContext';
 
-const Square = (props, id, text) => {
+const Square = (props, id, key, text) => {
   // const [win, setWin]=(false)
   const { marked, setMarked } = useContext(MarkedContext)
   // const [restart, setRestart] = useState(false)
