@@ -1,13 +1,14 @@
 import './App.css';
-import React, { useState, useContext} from 'react';
+import React, { useState, useEffect, useContext} from 'react';
 import { MarkedArrContext } from './context/MarkedArrContext';
 import { MarkedContext } from './context/MarkedContext';
+// import checkWin from './functions/checkWin';
 // import { Routes, Route, Link } from "react-router-dom"
 // import Square from './components/Square';
 // import Navbar from './components/Navbar';
 // import GameIntro from './components/GameIntro'
 import jsonArr from './data/promptList.js'
-// import winningCombos from'./data/winningCombos'
+import winningCombos from'./data/winningCombos'
 import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
@@ -37,12 +38,13 @@ const App2 = () => {
     renderNewGame()
   }
 
-  const handleCellClick = (event) => {
-    const id = event.target.id
-    console.log(id)
-    // markedArr.push(event.target.id)
-    console.log(markedArr)
-  }
+
+  useEffect(() => {
+    // console.log(winningCombos)
+    // console.log(markedArr)
+
+  }, [markedArr])
+
 
   return (
     <>
@@ -62,8 +64,10 @@ const App2 = () => {
         {newPrompts.map((v, k) => {
           return (
             <Square 
-              key={`${k}${v.prompt}`}  
-              prompt={v.prompt}  id={v.id} onClick={handleCellClick}
+              key={`${k}`} 
+              sqID={k} 
+              prompt={v.prompt} 
+              id={v.id}
           />)
         })}     
       </Grid>    

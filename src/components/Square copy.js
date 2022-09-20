@@ -5,7 +5,7 @@ import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import { styled } from '@mui/material/styles';
 
-const Square = ({prompt, id}) => {
+const Square = ({prompt, id, sqID}) => {
   const [marked, setMarked] = useState()
   const { markedArr, setMarkedArr } = useContext(MarkedArrContext)
 
@@ -17,7 +17,7 @@ const Square = ({prompt, id}) => {
   // Set clicked square to 'marked' (applies marked styling) and push id of clicked square to array of squares marked this round
   const handleClick = (event) => {
     setMarked(event.target.id)
-    markedArr.push(event.target.id)
+    markedArr.push(sqID)
     console.log(markedArr)
   }
 
@@ -25,20 +25,22 @@ const Square = ({prompt, id}) => {
   // compare id of clicked square to the others in array, if array already contains it, remove that from the array/don't add it   
   // console.log(markedArr[markedArr.length -1])
   // if (event.target.id === markedArr[markedArr.length-1]) 
+  // or _.last (lodash )
+  // https://lodash.com/docs/4.17.15#last
 
   // console.log(marked)
   const BingoPrompt = styled(Card)(marked ? {
-    height: '18vh',
-    width: '18vw',
+    height: '20vh',
+    width: '20vw',
     color: 'red', 
-    fontSize: '18px', 
+    fontSize: '20px', 
     border: '2px solid black',
     alignItems: 'center',
     justifyContent: 'center',
     textAlign: 'center',
       } : {
-    height: '18vh',
-    width: '18vw',
+    height: '20vh',
+    width: '20vw',
     color: 'black',
     border: '2px solid black',
     alignItems: 'center',
@@ -50,7 +52,9 @@ const Square = ({prompt, id}) => {
     <>
       <BingoPrompt
         onClick={handleClick}
-        id={id}>
+        id={id}
+        sqID={sqID}
+        >
         {prompt}
       </BingoPrompt>
     </>
