@@ -180,24 +180,7 @@ const handleClick = (event) => {
   // setMarked({[event.target.id]: true})
 }
 
-// restart game:
-// clear previous round:
-    // clear prompts from squares (except for square 13/free)
-    // set marked state to initial state
-    // make sure state of squares is all back to 'unmarked'
-  // call new game function(s) to shuffle, pick first 25, and re-render
 
-// toggling/marking
-  // handle click, to toggle state to 'marked' state
-    // only set it to mark if it is unmarked? 
-      // maybe undo as a stretch?
-  // trigger checkwin with each click (/useeffect)
-
-// check win
-  // after a square is clicked, run it 
-  // run function verifying if square id combos are all marked
-// check combos with that function
-    
   return (
     <>
       <nav>

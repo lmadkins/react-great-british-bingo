@@ -1,159 +1,50 @@
-Rendering new:
+Rendering New Board:
+Import & set state:
+- set state for new prompts this game will use (empty initially)
 - Prompts are imported from file
-- Store in a prompts usestate?
-- Set var shuffled prompts
-- shuffle prompt state 
-- set var of the slice 0, 25, set newprompts state 
-- STATE board initial state (empty)
-- 0
-onclick event of start/restart button, 
-handle above render new, set boardstate to intitial 
+- Set variable for shuffled prompts
 
-have container for grid
-square component
+Shuffle and slice to pick new prompts for the squares, set state:
+- shuffle prompt state w/ sort and math.random
+- set variable of the slice 0, 25, set new prompts state to the sliced prompts array
 
-- pass in text to each 
-
-to clear prompts
-set state unmarked 
+On click event of start/restart button:
+- Set state of marked squares to empty to restart
+- Set marked state of all squares to false
+- Handle above render new actions
 
 
-PSEUDOCODE FROM TYPESCRIPT EXAMPLE
-in words.ts
-Importing wordlist (in ours it's jsonArr) to a js file that 
-shuffle and slice 
-export as new variable that is imported in curlies in App
-App 
-declare const newCellDataList which Map the words, word: word, stamped: false 
- 
- state or context?
-set state cellDataList, setCellDataList= useState
-
-set stamped function that passes in index and stamped boolean 
-  set state/or context to cellDataList.map maps 
-?
-cellclick handler returns setstamped 
+Clicking on and marking squares:
+- Set marked state, initially
+- Handle click function, to toggle state to 'marked' state
+- Push id of clicked square to array of squares marked this round
+- Once past 5 clicks (or markedArr length of 5?), run trigger checkwin with each click (/useeffect?)
 
 
-PSEUDOCODE FROM JS ICEBREAKER VERSION
+Check Win: 
+Need to compare markedArr (the key ids of each of the squares) with the contents of each of the arrays
+- After 5 squares have been clicked (because it can't be a bingo if there's less than 5)/markedArr length is 5 or higher, run it each time another square is clicked.
 
-rende new game 
-shuffle function to new array, slice from that array, assign that to a new variable
-set to intiial state? on restart game
+Remove duplicates from markedArr (or not allow them in the first place?)
+Then concatenate/merge markedArr with winningCombos, and if there are duplicates, it's bingo?
 
-sets initial state of marked, setMarked sq0: false, sq1: false, etc for all of them.
 
-handlemarked function event, 
-assign sqId to event .target.id
-setmarked state({[sqId]: true})
 
-if this.marked[sqId] is true, return Marked Square grid qirh  
 
-returning
-map of the shuffled & sliced array, 
-const variable for prompt id
-grid, 5 columns, key of prompt.id
+- (Sort marked array, to make sure it's in numerical order?)
+- For the ones in numerical order (horizontal), could convert both to strings? then see if contains '0, 1, 2, 3, 4, 5'
+- For vertical  ones, needs to be contains but allow for other values in between, so maybe don't convert to array?
+- Run function verifying if square id combos are all marked
+-Check combos with that function
 
 
 
 
 
+Stretch Features :
+Undo when toggling marked?
+- (only set it to mark if it is unmarked? 
+- or maybe undo as a stretch? see comments in Square component )
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 
-// new game: 
-// handle click/useeffect? state?
-  // import square options from json to an array
-  // function to shuffle array those square options
-  // extract first 25 from that new shuffled array
-  // render/map grid squares w/ those prompts (0-24)
-    // exclude middle 'free' square (square 13)
-    
-
-react router?
-see bitcoin example thing
-
-see react review lesson, can follow along to refactor
-
-App.js
-array of options (start with 8)
-
-Squares component- function, pass in props, 
-{arrayName.map(nameIWanttoCallIt => (<button
-      className='square'
-      // src={props.arrayName}
-      src={nameIWanttoCallIt}
-      />))}
-then in App.js
-   <Squares arrayName={arrayName}/>
-
-function renderNew 
-initial state uses render new function as parameter?
-// rendering new bingo card
-function renderNew () {
-  let randomOptions = squareOptions.sort(() => Math.random() - 0.5)
-
-  for (let i = 0; i < cardSquares.length; i++) {
-    if (!cardSquares[i].classList.contains('free')){
-      cardSquares[i].innerText = randomOptions[i]
-    }
-    cardSquares[i].classList.remove('marked')
-  }
-}
-
-Component of card structure (buttons)
-
-
-/// APP.JS
-
-return ( 
-    <>
-      <header>
-        <h1 className="name">Welcome to GBBO</h1>
-      </header>
-      <main>
-      {initialState.map((element, index) => {
-          return <Card initialState=
-          <!-- {element} key={index}  -->
-          />
-      })}
-      </main>
-    </>
-  );
-  component for restart/newcard button
-  re-render board/call same function
-
-
-see searchresults js file for giphy
-  cardOptions
-  const Card = ({cardOptions}) => {
-    return 
-  }
-  <Component cardOptions={cardOptions}>
-
-    <div className="bingoCard">
-      {squareOptions.map(item => (
-         <div key={squareOptions.id} className="square">
-         {squareOptions.text}
-         />
-       </div>
-      ))}
-    </div>
+Free square
+Exclude middle 'free' square?(square 13)
