@@ -27,7 +27,7 @@ Need to compare markedArr (the key ids of each of the squares) with the contents
 
 Remove duplicates from markedArr (or not allow them in the first place?)
 Then concatenate/merge markedArr with winningCombos, and if there are duplicates, it's bingo?
-
+for each array in winningCombos, concatenate them, get IDs of any duplicates. If have 5 duplicates it's bingo?
 
 
 
