@@ -25,7 +25,6 @@ Check Win:
 Need to compare markedArr (the key ids of each of the squares) with the contents of each of the arrays
 - After 5 squares have been clicked (because it can't be a bingo if there's less than 5)/markedArr length is 5 or higher, run it each time another square is clicked.
 
-Remove duplicates from markedArr (or not allow them in the first place?)
 Then concatenate/merge markedArr with winningCombos, and if there are duplicates, it's bingo?
 for each array in winningCombos, concatenate them, get IDs of any duplicates. If have 5 duplicates it's bingo?
 

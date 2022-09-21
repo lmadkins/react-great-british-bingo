@@ -1,14 +1,14 @@
 import React, {useEffect, useState, useContext} from 'react';
-import { MarkedContext } from '../context/MarkedContext';
+// import { MarkedContext } from '../context/MarkedContext';
 import { MarkedArrContext } from '../context/MarkedArrContext';
-import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
+// import Grid from '@mui/material/Grid';
+// import Card from '@mui/material/Card';
 import { styled } from '@mui/material/styles';
 import winningCombos from '../data/winningCombos';
 
 const Square = ({prompt, id, squareid, checkBingo}) => {
-  // const initialMarkedState = false
   const [marked, setMarked] = useState()
+  const [win, setWin] = useState(false)
 
   const { markedArr, setMarkedArr } = useContext(MarkedArrContext)
 
@@ -17,48 +17,45 @@ const Square = ({prompt, id, squareid, checkBingo}) => {
   }, [prompt])
 
 
-  useEffect(() => {
-    // console.log(winningCombos)
-    // console.log(markedArr)
-    checkBingo()
-    // console.log(markedArr.toString())
-    // console.log(winningCombos[0].toString())
-  }, [marked])
+  let compareArr = []
+  const findDupes = arr => arr.filter((item, index) => arr.indexOf(item) !== index)
 
-  const combo1 = winningCombos[0]
-// console.log(combo1)
-
+  let combo1 = winningCombos[0]
   function checkBingo () {
-// 
-    const sortAsc = markedArr.sort((a, b) => a - b)
-    // const arrRow = sortAsc.slice(0, 5)
-    // console.log(arrRow)
-
-    // let isEqual = arrRow.length === combo1.length &&
-    // sortAsc.every((value, index) => value === combo1[index])
-    // console.log(isEqual)
-  
-    // console.log(sortAsc)
-
-  // const compareArrays = (arr1, arr2) => {
-  //   arr1.length > 5 &&
-  //   arr1.every((element, index) => element === arr2[index])
-  // }
-  //   console.log(compareArrays(markedArr, combo1))
-  //   console.log(markedArr)
-  
+    let mergedArr = markedArr.concat(combo1)
+    let duplicates = [];
+    mergedArr.sort();
+    for (let i = 0; i < mergedArr.length; i++) {
+	    if (mergedArr[i] === mergedArr[i + 1]) {
+		    duplicates.push(mergedArr[i]);
+	    }
+      if (duplicates.length >= 5) {
+        setWin(true)
+      }
+    }
   }
+
+  useEffect(() => {
+    if (win) {
+      console.log('set win/bingo called')
+    }
+  }, [win])
+
+  useEffect(() => {
+    if (markedArr.length >= 5) {
+      checkBingo()
+    }
+  }, [marked])
+    
 
   // Set clicked square to 'marked' (applies marked styling) and push id of clicked square to array of squares marked this round
   const handleClick = (event) => {
       setMarked(event.target.id)
-      
       if (!markedArr.includes(squareid)) {
         markedArr.push(squareid)
-        console.log(markedArr)
+        markedArr.sort((a, b) => a - b)
+        // console.log(markedArr)
       }
-    
-    
   }
 
   // Undo marking a square

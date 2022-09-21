@@ -19,7 +19,6 @@ const App2 = () => {
   const [newPrompts, setNewPrompts] = useState([])
   const [marked, setMarked] = useState()
   const [markedArr, setMarkedArr] = useState([])
-  const [win, setWin] = useState(false)
 
   let shuffledArr = []
 
@@ -41,40 +40,7 @@ const App2 = () => {
     // setMarked(false)
   }
 
-
-
-  function checkBingo () {
-    // console.log(markedArr)
-   
-    // const compareArrays = (arr1, arr2) => {
-    //   arr1.length > 5 &&
-    //   arr1.every((element, index) => element === arr2[0][index])
-    // }
-
-    // console.log(compareArrays(markedArr, winningCombos[0]))
-
-  }
   
-    // console.log(winningCombos[0])
-    // const compareArrays = (markedArr, winningCombos) => {
-    //   return (markedArr.toString() === winningCombos[0].toString())
-    //   console.log(compareArrays)
-    // }
-    // if (markedArr === winningCombos[0]) {
-    //   console.log('Bingo!')
-    // }
-    // const verifyCombo = (combo) => {
-    //   for (let i = 0; i <= markedArr.length; i++) {
-    //     const winners= winningCombos.filter(markedArr) 
-    //     if (winners.length > 0) {
-    //       console.log('Bingo!')
-    //     }
-          // console.log(markedArr.includes(winningCombos[0]))
-      // }
-    // }
-
-
-
 
   return (
     <>
@@ -111,7 +77,7 @@ const App2 = () => {
               squareid={k} 
               prompt={v.prompt} 
               id={v.id}
-              checkBingo={checkBingo}
+              // checkBingo={checkBingo}
           />)
         })}     
       </Grid>    
