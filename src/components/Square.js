@@ -1,12 +1,12 @@
 import React, {useEffect, useState, useContext} from 'react';
-// import { MarkedContext } from '../context/MarkedContext';
 import { MarkedArrContext } from '../context/MarkedArrContext';
+// import { MarkedContext } from '../context/MarkedContext';
 // import Grid from '@mui/material/Grid';
 // import Card from '@mui/material/Card';
 import { styled } from '@mui/material/styles';
 import winningCombos from '../data/winningCombos';
 
-const Square = ({prompt, id, squareid, checkBingo}) => {
+const Square = ({prompt, id, squareid}) => {
   const [marked, setMarked] = useState()
   const [win, setWin] = useState(false)
 
@@ -14,15 +14,12 @@ const Square = ({prompt, id, squareid, checkBingo}) => {
 
   useEffect(() => {
     setMarked(false)
+    setWin(false)
   }, [prompt])
 
-
-  let compareArr = []
-  const findDupes = arr => arr.filter((item, index) => arr.indexOf(item) !== index)
-
-  let combo1 = winningCombos[0]
   function checkBingo () {
-    let mergedArr = markedArr.concat(combo1)
+  winningCombos.forEach((array) => {
+    let mergedArr = markedArr.concat(array)
     let duplicates = [];
     mergedArr.sort();
     for (let i = 0; i < mergedArr.length; i++) {
@@ -33,19 +30,21 @@ const Square = ({prompt, id, squareid, checkBingo}) => {
         setWin(true)
       }
     }
+  })
   }
 
+
   useEffect(() => {
-    if (win) {
-      console.log('set win/bingo called')
+    if (win) { 
+      console.log('bingo')
     }
   }, [win])
 
-  useEffect(() => {
+  useEffect((checkBingo) => {
     if (markedArr.length >= 5) {
       checkBingo()
     }
-  }, [marked])
+  }, [markedArr.length])
     
 
   // Set clicked square to 'marked' (applies marked styling) and push id of clicked square to array of squares marked this round
@@ -54,7 +53,6 @@ const Square = ({prompt, id, squareid, checkBingo}) => {
       if (!markedArr.includes(squareid)) {
         markedArr.push(squareid)
         markedArr.sort((a, b) => a - b)
-        // console.log(markedArr)
       }
   }
 

@@ -8,14 +8,13 @@ import { MarkedContext } from './context/MarkedContext';
 // import Navbar from './components/Navbar';
 // import GameIntro from './components/GameIntro'
 import jsonArr from './data/promptList.js'
-import winningCombos from'./data/winningCombos'
-import { styled } from '@mui/material/styles';
+// import winningCombos from'./data/winningCombos'
+// import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
+// import Card from '@mui/material/Card';
 import Square from './components/Square';
 
 const App2 = () => {
- 
   const [newPrompts, setNewPrompts] = useState([])
   const [marked, setMarked] = useState()
   const [markedArr, setMarkedArr] = useState([])
@@ -31,16 +30,12 @@ const App2 = () => {
 
   function renderNewGame() {
     shuffleSlicePrompts()
-    // setMarked(false)
     setMarkedArr([])
   }
   
   const handleRestartClick = () => {
     renderNewGame()
-    // setMarked(false)
   }
-
-  
 
   return (
     <>
@@ -77,7 +72,6 @@ const App2 = () => {
               squareid={k} 
               prompt={v.prompt} 
               id={v.id}
-              // checkBingo={checkBingo}
           />)
         })}     
       </Grid>    
