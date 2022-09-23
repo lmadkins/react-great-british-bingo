@@ -12,9 +12,10 @@ td {
 }
 
 .marked {
-  background-color: red;
-}
+  background-image: url('./img/star-circle-blue.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 80%;
+  z-index: -1;
 
-.unmarked{
-  background-color: white;
 }

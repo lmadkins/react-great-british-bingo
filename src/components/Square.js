@@ -3,8 +3,13 @@ import { MarkedArrContext } from '../context/MarkedArrContext';
 // import { MarkedContext } from '../context/MarkedContext';
 // import Grid from '@mui/material/Grid';
 // import Card from '@mui/material/Card';
+
+// import StarsIcon from '@mui/icons-material/Stars';
 import { styled } from '@mui/material/styles';
+import starCircle from '../img/star-circle-blue.png';
+import Slide from '@mui/material/Slide';
 import winningCombos from '../data/winningCombos';
+
 
 const Square = ({prompt, id, squareid}) => {
   const [marked, setMarked] = useState()
@@ -63,10 +68,9 @@ const Square = ({prompt, id, squareid}) => {
   // or _.last (lodash )
   // https://lodash.com/docs/4.17.15#last
 
-  const BingoPrompt = styled('span')(marked ? {
+  const BingoPrompt = styled('div')(marked ? {
     height: '18vh',
     width: '18vw',
-    color: 'red', 
     fontSize: '20px', 
     padding: '3vh',
     paddingTop: '5vh',
@@ -86,7 +90,12 @@ const Square = ({prompt, id, squareid}) => {
     alignItems: 'center',
     justifyContent: 'center',
     textAlign: 'center',
-    boxSizing: 'border-box'
+    boxSizing: 'border-box',
+    // backgroundImage: ('/src/img/star-blue.png'),
+    // backgroundRepeat: 'no-repeat',
+    // backgroundPosition: 'center',
+    // opacity: '100%',
+    // zIndex: '1',
     })
 
   return (
@@ -96,6 +105,19 @@ const Square = ({prompt, id, squareid}) => {
         id={id}
         squareid={squareid}
         >
+        {marked ? (<Slide in={marked} mountOnEnter unmountOnExit 
+        style={{ transformOrigin: '0 0 0' }}
+        {...(marked ? { timeout: 105 } : {})}>
+          
+        
+        <div style={{ backgroundImage:`url(${starCircle})`,
+        backgroundRepeat:"no-repeat",backgroundSize:"contain", 
+        position: 'absolute',
+        height: '12%', width: '12%' ,     
+        opacity: .70,
+        zIndex: '1',
+      }} ></div></Slide>) : (<></>)
+        }  
         {prompt}
       </BingoPrompt>
     </>
