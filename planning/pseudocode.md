@@ -42,8 +42,9 @@ for each array in winningCombos, concatenate them, get IDs of any duplicates. If
 
 Stretch Features :
 Undo when toggling marked?
+- interactivity when clicked
 - (only set it to mark if it is unmarked? 
 - or maybe undo as a stretch? see comments in Square component )
-
+- Message display when stalemate game
 Free square
 Exclude middle 'free' square?(square 13)

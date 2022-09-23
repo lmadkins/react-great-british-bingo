@@ -18,19 +18,19 @@ const Square = ({prompt, id, squareid}) => {
   }, [prompt])
 
   function checkBingo () {
-  winningCombos.forEach((array) => {
+    winningCombos.forEach((array) => {
     let mergedArr = markedArr.concat(array)
     let duplicates = [];
     mergedArr.sort();
-    for (let i = 0; i < mergedArr.length; i++) {
-	    if (mergedArr[i] === mergedArr[i + 1]) {
-		    duplicates.push(mergedArr[i]);
-	    }
-      if (duplicates.length >= 5) {
-        setWin(true)
+      for (let i = 0; i < mergedArr.length; i++) {
+        if (mergedArr[i] === mergedArr[i + 1]) {
+          duplicates.push(mergedArr[i]);
+        }
+        if (duplicates.length >= 5) {
+          setWin(true)
+        }
       }
-    }
-  })
+    })
   }
 
 
@@ -40,7 +40,7 @@ const Square = ({prompt, id, squareid}) => {
     }
   }, [win])
 
-  useEffect((checkBingo) => {
+  useEffect(() => {
     if (markedArr.length >= 5) {
       checkBingo()
     }
