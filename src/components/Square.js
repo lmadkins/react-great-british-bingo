@@ -1,21 +1,26 @@
 import React, {useEffect, useState, useContext} from 'react';
 import { MarkedArrContext } from '../context/MarkedArrContext';
+import { WinContext } from '../context/WinContext';
 // import { MarkedContext } from '../context/MarkedContext';
 // import Grid from '@mui/material/Grid';
 // import Card from '@mui/material/Card';
+import WinAlert from './WinAlert';
 
 // import StarsIcon from '@mui/icons-material/Stars';
 import { styled } from '@mui/material/styles';
 import starCircle from '../img/star-circle-blue.png';
 import Slide from '@mui/material/Slide';
+import Typography from '@mui/material/Typography';
 import winningCombos from '../data/winningCombos';
 
 
 const Square = ({prompt, id, squareid}) => {
   const [marked, setMarked] = useState()
-  const [win, setWin] = useState(false)
+  // const [win, setWin] = useState(false)
 
   const { markedArr, setMarkedArr } = useContext(MarkedArrContext)
+
+  const { win, setWin } = useContext(WinContext)
 
   useEffect(() => {
     setMarked(false)
@@ -109,7 +114,6 @@ const Square = ({prompt, id, squareid}) => {
         style={{ transformOrigin: '0 0 0' }}
         {...(marked ? { timeout: 105 } : {})}>
           
-        
         <div style={{ backgroundImage:`url(${starCircle})`,
         backgroundRepeat:"no-repeat",backgroundSize:"contain", 
         position: 'absolute',
@@ -117,8 +121,8 @@ const Square = ({prompt, id, squareid}) => {
         opacity: .70,
         zIndex: '1',
       }} ></div></Slide>) : (<></>)
-        }  
-        {prompt}
+        }  <Typography variant="body1">{prompt}</Typography>
+        
       </BingoPrompt>
     </>
   );
