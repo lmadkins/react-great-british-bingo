@@ -1,12 +1,6 @@
 import React, {useEffect, useState, useContext} from 'react';
 import { MarkedArrContext } from '../context/MarkedArrContext';
 import { WinContext } from '../context/WinContext';
-// import { MarkedContext } from '../context/MarkedContext';
-// import Grid from '@mui/material/Grid';
-// import Card from '@mui/material/Card';
-import WinAlert from './WinAlert';
-
-// import StarsIcon from '@mui/icons-material/Stars';
 import { styled } from '@mui/material/styles';
 import starCircle from '../img/star-circle-blue.png';
 import Slide from '@mui/material/Slide';
@@ -16,7 +10,6 @@ import winningCombos from '../data/winningCombos';
 
 const Square = ({prompt, id, squareid}) => {
   const [marked, setMarked] = useState()
-  // const [win, setWin] = useState(false)
 
   const { markedArr, setMarkedArr } = useContext(MarkedArrContext)
 
@@ -43,13 +36,6 @@ const Square = ({prompt, id, squareid}) => {
     })
   }
 
-
-  useEffect(() => {
-    if (win) { 
-      console.log('bingo')
-    }
-  }, [win])
-
   useEffect(() => {
     if (markedArr.length >= 5) {
       checkBingo()
@@ -65,13 +51,6 @@ const Square = ({prompt, id, squareid}) => {
         markedArr.sort((a, b) => a - b)
       }
   }
-
-  // Undo marking a square
-  // compare id of clicked square to the others in array, if array already contains it, remove that from the array/don't add it   
-  // console.log(markedArr[markedArr.length -1])
-  // if (event.target.id === markedArr[markedArr.length-1]) 
-  // or _.last (lodash )
-  // https://lodash.com/docs/4.17.15#last
 
   const BingoPrompt = styled('div')(marked ? {
     height: '18vh',
@@ -96,11 +75,6 @@ const Square = ({prompt, id, squareid}) => {
     justifyContent: 'center',
     textAlign: 'center',
     boxSizing: 'border-box',
-    // backgroundImage: ('/src/img/star-blue.png'),
-    // backgroundRepeat: 'no-repeat',
-    // backgroundPosition: 'center',
-    // opacity: '100%',
-    // zIndex: '1',
     })
 
   return (
@@ -110,18 +84,21 @@ const Square = ({prompt, id, squareid}) => {
         id={id}
         squareid={squareid}
         >
-        {marked ? (<Slide in={marked} mountOnEnter unmountOnExit 
-        style={{ transformOrigin: '0 0 0' }}
-        {...(marked ? { timeout: 105 } : {})}>
+        {marked ? (
+          <Slide in={marked} mountOnEnter unmountOnExit 
+          style={{ transformOrigin: '0 0 0' }}
+          {...(marked ? { timeout: 105 } : {})}>
           
-        <div style={{ backgroundImage:`url(${starCircle})`,
-        backgroundRepeat:"no-repeat",backgroundSize:"contain", 
-        position: 'absolute',
-        height: '12%', width: '12%' ,     
-        opacity: .70,
-        zIndex: '1',
-      }} ></div></Slide>) : (<></>)
-        }  <Typography variant="body1">{prompt}</Typography>
+          <div style={{ backgroundImage:`url(${starCircle})`,
+          backgroundRepeat:"no-repeat",backgroundSize:"contain", 
+          position: 'absolute',
+          height: '12%', width: '12%' ,     
+          opacity: .70,
+          zIndex: '1',
+          }} ></div>
+          </Slide>) 
+          : (<></>)
+          }  <Typography variant="body1">{prompt}</Typography>
         
       </BingoPrompt>
     </>

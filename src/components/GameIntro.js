@@ -7,11 +7,11 @@ import Fab from '@mui/material/Fab';
 const GameIntro = () => {
   return (
     <>
- 
     <Typography 
       align="center" 
       variant="h2"  
-      gutterBottom>
+      gutterBottom
+      fontFamily='Futura Heavy'>
         Welcome to the Great British Bakeoff Bingo
       </Typography>
     <Typography variant="h6" align="center" >

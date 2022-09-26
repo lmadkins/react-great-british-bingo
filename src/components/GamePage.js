@@ -6,12 +6,10 @@ import jsonArr from '../data/promptList';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
-// import Card from '@mui/material/Card';
 import Square from './Square';
 import WinAlert from "./WinAlert";
 
 const GamePage = () => {
-  const [game, setGame] = useState(false)
   const [newPrompts, setNewPrompts] = useState([])
   const [marked, setMarked] = useState()
   const [markedArr, setMarkedArr] = useState([])
@@ -28,7 +26,6 @@ const GamePage = () => {
     shuffledArr = jsonArr.sort(() => Math.random() - 0.5)
     let slicedPrompts = shuffledArr.slice(0, 25)
     setNewPrompts(slicedPrompts)
-    // return newPrompts
   }
 
   function renderNewGame() {
@@ -36,7 +33,6 @@ const GamePage = () => {
     setMarkedArr([])
   }
   
-
   const handleStartClick = () => {
     renderNewGame()
   }
@@ -50,31 +46,33 @@ const GamePage = () => {
     <MarkedContext.Provider
       value={{marked, setMarked}}>
 
-      <WinAlert 
+    <WinAlert 
       handleStartClick={handleStartClick}
-      replay={replay} renderNewGame={renderNewGame}/>
+      replay={replay}/>
 
-    <Button variant="contained" 
-    onClick={handleStartClick}  startIcon={<RestartAltIcon />}>Restart</Button>
-      <Grid container 
+    <Button 
+      variant="contained" 
+      onClick={handleStartClick}  startIcon={<RestartAltIcon />}>Restart</Button>
+
+    <Grid container 
       justify="center" 
       alignItems="center" 
       alignContent="center"
       spacing={0}>
-        {newPrompts.map((v, k) => {
-          return (
-            <Square 
-              key={`${k}`} 
-              squareid={k} 
-              prompt={v.prompt} 
-              id={v.id}
-          />)
-        })}     
-      </Grid>    
+      {newPrompts.map((v, k) => {
+        return (
+          <Square 
+            key={`${k}`} 
+            squareid={k} 
+            prompt={v.prompt} 
+            id={v.id}
+          />)})}     
+    </Grid>  
+
   </MarkedContext.Provider> 
   </MarkedArrContext.Provider>
   </WinContext.Provider>
-    </>
+  </>
   );
 };
 
