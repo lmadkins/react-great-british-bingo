@@ -9,12 +9,16 @@ const GameIntro = () => {
     <>
     <Typography 
       align="center" 
-      variant="h2"  
+      variant="h3"  
       gutterBottom
-      fontFamily='Futura Heavy'>
+      // textTransform='uppercase'
+      >
         Welcome to the Great British Bakeoff Bingo
       </Typography>
-    <Typography variant="h6" align="center" >
+    <Typography 
+      variant="h6" 
+      align="center" 
+     textTransform='uppercase'>
     How to Play:
       </Typography>
       <Typography 

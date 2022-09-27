@@ -2,9 +2,12 @@ import React, {useEffect, useState, useContext} from 'react';
 import { MarkedArrContext } from '../context/MarkedArrContext';
 import { WinContext } from '../context/WinContext';
 import { styled } from '@mui/material/styles';
-import starCircle from '../img/star-circle-blue.png';
+import checkmark from '../img/check-mark.png';
+import medal from '../img/medal.png'
+import ribbon from '../img/ribbon.png'
 import Slide from '@mui/material/Slide';
 import Typography from '@mui/material/Typography';
+import Paper from '@mui/material/Paper';
 import winningCombos from '../data/winningCombos';
 
 
@@ -58,19 +61,20 @@ const Square = ({prompt, id, squareid}) => {
     fontSize: '20px', 
     padding: '3vh',
     paddingTop: '5vh',
-    border: '2px solid black',
+    // border: '2px solid black',
     alignItems: 'center',
     justifyContent: 'center',
     textAlign: 'center',
     boxSizing: 'border-box',
       } : {
     height: '18vh',
+    
     width: '18vw',
     padding: '3vh',
     paddingTop: '5vh',
     color: 'black',
     fontSize: '20px', 
-    border: '2px solid black',
+    // border: '2px solid black',
     alignItems: 'center',
     justifyContent: 'center',
     textAlign: 'center',
@@ -79,6 +83,9 @@ const Square = ({prompt, id, squareid}) => {
 
   return (
     <>
+    <Paper
+    elevation={2}
+    square={true}>
       <BingoPrompt
         onClick={handleClick}
         id={id}
@@ -89,7 +96,7 @@ const Square = ({prompt, id, squareid}) => {
           style={{ transformOrigin: '0 0 0' }}
           {...(marked ? { timeout: 105 } : {})}>
           
-          <div style={{ backgroundImage:`url(${starCircle})`,
+          <div style={{ backgroundImage:`url(${ ribbon})`,
           backgroundRepeat:"no-repeat",backgroundSize:"contain", 
           position: 'absolute',
           height: '12%', width: '12%' ,     
@@ -101,6 +108,7 @@ const Square = ({prompt, id, squareid}) => {
           }  <Typography variant="body1">{prompt}</Typography>
         
       </BingoPrompt>
+      </Paper>
     </>
   );
 };

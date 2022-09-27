@@ -1,3 +1,7 @@
+body {
+  background-color: #f4f2ed;
+}
+
 /* Grid styles */
 table {
   border-collapse: collapse;
@@ -12,7 +16,7 @@ td {
 }
 
 .marked {
-  background-image: url('../img/star-circle-blue.png');
+  background-image: url('../img/check-mark.png');
   background-repeat: no-repeat;
   background-position: center;
   opacity: 80%;

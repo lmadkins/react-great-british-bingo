@@ -5,7 +5,7 @@ import { WinContext } from '../context/WinContext';
 import jsonArr from '../data/promptList';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
-import RestartAltIcon from '@mui/icons-material/RestartAlt';
+import Paper from '@mui/material/Paper';
 import Square from './Square';
 import WinAlert from "./WinAlert";
 
@@ -52,8 +52,8 @@ const GamePage = () => {
 
     <Button 
       variant="contained" 
-      onClick={handleStartClick}  startIcon={<RestartAltIcon />}>Restart</Button>
-
+      onClick={handleStartClick}  >Restart</Button>
+    {/* <Paper elevation={5}> */}
     <Grid container 
       justify="center" 
       alignItems="center" 
@@ -68,6 +68,7 @@ const GamePage = () => {
             id={v.id}
           />)})}     
     </Grid>  
+    {/* </Paper> */}
 
   </MarkedContext.Provider> 
   </MarkedArrContext.Provider>
