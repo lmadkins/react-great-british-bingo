@@ -6,6 +6,7 @@ import jsonArr from '../data/promptList';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 // import Box from '@mui/material/Box'
+import Paper from '@mui/material/Paper';
 import Container from '@mui/material/Container';
 import Square from './Square';
 import WinAlert from "./WinAlert";
@@ -54,16 +55,29 @@ const GamePage = () => {
     <Button 
       variant="contained" 
       onClick={handleStartClick}  >Restart</Button>
-   <Grid container spacing={3}>
+   {/* <Grid container spacing={3}> */}
+  {/* <button> */}
+  <Paper
+    elevation={6}
+    // square={true}
+    >
+    <div
+        className="bingoCard">
       {newPrompts.map((v, k) => {
         return (
-          <Square 
-            key={`${k}`} 
-            squareid={k} 
-            prompt={v.prompt} 
-            id={v.id}
-          />)})}       
-    </Grid>
+        
+        <Square 
+        key={`${k}`} 
+        squareid={k} 
+        prompt={v.prompt} 
+        id={v.id}
+          // className="bingoSquare"
+        />
+      )})}    
+    </div>
+  </Paper>
+          {/* </button>    */}
+    {/* </Grid> */}
 
   </MarkedContext.Provider> 
   </MarkedArrContext.Provider>

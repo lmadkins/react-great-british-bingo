@@ -1,3 +1,26 @@
 body {
   background-color: #f4f2ed;
 }
+
+.bingoCard {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.bingoSquare {
+    height: 10vh;
+    width: 15vw;
+    fontSize: 24px; 
+    padding: 3vh;
+    paddingTop: 7vh;
+    margin: 0;
+    alignItems: center;
+    justifyContent: center;
+    verticalAlign: center;
+    textAlign: center;
+    boxSizing: border-box;
+    cursor: pointer;
+}

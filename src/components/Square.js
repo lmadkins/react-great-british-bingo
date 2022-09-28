@@ -58,45 +58,18 @@ const Square = ({prompt, id, squareid}) => {
       }
   }
 
-  const BingoPrompt = styled(Container)(marked ? {
-    height: '130px',
-    width: '150px',
-    fontSize: '20px', 
-    // padding: '3vh',
-    paddingTop: '5vh',
-    // border: '2px solid black',
-    alignItems: 'center',
-    justifyContent: 'center',
-    verticalAlign: 'center',
-    textAlign: 'center',
-    boxSizing: 'border-box',
-    cursor: 'pointer',
-      } : {
-    height: '130px',
-    width: '175px',
-    padding: '3vh',
-    paddingTop: '5vh',
-    color: 'black',
-    fontSize: '20px', 
-    // border: '2px solid black',
-    alignItems: 'center',
-    justifyContent: 'center',
-    verticalAlign: 'center',
-    textAlign: 'center',
-    boxSizing: 'border-box',
-    cursor: 'pointer',
-    })
-
   return (
     <>
     <Paper
-    elevation={2}
-    square={true}>
-      <BingoPrompt
+    elevation={1}
+    square={true}
+    >
+      <div
         onClick={handleClick}
         id={id}
         squareid={squareid}
         fixed
+        className="bingoSquare"
         // xs="auto"
         >
         {marked ? (
@@ -111,10 +84,10 @@ const Square = ({prompt, id, squareid}) => {
             backgroundRepeat: "no-repeat",
             backgroundSize: "contain", 
             // backgroundImage: `url(${ ribbon})`,
-          position: 'absolute',
-          height: '13%', width: '13%' ,   
-          opacity: .70,
-          zIndex: '1',
+            position: 'absolute',
+            height: '13%', width: '13%' ,   
+            opacity: .70,
+            zIndex: '1',
           }} ></Container>
           </Slide>) 
           : (<></>)
@@ -123,7 +96,7 @@ const Square = ({prompt, id, squareid}) => {
             {prompt}
           </Typography>
         
-      </BingoPrompt>
+      </div>
       </Paper>
     </>
   );
