@@ -1,13 +1,14 @@
-import React, { useState, useEffect, useContext} from 'react';
+import React, { useState, useEffect} from 'react';
 import { MarkedArrContext } from '../context/MarkedArrContext'; 
 import { MarkedContext } from '../context/MarkedContext';
 import { WinContext } from '../context/WinContext'; 
 import jsonArr from '../data/promptList';
-import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
+// import Grid from '@mui/material/Grid';
+// import Button from '@mui/material/Button';
 // import Box from '@mui/material/Box'
-import Paper from '@mui/material/Paper';
-import Container from '@mui/material/Container';
+// import Paper from '@mui/material/Paper';
+// import Container from '@mui/material/Container';
+import GameNav from './GameNav';
 import Square from './Square';
 import WinAlert from "./WinAlert";
 
@@ -52,15 +53,12 @@ const GamePage = () => {
       handleStartClick={handleStartClick}
       replay={replay}/>
 
-    <Button 
-      variant="contained" 
-      onClick={handleStartClick}  >Restart</Button>
-   {/* <Grid container spacing={3}> */}
-  {/* <button> */}
-  <Paper
+    <GameNav 
+    handleStartClick={handleStartClick}/>
+  {/* <Paper
     elevation={6}
     // square={true}
-    >
+    > */}
     <div
         className="bingoCard">
       {newPrompts.map((v, k) => {
@@ -71,13 +69,10 @@ const GamePage = () => {
         squareid={k} 
         prompt={v.prompt} 
         id={v.id}
-          // className="bingoSquare"
         />
       )})}    
     </div>
-  </Paper>
-          {/* </button>    */}
-    {/* </Grid> */}
+  {/* </Paper> */}
 
   </MarkedContext.Provider> 
   </MarkedArrContext.Provider>

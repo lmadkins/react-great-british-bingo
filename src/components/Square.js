@@ -2,14 +2,15 @@ import React, {useEffect, useState, useContext} from 'react';
 import { MarkedArrContext } from '../context/MarkedArrContext';
 import { WinContext } from '../context/WinContext';
 import { styled } from '@mui/material/styles';
-import checkmark from '../img/check-mark.png';
-import medal from '../img/medal.png'
+// import Paper from '@mui/material/Paper';
+// import Grid from '@mui/material/Grid';
+// import Box from '@mui/material/Box'
+// import checkmark from '../img/check-mark.png';
+// import medal from '../img/medal.png'
 import ribbon from '../img/ribbon.png'
 import Slide from '@mui/material/Slide';
 import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box'
+
 import Container from '@mui/material/Container';
 import winningCombos from '../data/winningCombos';
 
@@ -28,12 +29,12 @@ const Square = ({prompt, id, squareid}) => {
 
   function checkBingo () {
     winningCombos.forEach((array) => {
-    let mergedArr = markedArr.concat(array)
-    let duplicates = [];
-    mergedArr.sort();
+      let mergedArr = markedArr.concat(array)
+      let duplicates = []
+      mergedArr.sort()
       for (let i = 0; i < mergedArr.length; i++) {
         if (mergedArr[i] === mergedArr[i + 1]) {
-          duplicates.push(mergedArr[i]);
+          duplicates.push(mergedArr[i])
         }
         if (duplicates.length >= 5) {
           setWin(true)
@@ -58,19 +59,20 @@ const Square = ({prompt, id, squareid}) => {
       }
   }
 
+  const BingoPrompt = styled('div')(marked ? {} : {})
+
   return (
     <>
-    <Paper
+    {/* <Paper
     elevation={1}
     square={true}
-    >
-      <div
+    > */}
+      <BingoPrompt
         onClick={handleClick}
         id={id}
         squareid={squareid}
         fixed
         className="bingoSquare"
-        // xs="auto"
         >
         {marked ? (
           <Slide 
@@ -83,21 +85,23 @@ const Square = ({prompt, id, squareid}) => {
             backgroundImage: `url(${ ribbon})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "contain", 
-            // backgroundImage: `url(${ ribbon})`,
-            position: 'absolute',
-            height: '13%', width: '13%' ,   
             opacity: .70,
             zIndex: '1',
+            position: 'absolute',
+            height: '12%', width: '12%' ,   
           }} ></Container>
           </Slide>) 
-          : (<></>)
+          : 
+          (<></>)
           }  
-          <Typography>
-            {prompt}
+          <Typography
+            id={id}
+            squareid={squareid}>
+              {prompt}
           </Typography>
         
-      </div>
-      </Paper>
+      </BingoPrompt>
+      {/* </Paper> */}
     </>
   );
 };
