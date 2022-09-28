@@ -5,7 +5,8 @@ import { WinContext } from '../context/WinContext';
 import jsonArr from '../data/promptList';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
-import Paper from '@mui/material/Paper';
+// import Box from '@mui/material/Box'
+import Container from '@mui/material/Container';
 import Square from './Square';
 import WinAlert from "./WinAlert";
 
@@ -53,12 +54,7 @@ const GamePage = () => {
     <Button 
       variant="contained" 
       onClick={handleStartClick}  >Restart</Button>
-    {/* <Paper elevation={5}> */}
-    <Grid container 
-      justify="center" 
-      alignItems="center" 
-      alignContent="center"
-      spacing={0}>
+   <Grid container spacing={3}>
       {newPrompts.map((v, k) => {
         return (
           <Square 
@@ -66,9 +62,8 @@ const GamePage = () => {
             squareid={k} 
             prompt={v.prompt} 
             id={v.id}
-          />)})}     
-    </Grid>  
-    {/* </Paper> */}
+          />)})}       
+    </Grid>
 
   </MarkedContext.Provider> 
   </MarkedArrContext.Provider>

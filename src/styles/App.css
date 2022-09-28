@@ -1,24 +1,3 @@
 body {
   background-color: #f4f2ed;
 }
-
-/* Grid styles */
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin: 0 auto;
-}
-
-td {
-  border: 2px solid black;
-  padding: 4em;
-  width: 20%;
-}
-
-.marked {
-  background-image: url('../img/check-mark.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 80%;
-  z-index: -1;
-}

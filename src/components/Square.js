@@ -8,6 +8,9 @@ import ribbon from '../img/ribbon.png'
 import Slide from '@mui/material/Slide';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box'
+import Container from '@mui/material/Container';
 import winningCombos from '../data/winningCombos';
 
 
@@ -55,21 +58,22 @@ const Square = ({prompt, id, squareid}) => {
       }
   }
 
-  const BingoPrompt = styled('div')(marked ? {
-    height: '18vh',
-    width: '18vw',
+  const BingoPrompt = styled(Container)(marked ? {
+    height: '130px',
+    width: '150px',
     fontSize: '20px', 
-    padding: '3vh',
+    // padding: '3vh',
     paddingTop: '5vh',
     // border: '2px solid black',
     alignItems: 'center',
     justifyContent: 'center',
+    verticalAlign: 'center',
     textAlign: 'center',
     boxSizing: 'border-box',
+    cursor: 'pointer',
       } : {
-    height: '18vh',
-    
-    width: '18vw',
+    height: '130px',
+    width: '175px',
     padding: '3vh',
     paddingTop: '5vh',
     color: 'black',
@@ -77,8 +81,10 @@ const Square = ({prompt, id, squareid}) => {
     // border: '2px solid black',
     alignItems: 'center',
     justifyContent: 'center',
+    verticalAlign: 'center',
     textAlign: 'center',
     boxSizing: 'border-box',
+    cursor: 'pointer',
     })
 
   return (
@@ -90,22 +96,32 @@ const Square = ({prompt, id, squareid}) => {
         onClick={handleClick}
         id={id}
         squareid={squareid}
+        fixed
+        // xs="auto"
         >
         {marked ? (
-          <Slide in={marked} mountOnEnter unmountOnExit 
+          <Slide 
+          in={marked} 
+          mountOnEnter unmountOnExit 
           style={{ transformOrigin: '0 0 0' }}
           {...(marked ? { timeout: 105 } : {})}>
           
-          <div style={{ backgroundImage:`url(${ ribbon})`,
-          backgroundRepeat:"no-repeat",backgroundSize:"contain", 
+          <Container style={{ 
+            backgroundImage: `url(${ ribbon})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "contain", 
+            // backgroundImage: `url(${ ribbon})`,
           position: 'absolute',
-          height: '12%', width: '12%' ,     
+          height: '13%', width: '13%' ,   
           opacity: .70,
           zIndex: '1',
-          }} ></div>
+          }} ></Container>
           </Slide>) 
           : (<></>)
-          }  <Typography variant="body1">{prompt}</Typography>
+          }  
+          <Typography>
+            {prompt}
+          </Typography>
         
       </BingoPrompt>
       </Paper>
