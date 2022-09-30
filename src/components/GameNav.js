@@ -11,7 +11,9 @@ const GameNav = ({handleStartClick}) => {
       {/* <Typography
       > Welcome to the Great British Bakeoff Bingo</Typography> */}
         <Button 
-      variant="contained" 
+        className="restart"
+      variant="contained"
+      color="secondary" 
       onClick={handleStartClick}  >Restart</Button>
     </nav>
     </>

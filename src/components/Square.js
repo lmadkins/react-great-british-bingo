@@ -59,7 +59,14 @@ const Square = ({prompt, id, squareid}) => {
       }
   }
 
-  const BingoPrompt = styled('div')(marked ? {} : {})
+  const BingoPrompt = styled('div')(marked ? {
+    backgroundColor: '#f4f2ed',
+    // border: '1px solid gray',
+  } : {
+    backgroundColor: 'white',
+    
+    
+  })
 
   return (
     <>
@@ -88,7 +95,8 @@ const Square = ({prompt, id, squareid}) => {
             opacity: .70,
             zIndex: '1',
             position: 'absolute',
-            height: '12%', width: '12%' ,   
+            height: '12%', 
+            width: '12%' ,   
           }} ></Container>
           </Slide>) 
           : 

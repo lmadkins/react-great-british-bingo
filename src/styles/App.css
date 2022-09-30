@@ -1,36 +1,60 @@
 body {
-  background-color: #f4f2ed;
+  background-color:  #b6e6ed;
+  border: 0px; 
+  margin: 0px; 
+  padding: 0px;
 }
+
 
 nav {
   font-family: Futura Heavy;
-  margin: 0 auto;
   text-align: center;
-  background-color: #d3d2cb;
+  background-color: #555555;
   padding: 1vh;
   max-width: 100vw;
   min-width: 90vw;
 }
 
+.restart {
+  transition: all 0.20s ease-in-out;
+  /* opacity: 0.8; */
+}
+
+.restart:hover {
+opacity: 1;
+transform: rotateZ(-5deg);
+}
+
+
 .bingoCard {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  margin: 0 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  overflow: hidden;
+
+  /* disable text selection of prompts, to make more mobile friendly */
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
 }
 
 .bingoSquare {
-    max-width: 10rem;
-    max-height: 10rem;
-    font-size: 24px; 
-    padding: 3vh;
-    margin: 0;
-    align-items: center;
-    justify-content: center;
-    vertical-align: center;
-    text-align: center;
-    box-sizing: border-box;
-    cursor: pointer;
+  font-size: 10em; 
+  width: 20%; /* 32% */
+  padding: 6% 0;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  overflow: hidden;
+  color: #555555;
+  /* border: 2px solid white; */
+  background-color:#f4f2ed;
+  transition: background-color .5s;  
 }
 
+.bingoSquare:hover {
+  background-color: #f4f2ed;
+  transition: background-color .5s;
+}
