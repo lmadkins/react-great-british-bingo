@@ -38,16 +38,14 @@ const GamePage = () => {
 
   function renderNewGame() {
     shuffleSlicePrompts()
-    setMarkedArr([])
+    // Include 12 (squareid of "free square")
+    setMarkedArr([12])
     setRestartBoard(false)
     setWin(false)
   }
   
   const handleStartClick = () => {
     renderNewGame()
-    // setRestartBoard(true)
-    // console.log(restartBoard)
-    // setRestartBoard(false)
   }
 
   return (

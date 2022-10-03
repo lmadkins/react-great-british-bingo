@@ -1,10 +1,11 @@
 import React, {useEffect, useState, useContext} from 'react';
 import { MarkedArrContext } from '../context/MarkedArrContext';
 import { WinContext } from '../context/WinContext';
+import '../styles/App.css'
 import { styled } from '@mui/material/styles';
-// import Paper from '@mui/material/Paper';
+import Paper from '@mui/material/Paper';
 // import Grid from '@mui/material/Grid';
-// import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
 // import checkmark from '../img/check-mark.png';
 // import medal from '../img/medal.png'
 import ribbon from '../img/ribbon.png'
@@ -30,7 +31,8 @@ const Square = ({prompt, id, squareid}) => {
   function checkBingo () {
     winningCombos.forEach((array) => {
       let mergedArr = markedArr.concat(array)
-      let duplicates = []
+      // Always includes 12 (squareid of "free square")
+      let duplicates = [12]
       mergedArr.sort()
       for (let i = 0; i < mergedArr.length; i++) {
         if (mergedArr[i] === mergedArr[i + 1]) {
@@ -44,6 +46,7 @@ const Square = ({prompt, id, squareid}) => {
   }
 
   useEffect(() => {
+    console.log(markedArr)
     if (markedArr.length >= 5) {
       checkBingo()
     }
@@ -59,49 +62,57 @@ const Square = ({prompt, id, squareid}) => {
       }
   }
 
+  const BingoPrompt = styled('button')(marked ? {
+    transition: 'background-color .5s',
+    backgroundColor: '#4a4a4a',
+    color: 'white',
+    width: '20%',
+    padding: '6% 0',
+    borderRadius: '0',
+    border: '2px solid white',
+    overflow: 'hidden',
+    textAlign: 'center',
+    boxSizing: 'border-box',
+    cursor: 'pointer',
+      } : {
+    backgroundColor: '#f4f2ed',
+    borderRadius: '0',
+    transition: 'background-color .5s',
+    width: '20%',
+    padding: '6% 0',
+    color: '#55555',
+    fontSize: '12px', 
+    border: '2px solid white',
+    overflow: 'hidden',
+    textAlign: 'center',
+    boxSizing: 'border-box',
+    cursor: 'pointer',
+    })
  
 
   return (
-    <>
-    {/* <Paper
-    elevation={1}
-    square={true}
-    > */}
-    {
-      marked? (
-        <button
+    <> 
+    { squareid === 12 ? (
+        <BingoPrompt
         onClick={handleClick}
         id={id}
         squareid={squareid}
         fixed
-        className="bingoSquaremarked "
-        aria-pressed={true}  
-        >
-          <Slide 
-          in={marked} 
-          mountOnEnter unmountOnExit 
-          style={{ transformOrigin: '0 0 0' }}
-          {...(marked ? { timeout: 105 } : {})}>
+        className="bingoSquare marked"
+        style={{    
+          backgroundColor: '#4a4a4a',
+          color: 'white',
+          fontSize: '12em',}}
           
-          <Container style={{ 
-            backgroundImage: `url(${ ribbon})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "contain", 
-            opacity: .70,
-            zIndex: '1',
-            position: 'absolute',
-            height: '12%', 
-            width: '12%' ,   
-          }} ></Container>
-          </Slide>
+        >
           <Typography
             id={id}
             squareid={squareid}>
-              {prompt}
+              <p>FREE</p>
           </Typography> 
-      </button>
+      </BingoPrompt>
       ) : (
-        <button
+        <BingoPrompt
         onClick={handleClick}
         id={id}
         squareid={squareid}
@@ -112,13 +123,10 @@ const Square = ({prompt, id, squareid}) => {
             id={id}
             squareid={squareid}>
               {prompt}
-          </Typography>
-        
-      </button>
+          </Typography> 
+      </BingoPrompt>
       )
     }
-
-      {/* </Paper> */}
     </>
   );
 };

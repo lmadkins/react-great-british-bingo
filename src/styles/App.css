@@ -13,6 +13,7 @@ main {
   padding: 10%;
   border-radius: 10px;
   text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 17px 30px;
 }
 
 nav {
@@ -41,33 +42,30 @@ transform: rotateZ(-5deg);
   flex-wrap: wrap;
   justify-content: space-between;
   overflow: hidden;
-
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 17px 30px;
   /* disable text selection of prompts, to make more mobile friendly */
   -webkit-user-select: none;  
   -moz-user-select: none;    
   -ms-user-select: none;      
   user-select: none;
 }
-
 .bingoSquare {
   font-size: 10em; 
-  width: 20%; /* 32% */
+  width: 20%; 
   padding: 6% 0;
   text-align: center;
   box-sizing: border-box;
   cursor: pointer;
   overflow: hidden;
-  color: #555555;
-  /* border: 2px solid white; */
-  background-color:#f4f2ed;
-  transition: background-color .5s;  
-}
+  border: 2px solid white;
+  transition: background-color .5s;   
+} 
 
-.bingoSquare .marked {
-  background-color: #f4f2ed;
-}
+
 
 .bingoSquare:hover {
-  background-color: #f4f2ed;
+  background-color: #7e7e7e;
+  color: white;
   transition: background-color .5s;
 }
