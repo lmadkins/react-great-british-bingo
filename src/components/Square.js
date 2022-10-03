@@ -59,14 +59,7 @@ const Square = ({prompt, id, squareid}) => {
       }
   }
 
-  const BingoPrompt = styled('div')(marked ? {
-    backgroundColor: '#f4f2ed',
-    // border: '1px solid gray',
-  } : {
-    backgroundColor: 'white',
-    
-    
-  })
+ 
 
   return (
     <>
@@ -74,14 +67,16 @@ const Square = ({prompt, id, squareid}) => {
     elevation={1}
     square={true}
     > */}
-      <BingoPrompt
+    {
+      marked? (
+        <button
         onClick={handleClick}
         id={id}
         squareid={squareid}
         fixed
-        className="bingoSquare"
+        className="bingoSquaremarked "
+        aria-pressed={true}  
         >
-        {marked ? (
           <Slide 
           in={marked} 
           mountOnEnter unmountOnExit 
@@ -98,17 +93,31 @@ const Square = ({prompt, id, squareid}) => {
             height: '12%', 
             width: '12%' ,   
           }} ></Container>
-          </Slide>) 
-          : 
-          (<></>)
-          }  
+          </Slide>
+          <Typography
+            id={id}
+            squareid={squareid}>
+              {prompt}
+          </Typography> 
+      </button>
+      ) : (
+        <button
+        onClick={handleClick}
+        id={id}
+        squareid={squareid}
+        fixed
+        className="bingoSquare"
+        >
           <Typography
             id={id}
             squareid={squareid}>
               {prompt}
           </Typography>
         
-      </BingoPrompt>
+      </button>
+      )
+    }
+
       {/* </Paper> */}
     </>
   );

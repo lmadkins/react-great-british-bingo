@@ -2,6 +2,7 @@ import React, { useState, useEffect} from 'react';
 import { MarkedArrContext } from '../context/MarkedArrContext'; 
 import { MarkedContext } from '../context/MarkedContext';
 import { WinContext } from '../context/WinContext'; 
+import { RestartContext } from '../context/RestartContext';
 import jsonArr from '../data/promptList';
 // import Grid from '@mui/material/Grid';
 // import Button from '@mui/material/Button';
@@ -18,10 +19,14 @@ const GamePage = () => {
   const [markedArr, setMarkedArr] = useState([])
   const [win, setWin] = useState(false)
   const [replay, setReplay] = useState(false)
+  const [restartBoard, setRestartBoard] = useState(false)
 
   useEffect(() => {
     renderNewGame()
-  }, [replay])
+    // setWin(false)
+    // console.log(restartBoard)
+    // console.log(win)
+  }, [restartBoard])
 
   let shuffledArr = []
 
@@ -34,10 +39,15 @@ const GamePage = () => {
   function renderNewGame() {
     shuffleSlicePrompts()
     setMarkedArr([])
+    setRestartBoard(false)
+    setWin(false)
   }
   
   const handleStartClick = () => {
     renderNewGame()
+    // setRestartBoard(true)
+    // console.log(restartBoard)
+    // setRestartBoard(false)
   }
 
   return (
@@ -48,19 +58,22 @@ const GamePage = () => {
       value={{markedArr, setMarkedArr}}>
     <MarkedContext.Provider
       value={{marked, setMarked}}>
+    <RestartContext.Provider
+      value={{restartBoard, setRestartBoard}}>
 
     <WinAlert 
-      handleStartClick={handleStartClick}
-      replay={replay}/>
+      // handleStartClick={handleStartClick}
+      />
 
     <GameNav 
-    handleStartClick={handleStartClick}/>
+    handleStartClick={handleStartClick}
+    />
   {/* <Paper
     elevation={6}
     // square={true}
     > */}
     <div
-        className="bingoCard">
+        className='bingoCard animate__animated animate__fadeInUp'>
       {newPrompts.map((v, k) => {
         return (
         
@@ -73,7 +86,7 @@ const GamePage = () => {
       )})}    
     </div>
   {/* </Paper> */}
-
+  </RestartContext.Provider>
   </MarkedContext.Provider> 
   </MarkedArrContext.Provider>
   </WinContext.Provider>

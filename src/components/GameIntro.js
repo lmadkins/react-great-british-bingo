@@ -1,27 +1,17 @@
 import { Link } from "react-router-dom"
-import { useState } from "react";
+// import { useState } from "react";
 // import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Fab from '@mui/material/Fab';
-import Fade from '@mui/material/Fade';
+// import Fade from '@mui/material/Fade';
 
 
 const GameIntro = () => {
 
-// console.log(leave)
   return (
     <>
-    <div 
-    className="animate__animated animate__fadeInDown"
-    style={{
-      color: "white",
-      backgroundColor: "#4a4a4a",
-      maxWidth: '60%',
-      margin: '20% auto',
-      padding: '10%',
-      borderRadius: '10px',
-      textAlign: 'center',
-    }}
+    <main 
+    className="animate__animated animate__slideInDown"
     >
       <Typography 
       align="center" 
@@ -65,7 +55,7 @@ const GameIntro = () => {
         On your mark, get set, PLAY!
         </Fab>
       </Link>
-      </div>
+      </main>
     </>
   );
 };

@@ -5,6 +5,15 @@ body {
   padding: 0px;
 }
 
+main {
+  color: white;
+  background-color: #4a4a4a;
+  max-width: 60%;
+  margin: 8% auto;
+  padding: 10%;
+  border-radius: 10px;
+  text-align: center;
+}
 
 nav {
   font-family: Futura Heavy;
@@ -52,6 +61,10 @@ transform: rotateZ(-5deg);
   /* border: 2px solid white; */
   background-color:#f4f2ed;
   transition: background-color .5s;  
+}
+
+.bingoSquare .marked {
+  background-color: #f4f2ed;
 }
 
 .bingoSquare:hover {
