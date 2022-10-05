@@ -13,7 +13,7 @@ const GameNav = ({handleStartClick}) => {
         <Button 
         className="restart"
       variant="contained"
-      color="secondary" 
+      color="third" 
       onClick={handleStartClick}  >Restart</Button>
     </nav>
     </>

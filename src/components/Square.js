@@ -32,7 +32,7 @@ const Square = ({prompt, id, squareid}) => {
     winningCombos.forEach((array) => {
       let mergedArr = markedArr.concat(array)
       // Always includes 12 (squareid of "free square")
-      let duplicates = [12]
+      let duplicates = []
       mergedArr.sort()
       for (let i = 0; i < mergedArr.length; i++) {
         if (mergedArr[i] === mergedArr[i + 1]) {
@@ -64,25 +64,25 @@ const Square = ({prompt, id, squareid}) => {
 
   const BingoPrompt = styled('button')(marked ? {
     transition: 'background-color .5s',
-    backgroundColor: '#4a4a4a',
-    color: 'white',
+    backgroundColor: '#a3bcc2',
+    color: '#000000',
     width: '20%',
     padding: '6% 0',
     borderRadius: '0',
-    border: '2px solid white',
+    border: '1px solid white',
     overflow: 'hidden',
     textAlign: 'center',
     boxSizing: 'border-box',
     cursor: 'pointer',
       } : {
-    backgroundColor: '#f4f2ed',
+    backgroundColor: '#edebe7',
     borderRadius: '0',
     transition: 'background-color .5s',
     width: '20%',
     padding: '6% 0',
     color: '#55555',
     fontSize: '12px', 
-    border: '2px solid white',
+    border: '1px solid white',
     overflow: 'hidden',
     textAlign: 'center',
     boxSizing: 'border-box',
@@ -100,7 +100,7 @@ const Square = ({prompt, id, squareid}) => {
         fixed
         className="bingoSquare marked"
         style={{    
-          backgroundColor: '#4a4a4a',
+          backgroundColor: '#748c92',
           color: 'white',
           fontSize: '12em',}}
           

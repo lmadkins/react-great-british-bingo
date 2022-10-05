@@ -7,13 +7,13 @@ import { createTheme } from '@mui/material/styles';
     },
     palette: {
       primary: {
-        main: '#169273',
+        main: '#169235',
       },
       secondary: {
-        main: '#9f3d19',
+        main: '#d5eef5',
       },
       third: {
-        main: '#479fce'
+        main: '#9f3d19'
       }
     },
   });
