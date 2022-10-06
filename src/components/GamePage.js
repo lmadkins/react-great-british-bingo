@@ -4,11 +4,6 @@ import { MarkedContext } from '../context/MarkedContext';
 import { WinContext } from '../context/WinContext'; 
 import { RestartContext } from '../context/RestartContext';
 import jsonArr from '../data/promptList';
-// import Grid from '@mui/material/Grid';
-// import Button from '@mui/material/Button';
-// import Box from '@mui/material/Box'
-// import Paper from '@mui/material/Paper';
-// import Container from '@mui/material/Container';
 import GameNav from './GameNav';
 import Square from './Square';
 import WinAlert from "./WinAlert";
@@ -18,14 +13,10 @@ const GamePage = () => {
   const [marked, setMarked] = useState()
   const [markedArr, setMarkedArr] = useState([])
   const [win, setWin] = useState(false)
-  const [replay, setReplay] = useState(false)
   const [restartBoard, setRestartBoard] = useState(false)
 
   useEffect(() => {
     renderNewGame()
-    // setWin(false)
-    // console.log(restartBoard)
-    // console.log(win)
   }, [restartBoard])
 
   let shuffledArr = []
@@ -50,44 +41,30 @@ const GamePage = () => {
 
   return (
     <>
-    <WinContext.Provider
-      value={{win, setWin}}>
-    <MarkedArrContext.Provider
-      value={{markedArr, setMarkedArr}}>
-    <MarkedContext.Provider
-      value={{marked, setMarked}}>
-    <RestartContext.Provider
-      value={{restartBoard, setRestartBoard}}>
+    <WinContext.Provider value={{win, setWin}}>
+    <MarkedArrContext.Provider value={{markedArr, setMarkedArr}}>
+    <MarkedContext.Provider value={{marked, setMarked}}>
+    <RestartContext.Provider value={{restartBoard, setRestartBoard}}>
 
-    <WinAlert 
-      // handleStartClick={handleStartClick}
-      />
+      <WinAlert />
 
-    <GameNav 
-    handleStartClick={handleStartClick}
-    />
-  {/* <Paper
-    elevation={6}
-    // square={true}
-    > */}
-    <div
+      <GameNav handleStartClick={handleStartClick}/>
+      
+      <div
         className='bingoCard animate__animated animate__fadeInUp'>
-      {newPrompts.map((v, k) => {
-        return (
-        
-        <Square 
-        key={`${k}`} 
-        squareid={k} 
-        prompt={v.prompt} 
-        id={v.id}
-        />
-      )})}    
-    </div>
-  {/* </Paper> */}
-  </RestartContext.Provider>
-  </MarkedContext.Provider> 
-  </MarkedArrContext.Provider>
-  </WinContext.Provider>
+        {newPrompts.map((v, k) => {
+          return (
+          <Square 
+            key={`${k}`} 
+            squareid={k} 
+            prompt={v.prompt} 
+            id={v.id}/>
+        )})}    
+      </div>
+    </RestartContext.Provider>
+    </MarkedContext.Provider> 
+    </MarkedArrContext.Provider>
+    </WinContext.Provider>
   </>
   );
 };

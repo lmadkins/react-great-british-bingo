@@ -1,9 +1,8 @@
 body {
-  /* background-color:  #b6e6ed; */
   background-color:  #f4f2ed;
-  border: 0px; 
-  margin: 0px; 
-  padding: 0px;
+  border: 0; 
+  margin: 0; 
+  padding: 0;
 }
 
 a {
@@ -11,85 +10,68 @@ a {
 }
 
 main {
-  color: white;
   background-color: #4a4a4a;
-  max-width: 60%;
-  margin: 8% auto;
-  padding: 10%;
   border-radius: 10px;
-  text-align: center;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 17px 30px;
+  color: white;
+  margin: 8% auto;
+  max-width: 60%;
+  padding: 10%;
+  text-align: center;
 }
 
 nav {
-  font-family: Futura Heavy;
-  text-align: center;
-  /* background-color: #e3ddd2; */
-  padding: 1vh;
-  max-width: 100vw;
-  min-width: 90vw;
   color: white;
+  font-family: Futura Heavy;
+  max-width: 100vw;
+  min-width: 90vw;  
+  padding: 1vh;
+  text-align: center;
 }
 
 .restart {
-  transition: all 0.20s ease-in-out;
-  /* opacity: 0.8; */
   color: white;
+  transition: all 0.20s ease-in-out;
 }
 
 .restart:hover {
-opacity: 1;
-transform: rotateZ(-5deg);
+  opacity: 1;
+  transform: rotateZ(-5deg);
 }
 
 
 .bingoCard {
-  margin: 0 50px;
-  padding: 1%;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 17px 30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin: 0 50px;
   overflow: hidden;
-  border-radius: 10px;
-  /* border: 2px solid #c1bfbb; */
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 17px 30px;
-  /* disable text selection of prompts, to make more mobile friendly */
+  padding: 1%;
+  user-select: none;
   -webkit-user-select: none;  
   -moz-user-select: none;    
   -ms-user-select: none;      
-  user-select: none;
 }
+
 .bingoSquare {
-  font-size: 10em; 
-  width: 20%; 
-  padding: 5% 1%;
-  text-align: center;
-  /* box-sizing: border-box; */
+  border: 1px solid white;
+  border-radius: 0;
+  box-sizing: border-box;
   cursor: pointer;
+  font-size: 1rem; 
+  max-height: 15%;
   overflow: hidden;
-  /* border-radius: 5px; */
-  /* border: 2px solid #c1bfbb; */
-  transition: background-color .3s;   
+  padding: 4% 1%;
+  text-align: center;
+  transition: background-color .3s;  
+  width: 20%;  
 } 
 
 
-
 .bingoSquare:hover, .bingoSquare:focus  {
-  /* #a3bcc2 */
-  /* background-color: #cde6ea; */
-  /* #d7f0f4 */
-  /* #d1e9ed */
-/* #b3e1df */
-/* #a3bcc2 */
-/* #87B5B2 */
-/* #8dbdba */
   background-color:   #8dbdba;
-  /* color: white; */
   color: #4a4a4a;
   transition: background-color .3s; 
 }
-
-/* #e3ddd2 */
-/* #7e7e7e */
-/* #80a5c3 */
-/* #9f3d19 */

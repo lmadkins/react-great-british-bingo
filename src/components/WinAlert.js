@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { RestartContext } from '../context/RestartContext';
 import { WinContext } from '../context/WinContext';
-import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
@@ -23,53 +22,60 @@ const WinAlert = (handleStartClick, replay) => {
   const handleClose = () => {
     setOpen(false)
     setRestartBoard(true)
-    // console.log(restartBoard)
-    // console.log(win)
   };
   
   return (
     <>
       <Dialog
-      sx={{
-        width: 600,
-        margin: '0 auto',
-      }}
+        sx={{
+          width: 600,
+          margin: '0 auto',
+        }}
         open={open}
         onClose={handleClose}
         aria-labelledby="Win-dialog-window"
         aria-describedby="alert-dialog-description"
         className={`${!open ? "animate__animated  animate__fadeOutDown animate__delay-2s" : ""
-        //  "animate__animated  animate__fadeIn  animate__fast"
-      }`}
-        >
+        }`}>
           
-        <DialogTitle id="alert-dialog-title">
-        Congratulations, baker, you've won!
+        <DialogTitle 
+          id="alert-dialog-title"
+          sx={{
+            textAlign: 'center',
+            paddingTop: '2.5rem',
+            fontSize: '3rem',
+            fontFamily: 'Futura Heavy',
+          }}>
+          BINGO!
         </DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description">
+        <DialogContent
+          sx={{
+            textAlign: 'center',
+            padding: '3rem',
+          }}>
+          <DialogContentText 
+            id="alert-dialog-description"
+            sx={{
+              fontSize: '1.25rem',
+              paddingTop: '1rem',
+            }}>
             Would you like to play again?
           </DialogContentText>
+            <Fab 
+              variant="extended"
+              color="primary" 
+              aria-label="Start button"
+              className="animate__animated animate__pulse animate__delay-1s"
+              onClick={handleClose} 
+              autoFocus
+              sx={{
+                fontSize: '1rem',
+                marginTop: '2rem',
+              }}
+              >
+              On your mark, get set, PLAY!
+            </Fab>
         </DialogContent>
-        {/* <Fab 
-        variant="extended"
-        color="primary" 
-        aria-label="Start button"
-        className="animate__animated animate__pulse animate__delay-1s"
-        onClick={handleClose} 
-          autoFocus
-        >
-        
-        On your mark, get set, PLAY!
-        </Fab> */}
-          <Button 
-          variant="contained"
-          size="medium"
-          aria-label="Start button"
-          onClick={handleClose} 
-          autoFocus>
-          Play Again
-          </Button>
       </Dialog>
     </>
   );

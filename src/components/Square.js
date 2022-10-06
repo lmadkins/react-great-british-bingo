@@ -3,16 +3,7 @@ import { MarkedArrContext } from '../context/MarkedArrContext';
 import { WinContext } from '../context/WinContext';
 import '../styles/App.css'
 import { styled } from '@mui/material/styles';
-import Paper from '@mui/material/Paper';
-// import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button'
-// import checkmark from '../img/check-mark.png';
-// import medal from '../img/medal.png'
-import ribbon from '../img/ribbon.png'
-import Slide from '@mui/material/Slide';
 import Typography from '@mui/material/Typography';
-
-import Container from '@mui/material/Container';
 import winningCombos from '../data/winningCombos';
 
 
@@ -63,30 +54,13 @@ const Square = ({prompt, id, squareid}) => {
   }
 
   const BingoPrompt = styled('button')(marked ? {
-    
     backgroundColor: '#87B5B2',
     color: '#000000',
-    width: '20%',
-    padding: '6% 0',
-    borderRadius: '0',
-    border: '1px solid white',
-    overflow: 'hidden',
-    textAlign: 'center',
-    boxSizing: 'border-box',
-    cursor: 'pointer',
       } : {
     backgroundColor: '#edebe7',
-    borderRadius: '0',
     transition: 'background-color .9s',
-    width: '20%',
-    padding: '6% 0',
     color: '#55555',
-    fontSize: '12px', 
-    border: '1px solid white',
-    overflow: 'hidden',
-    textAlign: 'center',
-    boxSizing: 'border-box',
-    cursor: 'pointer',
+    fontSize: '1.25rem', 
     })
  
 
@@ -100,32 +74,32 @@ const Square = ({prompt, id, squareid}) => {
         fixed
         className="bingoSquare marked"
         style={{    
-          // #b71c1c#a3bcc2
           backgroundColor: '#7aa3a1',
           color: 'white',
-          fontSize: '12em',}}
-          
+          fontSize: '1.5rem',
+        }}
         >
           <Typography
             id={id}
             squareid={squareid}>
               <p>FREE</p>
           </Typography> 
-      </BingoPrompt>
+        </BingoPrompt>
       ) : (
         <BingoPrompt
-        onClick={handleClick}
-        id={id}
-        squareid={squareid}
-        fixed
-        className="bingoSquare"
-        >
+          
+          id={id}
+          squareid={squareid}
+          fixed
+          onClick={handleClick}
+          className="bingoSquare"
+          >
           <Typography
             id={id}
             squareid={squareid}>
               {prompt}
           </Typography> 
-      </BingoPrompt>
+        </BingoPrompt>
       )
     }
     </>
