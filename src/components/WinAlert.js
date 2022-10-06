@@ -6,7 +6,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-
+import Fab from '@mui/material/Fab';
 
 const WinAlert = (handleStartClick, replay) => {
   const [open, setOpen] = useState(false);
@@ -30,6 +30,10 @@ const WinAlert = (handleStartClick, replay) => {
   return (
     <>
       <Dialog
+      sx={{
+        width: 600,
+        margin: '0 auto',
+      }}
         open={open}
         onClose={handleClose}
         aria-labelledby="Win-dialog-window"
@@ -47,7 +51,20 @@ const WinAlert = (handleStartClick, replay) => {
             Would you like to play again?
           </DialogContentText>
         </DialogContent>
+        {/* <Fab 
+        variant="extended"
+        color="primary" 
+        aria-label="Start button"
+        className="animate__animated animate__pulse animate__delay-1s"
+        onClick={handleClose} 
+          autoFocus
+        >
+        
+        On your mark, get set, PLAY!
+        </Fab> */}
           <Button 
+          variant="contained"
+          size="medium"
           aria-label="Start button"
           onClick={handleClose} 
           autoFocus>

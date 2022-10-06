@@ -13,7 +13,7 @@ import { createTheme } from '@mui/material/styles';
         main: '#d5eef5',
       },
       third: {
-        main: '#9f3d19'
+        main: '#b71c1c'
       }
     },
   });

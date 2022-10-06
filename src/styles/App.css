@@ -69,18 +69,24 @@ transform: rotateZ(-5deg);
   overflow: hidden;
   /* border-radius: 5px; */
   /* border: 2px solid #c1bfbb; */
-  transition: background-color .5s;   
+  transition: background-color .3s;   
 } 
 
 
 
-.bingoSquare:hover {
+.bingoSquare:hover, .bingoSquare:focus  {
   /* #a3bcc2 */
   /* background-color: #cde6ea; */
-  background-color:  #cde6ea;
+  /* #d7f0f4 */
+  /* #d1e9ed */
+/* #b3e1df */
+/* #a3bcc2 */
+/* #87B5B2 */
+/* #8dbdba */
+  background-color:   #8dbdba;
   /* color: white; */
   color: #4a4a4a;
-  transition: background-color .5s;
+  transition: background-color .3s; 
 }
 
 /* #e3ddd2 */

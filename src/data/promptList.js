@@ -1,7 +1,7 @@
 const jsonArr = [
 {
   "id": 1,
-  "prompt": "A bake collapses/breaks",
+  "prompt": "A bake collapses/slips",
 },
 {
   "id": 2,
@@ -13,23 +13,23 @@ const jsonArr = [
 },
 {
   "id": 4,
-  "prompt": "Dry",
+  "prompt": "'Dry'",
 },
 {
   "id": 5,
-  "prompt": "Even layering",
+  "prompt": "'Even layering'",
 },
 {
   "id": 6,
-  "prompt":"Flavors are not coming through",
+  "prompt":"'Flavors are not coming through'",
 },
 {
   "id": 7,
-  "prompt": "Flavors are too strong",
+  "prompt": "'Flavors are too strong'",
 },
 {
   "id": 8,
-  "prompt": "Good/beautiful sponge",
+  "prompt": "'Beautiful ___'",
 },
 {
   "id": 9,
@@ -45,7 +45,7 @@ const jsonArr = [
 },
 {
   "id": 12,
-  "prompt": "I've never made this before",
+  "prompt": "'I've never made this before'",
 },
 {
   "id": 13,
@@ -53,23 +53,23 @@ const jsonArr = [
 },
 {
   "id": 14,
-  "prompt": "It looks a mess/It could be neater", 
+  "prompt": "'It looks a mess'/'It could be neater'", 
 },
 {
   "id": 15,
-  "prompt": "It looks bad but the flavors are good", 
+  "prompt": "'It looks bad but the flavors are good'", 
 },
 {
   "id": 16,
-  "prompt": "It looks plain/ underwhelming",
+  "prompt": "'It looks plain/ underwhelming'",
 },
 {
   "id": 17,
-  "prompt": "It tastes good but the textures are wrong",
+  "prompt": "'It tastes good but the textures are wrong'",
 },
 {
   "id": 18,
-  "prompt": "I expected more",
+  "prompt": "'I expected more'",
 },
 {
   "id": 19,
@@ -77,7 +77,7 @@ const jsonArr = [
 },
 {
   "id": 20,
-  "prompt": "Overproved",
+  "prompt": "'Overproved'",
 },
 {
   "id": 21,
@@ -89,7 +89,7 @@ const jsonArr = [
 },
 {
   "id": 23,
-  "prompt": "Raw",
+  "prompt": "'Raw'",
 },
 {
   "id": 24,
@@ -97,11 +97,11 @@ const jsonArr = [
 },
 {
   "id": 25,
-  "prompt": "Rubbery",
+  "prompt": "'Rubbery'",
 },
 {
   "id": 26,
-  "prompt": "Soggy bottom",
+  "prompt": "'Soggy bottom'",
 },
 {
   "id": 27,
@@ -109,11 +109,11 @@ const jsonArr = [
 },
 {
   "id": 28,
-  "prompt": "Stodgy", 
+  "prompt": "'Stodgy'", 
 },
 {
   "id": 29,
-  "prompt": "Textures are wrong",  
+  "prompt": "'Textures are wrong'",  
 },
 {
   "id": 30,
@@ -121,19 +121,67 @@ const jsonArr = [
 },
 {
   "id": 31,
-  "prompt": "Underbaked",
+  "prompt": "'Underbaked'",
 },
 {
   "id": 32,
-  "prompt": "Underproved",
+  "prompt": "'Underproved'",
 },
 {
   "id": 33,
-  "prompt": "Uneven distribution of filling",
+  "prompt": "'Uneven distribution of filling'",
 },
 {
   "id": 34,
-  "prompt": "Uneven layering"
+  "prompt": "'Uneven layering'"
+},
+{
+  "id": 35,
+  "prompt": "Oven-staring"
+},
+{
+  "id": 36,
+  "prompt": "An ingredient is forgotten"
+},
+{
+  "id": 37,
+  "prompt": "Crying"
+},
+{
+  "id": 38,
+  "prompt": "Judge says 'Good Luck'"
+},
+{
+  "id": 39,
+  "prompt": "Burnt bake"
+},
+{
+  "id": 40,
+  "prompt": "Trying to hide a mistake"
+},
+{
+  "id": 41,
+  "prompt": "Use of alcohol"
+},
+{
+  "id": 42,
+  "prompt": "Animal is shown"
+},
+{
+  "id": 43,
+  "prompt": "Contestant attempting their signature or showstopper bake for the first time"
+},
+{
+  "id": 44,
+  "prompt": "Forgetting to turn the oven on"
+},
+{
+  "id": 45,
+  "prompt": "Contestant's bake didn't go well in practice"
+},
+{
+  "id": 46,
+  "prompt": "Unusual flavor combination"
 },
 ]
 

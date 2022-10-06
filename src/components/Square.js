@@ -63,8 +63,8 @@ const Square = ({prompt, id, squareid}) => {
   }
 
   const BingoPrompt = styled('button')(marked ? {
-    transition: 'background-color .5s',
-    backgroundColor: '#a3bcc2',
+    
+    backgroundColor: '#87B5B2',
     color: '#000000',
     width: '20%',
     padding: '6% 0',
@@ -77,7 +77,7 @@ const Square = ({prompt, id, squareid}) => {
       } : {
     backgroundColor: '#edebe7',
     borderRadius: '0',
-    transition: 'background-color .5s',
+    transition: 'background-color .9s',
     width: '20%',
     padding: '6% 0',
     color: '#55555',
@@ -100,7 +100,8 @@ const Square = ({prompt, id, squareid}) => {
         fixed
         className="bingoSquare marked"
         style={{    
-          backgroundColor: '#748c92',
+          // #b71c1c#a3bcc2
+          backgroundColor: '#7aa3a1',
           color: 'white',
           fontSize: '12em',}}
           
