@@ -3,10 +3,23 @@ body {
   border: 0; 
   margin: 0; 
   padding: 0;
+  font-family: Futura Book;
 }
 
 a {
   text-decoration: none;
+}
+
+h1 {
+  font-family: Futura Heavy;
+}
+
+h3 {
+  text-transform: uppercase;
+}
+
+p {
+  line-height: 125%;;
 }
 
 main {
@@ -75,3 +88,72 @@ nav {
   color: #000;
   transition: background-color .3s; 
 }
+
+/* PHONE LANDSCAPE */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+
+  
+  }
+/* PHONE PORTRAIT, INCL. Galaxy Fold */
+@media only screen and (min-width: 280px) and (max-width: 479px) {
+  main {
+    width: auto;
+    height: auto;
+  }
+
+  Typography .title {
+    font-size: 24px;
+  }
+  }
+
+/* TABLET  */
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+
+  
+  }
+
+  /* SMALL DESKTOP  */
+  @media only screen and (min-width: 980px) and (max-width: 1023px) {
+
+    
+    
+    }
+
+/* TYPICAL DESKTOP */
+@media only screen and (min-width: 1024px) and (max-width: 1199px) {
+
+  
+  
+  }
+
+/* DESKTOP VERSION */
+@media only screen and (min-width: 980px) {
+  h3:after {
+    content: ' - DESKTOP';
+    display: inline;
+  }
+}
+
+/* LARGE DESKTOP */
+@media only screen and (min-width: 1200px) {
+
+  
+}
+
+
+/* Styles for media queries
+main
+font size
+heigh
+width
+max h/w
+
+bingo card, bingo square
+height
+width
+max ehight
+max width
+font size
+
+*/

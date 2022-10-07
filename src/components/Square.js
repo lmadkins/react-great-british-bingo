@@ -37,7 +37,7 @@ const Square = ({prompt, id, squareid}) => {
   }
 
   useEffect(() => {
-    console.log(markedArr)
+    // console.log(markedArr)
     if (markedArr.length >= 5) {
       checkBingo()
     }
@@ -55,7 +55,9 @@ const Square = ({prompt, id, squareid}) => {
 
   const BingoPrompt = styled('button')(marked ? {
     backgroundColor: '#87B5B2',
+    
     color: '#000000',
+    
       } : {
     backgroundColor: '#edebe7',
     transition: 'background-color .9s',
