@@ -89,56 +89,38 @@ nav {
   transition: background-color .3s; 
 }
 
-/* PHONE LANDSCAPE */
-@media only screen and (min-width: 480px) and (max-width: 767px) {
+/* 
+PHONE
+min width 280 and max width 480
+280 x 653
+320 x 568
+320 x 640
+360 by 592
+360 x 640
+360 x 740
+375 x 667
+375 x 812
+380 x 844
+393 x 851
+412 x 915
+414 x 736
+414 x 896
+480 x800 
+*/
 
-
-  
-  }
-/* PHONE PORTRAIT, INCL. Galaxy Fold */
-@media only screen and (min-width: 280px) and (max-width: 479px) {
-  main {
-    width: auto;
-    height: auto;
-  }
-
-  Typography .title {
-    font-size: 24px;
-  }
-  }
-
-/* TABLET  */
-@media only screen and (min-width: 768px) and (max-width: 979px) {
-
-  
-  }
-
-  /* SMALL DESKTOP  */
-  @media only screen and (min-width: 980px) and (max-width: 1023px) {
-
-    
-    
+/* Portrait */
+@media only screen 
+  and (min-device-width: 280px) 
+  and (max-device-width: 480px) { 
+    main {
+      background-color: inherit;
+      box-shadow: none;
+      color: #555;
+      width: auto;
+      height: auto;
+      margin: 0 auto;
+      padding: 3%;
     }
-
-/* TYPICAL DESKTOP */
-@media only screen and (min-width: 1024px) and (max-width: 1199px) {
-
-  
-  
-  }
-
-/* DESKTOP VERSION */
-@media only screen and (min-width: 980px) {
-  h3:after {
-    content: ' - DESKTOP';
-    display: inline;
-  }
-}
-
-/* LARGE DESKTOP */
-@media only screen and (min-width: 1200px) {
-
-  
 }
 
 

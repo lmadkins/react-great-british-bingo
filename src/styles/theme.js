@@ -5,15 +5,6 @@ import { createTheme } from '@mui/material/styles';
     typography: {
       fontFamily: ['"Futura Book"', '"Futura Heavy"', 'Open Sans'].join(',')
     },
-    breakpoints: {
-      values: {
-        xs: 0,
-        sm: 600,
-        md: 900,
-        lg: 1200,
-        xl: 1536,
-      },
-    },
     palette: {
       primary: {
         main: '#169235',
