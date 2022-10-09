@@ -17,13 +17,12 @@ const GameIntro = () => {
         How to Play:
       </h3>
         <p>
-        <br></br>
         While watching, keep an eye out for when something happens matching one of your card prompts. When it does, click or tap to mark it off. 
         <br></br>
         When you get 3 in a row (horizontally or vertically), you win! 
         <br></br>
       </p>
-      <p></p><br></br>
+      <br></br>
       <Link to="/play">
         <Fab 
           variant="extended"

@@ -28,7 +28,7 @@ const WinAlert = (handleStartClick, replay) => {
     <>
       <Dialog
         sx={{
-          width: 600,
+          // width: 600,
           margin: '0 auto',
         }}
         open={open}

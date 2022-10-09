@@ -55,16 +55,14 @@ const Square = ({prompt, id, squareid}) => {
 
   const BingoPrompt = styled('button')(marked ? {
     backgroundColor: '#87B5B2',
-    
     color: '#000000',
     
       } : {
     backgroundColor: '#edebe7',
-    transition: 'background-color .9s',
+    transition: 'background-color .3s',
     color: '#55555',
-    fontSize: '1.25rem', 
     })
- 
+
 
   return (
     <> 
@@ -96,11 +94,11 @@ const Square = ({prompt, id, squareid}) => {
           onClick={handleClick}
           className="bingoSquare"
           >
-          <Typography
+          <p
             id={id}
             squareid={squareid}>
               {prompt}
-          </Typography> 
+          </p> 
         </BingoPrompt>
       )
     }

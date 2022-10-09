@@ -19,7 +19,8 @@ h3 {
 }
 
 p {
-  line-height: 125%;;
+  font-family: Futura Book;
+  line-height: 125%;
 }
 
 main {
@@ -78,6 +79,7 @@ nav {
   overflow: hidden;
   padding: 4% 1%;
   text-align: center;
+  word-wrap: break-word;
   transition: background-color .3s;  
   width: 20%;  
 } 
@@ -89,29 +91,11 @@ nav {
   transition: background-color .3s; 
 }
 
-/* 
-PHONE
-min width 280 and max width 480
-280 x 653
-320 x 568
-320 x 640
-360 by 592
-360 x 640
-360 x 740
-375 x 667
-375 x 812
-380 x 844
-393 x 851
-412 x 915
-414 x 736
-414 x 896
-480 x800 
-*/
+/*  PHONES  */
 
-/* Portrait */
+/* Extra small, e.g. Galaxy Fold */
 @media only screen 
-  and (min-device-width: 280px) 
-  and (max-device-width: 480px) { 
+  and (min-device-width: 280px) {
     main {
       background-color: inherit;
       box-shadow: none;
@@ -121,8 +105,39 @@ min width 280 and max width 480
       margin: 0 auto;
       padding: 3%;
     }
+    .bingoCard {
+      margin: 0;
+    }
+    .bingoSquare {
+      min-height: 17vh;
+      max-height: 17vh;
+      font-size: 0.75rem;
+      padding: 2vw;
+    }
+  }
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 320px) and (max-width: 767px)  { 
+    .bingoSquare {
+      font-size: 0.85rem;
+    }
 }
 
+@media only screen and (min-width: 480px) and (max-width: 767px)   
+and (orientation: landscape) {
+  main {
+    padding: 0;
+  }
+}
+
+/* TABLETS */
+/* Portrait */
+@media only screen and (min-width: 768px) and (max-width: 1024px)
+and (orientation: portrait)  
+{
+
+}
 
 /* Styles for media queries
 main
