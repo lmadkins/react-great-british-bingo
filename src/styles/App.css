@@ -26,16 +26,40 @@ p {
   line-height: 125%;
 }
 
+header {
+  /* background-color: #555; */
+  /* height: 60vh; */
+  /* height: 100%; */
+  /* width: 100%; */
+  margin: 0 auto;
+  /* min-height: 30vh; */
+}
+.game-banner {
+  min-height: 20vh;
+  /* height: inherit; */
+  /* max-height: inherit; */
+  /* max-width: 700px; */
+  margin: 0 auto;
+  background-image: url('/src/img/gbbs-title1500.jpeg');
+  background-position: top center;
+  background-attachment: fixed;
+  background-repeat: no-repeat; 
+  background-size: contain; 
+  z-index: 2;
+}
+
 main {
+  z-index: 2;
   background-color: #4a4a4a;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 17px 30px;
   color: white;
-  margin: 8% auto;
+  margin: 0 auto;
   max-width: 60%;
   padding: 10%;
   text-align: center;
 }
+
 
 nav {
   color: white;
@@ -112,6 +136,15 @@ Fab:hover, Button:hover {
 /* Extra small, e.g. Galaxy Fold */
 @media only screen 
   and (min-device-width: 280px) {
+
+  header, .game-banner {
+    /* margin-top: 30vh; */
+    /* margin: 0 auto; */
+    /* height: 20vh; */
+    /* background-size: 100%;  */
+    /* background-size: auto; */
+  }
+
   main {
     background-color: inherit;
     box-shadow: none;
@@ -134,6 +167,11 @@ Fab:hover, Button:hover {
 /* Portrait */
 @media only screen 
   and (min-device-width: 320px) and (max-width: 767px)  { 
+
+  header, .game-banner {
+    height: 45vh;
+    /* background-size: ;  */
+  }
   .bingoSquare {
     max-width: 20%;
     max-width: 20%;
@@ -147,8 +185,12 @@ Fab:hover, Button:hover {
 
 @media only screen and (min-width: 480px) and (max-width: 767px)   
 and (orientation: landscape) {
+
+  header, .game-banner {
+    height: 45vh;
+  }
   main {
-    margin: 20vh auto;
+    margin: 0 auto;
   }
 
   .bingoSquare p {
@@ -159,8 +201,17 @@ and (orientation: landscape) {
 /* TABLETS */
 
 @media only screen and (min-width: 768px) {
+  header, .game-banner {
+    height: 60vh;
+    background-image: url('/src/img/gbbs-title768.png');
+    margin: 0 auto;
+    background-attachment: fixed;
+    background-repeat: no-repeat; 
+    /* background-position: top center; */
+    /* background-size: ;  */
+  }
   main {
-    margin: 20vh auto;
+    margin: 5vh auto;
   }
 
   h1 {
@@ -193,6 +244,19 @@ and (orientation: landscape) {
 }
 
 @media only screen and (min-width: 1024px) {
+
+  header, .game-banner {
+    /* max-height: 50vh; */
+    background-size: auto;
+    background-image: url('/src/img/gbbs-title1024.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat; 
+    background-position: top center;
+    margin: 0 auto;
+    /* height: 50vh; */
+    /* background-size: ;  */
+  }
+
   main {
     margin: 0vh auto;
   }
@@ -227,6 +291,23 @@ and (orientation: landscape) {
 }
 
 @media only screen and (min-width: 1280px) {
+  header, .game-banner {
+    /* max-height: 50vh; */
+    background-size: auto;
+    background-image: url('/src/img/gbbs-title1024.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat; 
+    background-position: top center;
+    margin: 0 auto;
+    /* height: 50vh; */
+    /* background-size: ;  */
+  }
+
+  body, main, header {
+    background-color: rgb(25, 24, 24);
+    color: white;
+  }
+
   .bingoSquare p {
     font-size: 20px;
   }

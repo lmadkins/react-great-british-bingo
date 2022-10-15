@@ -1,12 +1,25 @@
 import { Link } from "react-router-dom"
 import Fab from '@mui/material/Fab';
+// import gameBanner from '../img/gbbs-title.jpeg'
 
 const GameIntro = () => {
   return (
+    <div className="main-container">
+      <header>
+      <div className="game-banner">
+        {/* <img src={gameBanner} 
+        className='game-banner'
+        alt="Banner image of the opening credits title sequence for The Great British Baking Show , with added text reading: 'Welcome to the Great British Baking Show Bingo"
+        ></img> */}
+        </div>
+      </header>
+      
+      
     <main className="
     animate__animated 
     animate__slideInDown">
-      <h1>Welcome to the Great British Baking Show Bingo</h1>
+     
+      {/* <h1>Welcome to the Great British Baking Show Bingo!</h1> */}
 
       <h2>How to Play:</h2>
         <p>
@@ -32,6 +45,7 @@ const GameIntro = () => {
         </Fab>
       </Link>
     </main>
+    </div>
   );
 };
 
