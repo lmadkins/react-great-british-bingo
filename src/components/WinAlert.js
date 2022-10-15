@@ -70,6 +70,7 @@ const WinAlert = (handleStartClick, replay) => {
               sx={{
                 fontSize: '1rem',
                 marginTop: '2rem',
+                color: 'white',
               }}
               >
               On your mark, get set, PLAY!

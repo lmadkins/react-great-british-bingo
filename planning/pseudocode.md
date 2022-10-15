@@ -54,3 +54,19 @@ For each array in winning combos, merge winningArr with it and find if there are
     // Merge the arrays of winning combos with the array of marked squares, one at a time, and each time, check for duplicates from that merged array. If there are 5 duplicates, it's a bingo 
     winningCombos.forEach((array) => {
       mergedArr = markedArr.concat(array)
+
+Printing
+Button in nav click to print
+Needs to print version currently shown
+same data/prompts
+Different stylings:
+- nav gone
+- landscape default? 
+- no headers and footers
+- bingo square border black and font size bigger 
+window.print()
+and make buttons display none in styles
+When closed, turn off print mode, show nav/buttons
+
+conditionally render print mode?
+if print mode, 

@@ -1,5 +1,6 @@
 import React, {useEffect, useState, useContext} from 'react';
 import { MarkedArrContext } from '../context/MarkedArrContext';
+import { PrintModeContext } from '../context/PrintModeContext';
 import { WinContext } from '../context/WinContext';
 import '../styles/App.css'
 import { styled } from '@mui/material/styles';
@@ -10,7 +11,7 @@ const Square = ({prompt, id, squareid}) => {
   const [marked, setMarked] = useState()
 
   const { markedArr, setMarkedArr } = useContext(MarkedArrContext)
-
+  const { print, setPrint } = useContext(PrintModeContext)
   const { win, setWin } = useContext(WinContext)
 
   useEffect(() => {
@@ -58,8 +59,16 @@ const handleClick = (event) => {
     backgroundColor: '#edebe7',
     transition: 'background-color .3s',
     color: '#55555',
-    })
-
+    }, print ? {
+      color: 'black',
+      backgroundColor: 'white',
+      border: '2px solid black', 
+      fontSize: '1.15rem',
+      padding: '1%',
+      minWidth: '20%',
+      minHeight: '20%',
+      } : {  transition: 'background-color .9s',}
+    )
 
   return (
     <> 
@@ -70,11 +79,7 @@ const handleClick = (event) => {
         squareid={squareid}
         fixed
         className="bingoSquare marked free"
-        style={{    
-          backgroundColor: '#7aa3a1',
-          color: 'white',
-          fontSize: '1rem',
-        }}>
+        >
           <h2
             id={id}
             squareid={squareid}>

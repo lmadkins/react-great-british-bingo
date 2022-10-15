@@ -1,10 +1,23 @@
 import Button from '@mui/material/Button';
+import { useContext } from 'react';
+import { PrintModeContext } from '../context/PrintModeContext';
 
 const GameNav = ({handleStartClick}) => {
+  const {print, setPrint} = useContext(PrintModeContext)
+
+  const openPrint = () => {
+    window.print()
+    // changes stylings back to normal
+    setPrint(false)
+  }
 
   const handlePrintClick = () => {
-    window.print()
+    setPrint(true)
+  // timeout for conditional styling on components to re-render
+    setTimeout(openPrint, 250)
   }
+
+
 
   return (
     <nav>
@@ -16,8 +29,7 @@ const GameNav = ({handleStartClick}) => {
         onClick={handlePrintClick}
         sx={{
           backgroundColor: '#7aa3a1',
-        }}
-        >
+        }}>
           Print Bingo Card
         </Button>
 

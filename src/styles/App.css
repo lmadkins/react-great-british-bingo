@@ -46,7 +46,7 @@ nav {
   text-align: center;
 }
 
-Button:hover {
+Fab:hover, Button:hover {
   color: black;
 }
 
@@ -63,7 +63,6 @@ Button:hover {
 
 .bingoCard {
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 17px 30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -77,7 +76,7 @@ Button:hover {
 }
 
 .bingoSquare p {
-  font-size: 12px;
+  /* font-size: 12px; */
 }
 
 .bingoSquare {
@@ -101,6 +100,13 @@ Button:hover {
   transition: background-color .3s; 
 }
 
+/* set default to landscape */
+@media print{@page { size: landscape }}
+
+/* /* /* /* /* /* /* /* /* /* 
+/*  MEDIA QUERIES  */
+
+/* /* /* /* /* /* /* /*  */ 
 /*  PHONES  */
 /* Extra small, e.g. Galaxy Fold */
 @media only screen 
@@ -176,7 +182,7 @@ and (orientation: landscape) {
   }
   .bingoSquare {
     max-width: 20%;
-    max-width: 20%;
+    max-height: 20%;
     padding: 0 1%;
   }
 
@@ -210,7 +216,6 @@ and (orientation: landscape) {
   }
 
   .bingoSquare {
-    max-width: 20%;
     max-width: 20%;
     padding: 1%;
   }
