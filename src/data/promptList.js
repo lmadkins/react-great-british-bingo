@@ -85,7 +85,7 @@ const jsonArr = [
 },
 {
   "id": 22,
-  "prompt": "Somebody cooks something in a flavor one of the judges hates",
+  "prompt": "Using a flavor one of the judges hates",
 },
 {
   "id": 23,
@@ -169,7 +169,7 @@ const jsonArr = [
 },
 {
   "id": 43,
-  "prompt": "Contestant attempting their signature or showstopper bake for the first time"
+  "prompt": "Attempting a signature or showstopper bake for the first time"
 },
 {
   "id": 44,
@@ -182,6 +182,10 @@ const jsonArr = [
 {
   "id": 46,
   "prompt": "Unusual flavor combination"
+},
+{
+  "id": 47,
+  "prompt": "Host makes a joke about themselves"
 },
 ]
 
