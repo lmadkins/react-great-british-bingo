@@ -19,11 +19,14 @@ const GameIntro = () => {
       <Link to="/play">
         <Fab 
           variant="extended"
-          color="green" 
           autoFocus
           aria-label="Start button"
           className="
-          animate__animated animate__pulse animate__delay-3s">
+          animate__animated animate__pulse animate__delay-3s"
+          sx={{
+            backgroundColor: '#169235',
+            color: 'white',
+          }}>
           <p>Ready?
           On your mark, get set, PLAY!</p>
         </Fab>

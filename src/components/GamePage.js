@@ -39,6 +39,7 @@ const GamePage = () => {
     renderNewGame()
   }
 
+
   return (
     <>
     <WinContext.Provider value={{win, setWin}}>

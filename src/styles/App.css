@@ -46,6 +46,10 @@ nav {
   text-align: center;
 }
 
+Button:hover {
+  color: black;
+}
+
 .restart-btn {
   color: white;
   transition: all 0.20s ease-in-out;

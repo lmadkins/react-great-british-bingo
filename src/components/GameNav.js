@@ -14,6 +14,9 @@ const GameNav = ({handleStartClick}) => {
         variant="contained"
         color="teal" 
         onClick={handlePrintClick}
+        sx={{
+          backgroundColor: '#7aa3a1',
+        }}
         >
           Print Bingo Card
         </Button>
@@ -22,8 +25,10 @@ const GameNav = ({handleStartClick}) => {
         aria-label="Restart game button"
         className="restart-btn"
         variant="contained"
-        color="red" 
-        onClick={handleStartClick}>
+        onClick={handleStartClick}
+        sx={{
+          backgroundColor: '#b71c1c',
+        }}>
           Restart
         </Button>
     </nav>

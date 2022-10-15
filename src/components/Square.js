@@ -3,7 +3,6 @@ import { MarkedArrContext } from '../context/MarkedArrContext';
 import { WinContext } from '../context/WinContext';
 import '../styles/App.css'
 import { styled } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
 import winningCombos from '../data/winningCombos';
 
 
