@@ -69,6 +69,16 @@ nav {
   -ms-user-select: none;      
 }
 
+.bingoSquare p {
+  font-size: 12px;
+}
+/* 
+.bingoSquare .marked .free {
+  font-size: 30px;
+  background-color: #7aa3a1;
+  color: white;
+} */
+
 .bingoSquare {
   border: 1px solid white;
   border-radius: 0;
@@ -106,13 +116,12 @@ nav {
       padding: 3%;
     }
     .bingoCard {
-      margin: 0;
+      margin: 5px auto;
     }
     .bingoSquare {
       min-height: 17vh;
       max-height: 17vh;
       font-size: 0.75rem;
-      padding: 2vw;
     }
   }
 
@@ -120,25 +129,116 @@ nav {
 @media only screen 
   and (min-device-width: 320px) and (max-width: 767px)  { 
     .bingoSquare {
-      font-size: 0.85rem;
+      max-width: 20%;
+      max-width: 20%;
+      padding: 1%;
+    }
+  
+    .bingoSquare p {
+      font-size: 14px;
     }
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px)   
 and (orientation: landscape) {
   main {
-    padding: 0;
+    margin: 20vh auto;
   }
+
+  .bingoSquare p {
+    font-size: 16px;
+  } 
 }
 
 /* TABLETS */
-/* Portrait */
-@media only screen and (min-width: 768px) and (max-width: 1024px)
-and (orientation: portrait)  
-{
 
+@media only screen and (min-width: 768px) {
+
+  main {
+    margin: 20vh auto;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+
+  main p {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .bingoCard {
+    height: 90vh;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .bingoSquare {
+    max-width: 20%;
+    max-width: 20%;
+    padding: 0 1%;
+  }
+
+  .bingoSquare p {
+    font-size: 18px;
+  }
 }
 
+@media only screen and (min-width: 1024px) {
+  main {
+    margin: 0vh auto;
+  }
+
+  h1 {
+    font-size: 60px;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+
+  main p {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .bingoCard {
+    height: 90vh;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .bingoSquare {
+    max-width: 20%;
+    max-width: 20%;
+    padding: 1%;
+  }
+
+  .bingoSquare p {
+    font-size: 17px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .bingoSquare p {
+    font-size: 20px;
+  }
+
+  .bingoCard {
+    /* height: 90vh; */
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .bingoSquare {
+    max-width: 20%;
+    max-width: 20%;
+    padding: 0 1%;
+  }
+}
 /* Styles for media queries
 main
 font size

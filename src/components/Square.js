@@ -19,21 +19,33 @@ const Square = ({prompt, id, squareid}) => {
     setWin(false)
   }, [prompt])
 
+// Set clicked square to 'marked' (applies marked styling) and push id of clicked square to array of squares marked this round
+const handleClick = (event) => {
+  setMarked(event.target.id)
+  if (!markedArr.includes(squareid)) {
+    markedArr.push(squareid)
+    markedArr.sort((a, b) => a - b)
+  }
+}
+
   function checkBingo () {
     winningCombos.forEach((array) => {
       let mergedArr = markedArr.concat(array)
-      // Always includes 12 (squareid of "free square")
       let duplicates = []
-      mergedArr.sort()
-      for (let i = 0; i < mergedArr.length; i++) {
-        if (mergedArr[i] === mergedArr[i + 1]) {
-          duplicates.push(mergedArr[i])
+      let sortedArr = mergedArr.sort(function(a, b){return a - b});
+
+      for (let i = 0; i < sortedArr.length; i++) {
+        if (sortedArr[i] === sortedArr[i + 1]) {
+          duplicates.push(sortedArr[i])
         }
         if (duplicates.length >= 5) {
           setWin(true)
         }
       }
     })
+
+    
+  
   }
 
   useEffect(() => {
@@ -44,19 +56,11 @@ const Square = ({prompt, id, squareid}) => {
   }, [markedArr.length])
     
 
-  // Set clicked square to 'marked' (applies marked styling) and push id of clicked square to array of squares marked this round
-  const handleClick = (event) => {
-      setMarked(event.target.id)
-      if (!markedArr.includes(squareid)) {
-        markedArr.push(squareid)
-        markedArr.sort((a, b) => a - b)
-      }
-  }
+  
 
   const BingoPrompt = styled('button')(marked ? {
     backgroundColor: '#87B5B2',
     color: '#000000',
-    
       } : {
     backgroundColor: '#edebe7',
     transition: 'background-color .3s',
@@ -72,18 +76,18 @@ const Square = ({prompt, id, squareid}) => {
         id={id}
         squareid={squareid}
         fixed
-        className="bingoSquare marked"
+        className="bingoSquare marked free"
         style={{    
           backgroundColor: '#7aa3a1',
           color: 'white',
-          fontSize: '1.5rem',
+          fontSize: '30px',
         }}
         >
-          <Typography
+          <p
             id={id}
             squareid={squareid}>
-              <p>FREE</p>
-          </Typography> 
+              FREE
+          </p> 
         </BingoPrompt>
       ) : (
         <BingoPrompt

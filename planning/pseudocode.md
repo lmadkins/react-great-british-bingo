@@ -37,14 +37,20 @@ for each array in winningCombos, concatenate them, get IDs of any duplicates. If
 -Check combos with that function
 
 
+markedArr starts off with squareid of 12 in it because 12 is already marked
+
+Each square that is clicked on gets its squareid (0-24) added
+
+Once 4 squares have been clicked it is possible to have a bingo (4 because free square is included), and markedArr will be length of 5 or greater
+
+So as soon as markedArr is longer than 5 or more, check for winning combination each time markedArr changes 
+
+Want to be comparing markedArr to see if some of the values in markedArr are all in one of the winningCombos arrays 
+Marked Arr can have elements that are not in one of the winningCombos, but the combo array has to contain at least 5 of the same
 
 
-
-Stretch Features :
-Undo when toggling marked?
-- interactivity when clicked
-- (only set it to mark if it is unmarked? 
-- or maybe undo as a stretch? see comments in Square component )
-- Message display when stalemate game
-Free square
-Exclude middle 'free' square?(square 13)
+Or, 
+For each array in winning combos, merge winningArr with it and find if there are 5 duplicates, it's bingo 
+    // Merge the arrays of winning combos with the array of marked squares, one at a time, and each time, check for duplicates from that merged array. If there are 5 duplicates, it's a bingo 
+    winningCombos.forEach((array) => {
+      mergedArr = markedArr.concat(array)
