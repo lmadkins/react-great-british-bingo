@@ -43,9 +43,6 @@ const handleClick = (event) => {
         }
       }
     })
-
-    
-  
   }
 
   useEffect(() => {
@@ -55,8 +52,6 @@ const handleClick = (event) => {
     }
   }, [markedArr.length])
     
-
-  
 
   const BingoPrompt = styled('button')(marked ? {
     backgroundColor: '#87B5B2',

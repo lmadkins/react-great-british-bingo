@@ -6,13 +6,13 @@ import { createTheme } from '@mui/material/styles';
       fontFamily: ['"Futura Book"', '"Futura Heavy"', 'Open Sans'].join(',')
     },
     palette: {
-      primary: {
+      green: {
         main: '#169235',
       },
-      secondary: {
-        main: '#d5eef5',
+      teal: {
+        main: '#7aa3a1',
       },
-      third: {
+      red: {
         main: '#b71c1c'
       }
     },

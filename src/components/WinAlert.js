@@ -33,7 +33,7 @@ const WinAlert = (handleStartClick, replay) => {
         }}
         open={open}
         onClose={handleClose}
-        aria-labelledby="Win-dialog-window"
+        aria-labelledby="Win Dialog Window"
         aria-describedby="alert-dialog-description"
         className={`${!open ? "animate__animated  animate__fadeOutDown animate__delay-2s" : ""
         }`}>
@@ -63,7 +63,7 @@ const WinAlert = (handleStartClick, replay) => {
           </DialogContentText>
             <Fab 
               variant="extended"
-              color="primary" 
+              color="green" 
               aria-label="Start button"
               className="animate__animated animate__pulse animate__delay-1s"
               onClick={handleClose} 

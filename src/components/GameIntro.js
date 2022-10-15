@@ -9,12 +9,12 @@ const GameIntro = () => {
     animate__animated 
     animate__slideInDown">
       <h1>
-        Welcome to the Great British Bakeoff Bingo
+        Welcome to the Great British Baking Show Bingo
       </h1>
 
-      <h3>
+      <h2>
         How to Play:
-      </h3>
+      </h2>
         <p>
         While watching, keep an eye out for when something happens matching one of your card prompts. When it does, click or tap to mark it off. 
         <br></br>
@@ -25,7 +25,8 @@ const GameIntro = () => {
       <Link to="/play">
         <Fab 
           variant="extended"
-          color="primary" 
+          color="green" 
+          autoFocus
           aria-label="Start button"
           className="
           animate__animated animate__pulse animate__delay-3s">

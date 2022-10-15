@@ -4,6 +4,7 @@ body {
   margin: 0; 
   padding: 0;
   font-family: Futura Book;
+  font-display: swap;
 }
 
 a {
@@ -43,12 +44,12 @@ nav {
   text-align: center;
 }
 
-.restart {
+.restart-btn {
   color: white;
   transition: all 0.20s ease-in-out;
 }
 
-.restart:hover {
+.restart-btn:hover {
   opacity: 1;
   transform: rotateZ(-5deg);
 }
