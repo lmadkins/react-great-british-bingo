@@ -27,17 +27,21 @@ const GameNav = ({handleStartClick}) => {
         variant="contained"
         color="teal" 
         onClick={handlePrintClick}
+        onTouchStart={handlePrintClick}
         sx={{
           backgroundColor: '#7aa3a1',
+          marginRight: '15px'
         }}>
           Print Bingo Card
         </Button>
 
         <Button 
         aria-label="Restart game button"
+        // color:hover="teal"
         className="restart-btn"
         variant="contained"
         onClick={handleStartClick}
+        onTouchStart={handleStartClick}
         sx={{
           backgroundColor: '#b71c1c',
         }}>

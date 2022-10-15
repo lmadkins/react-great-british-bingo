@@ -48,6 +48,7 @@ nav {
 
 Fab:hover, Button:hover {
   color: black;
+  background-color: #8dbdba;
 }
 
 .restart-btn {

@@ -17,7 +17,7 @@ const Square = ({prompt, id, squareid}) => {
   useEffect(() => {
     setMarked(false)
     setWin(false)
-  }, [setWin])
+  }, [win])
 
 // Set clicked square to 'marked' (applies marked styling) and push id of clicked square to array of squares marked this round
 const handleClick = (event) => {
@@ -74,11 +74,15 @@ const handleClick = (event) => {
     <> 
     { squareid === 12 ? (
         <BingoPrompt
-        onClick={handleClick}
         id={id}
         squareid={squareid}
         fixed
         className="bingoSquare marked free"
+        style={{    
+          backgroundColor: '#7aa3a1',
+          color: 'white',
+          fontSize: '1rem',
+        }}
         >
           <h2
             id={id}
@@ -88,11 +92,11 @@ const handleClick = (event) => {
         </BingoPrompt>
       ) : (
         <BingoPrompt
-          
           id={id}
           squareid={squareid}
           fixed
           onClick={handleClick}
+          onTouchStart={handleClick}
           className="bingoSquare"
           >
           <p
