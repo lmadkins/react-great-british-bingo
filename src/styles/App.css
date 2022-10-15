@@ -11,8 +11,9 @@ a {
   text-decoration: none;
 }
 
-h1 {
+h1, h2 {
   font-family: Futura Heavy;
+  font-display: swap;
 }
 
 h3 {
@@ -21,6 +22,7 @@ h3 {
 
 p {
   font-family: Futura Book;
+  font-display: swap;
   line-height: 125%;
 }
 
@@ -73,12 +75,6 @@ nav {
 .bingoSquare p {
   font-size: 12px;
 }
-/* 
-.bingoSquare .marked .free {
-  font-size: 30px;
-  background-color: #7aa3a1;
-  color: white;
-} */
 
 .bingoSquare {
   border: 1px solid white;
@@ -95,7 +91,6 @@ nav {
   width: 20%;  
 } 
 
-
 .bingoSquare:hover, .bingoSquare:focus  {
   background-color:   #8dbdba;
   color: #000;
@@ -103,41 +98,40 @@ nav {
 }
 
 /*  PHONES  */
-
 /* Extra small, e.g. Galaxy Fold */
 @media only screen 
   and (min-device-width: 280px) {
-    main {
-      background-color: inherit;
-      box-shadow: none;
-      color: #555;
-      width: auto;
-      height: auto;
-      margin: 0 auto;
-      padding: 3%;
-    }
-    .bingoCard {
-      margin: 5px auto;
-    }
-    .bingoSquare {
-      min-height: 17vh;
-      max-height: 17vh;
-      font-size: 0.75rem;
-    }
+  main {
+    background-color: inherit;
+    box-shadow: none;
+    color: #555;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    padding: 3%;
   }
+  .bingoCard {
+    margin: 5px auto;
+  }
+  .bingoSquare {
+    min-height: 17vh;
+    max-height: 17vh;
+    font-size: 0.75rem;
+  }
+}
 
 /* Portrait */
 @media only screen 
   and (min-device-width: 320px) and (max-width: 767px)  { 
-    .bingoSquare {
-      max-width: 20%;
-      max-width: 20%;
-      padding: 1%;
-    }
-  
-    .bingoSquare p {
-      font-size: 14px;
-    }
+  .bingoSquare {
+    max-width: 20%;
+    max-width: 20%;
+    padding: 1%;
+  }
+
+  .bingoSquare p {
+    font-size: 14px;
+  }
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px)   
@@ -154,7 +148,6 @@ and (orientation: landscape) {
 /* TABLETS */
 
 @media only screen and (min-width: 768px) {
-
   main {
     margin: 20vh auto;
   }
@@ -240,18 +233,3 @@ and (orientation: landscape) {
     padding: 0 1%;
   }
 }
-/* Styles for media queries
-main
-font size
-heigh
-width
-max h/w
-
-bingo card, bingo square
-height
-width
-max ehight
-max width
-font size
-
-*/
