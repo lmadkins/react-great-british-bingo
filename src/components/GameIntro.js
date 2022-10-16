@@ -67,6 +67,8 @@ const GameIntro = () => {
             color: 'white',
             padding: '2%',
             borderRadius: '10px',
+            letterSpacing: '1px',
+            fontFamily: 'Futura Heavy',
           }}>
           <p>Ready?
           On your mark, get set, PLAY!</p>

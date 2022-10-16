@@ -37,6 +37,9 @@ p {
   background-color: black;
 }
 
+.main-container p {
+  font-family: Futura Heavy;
+}
 main {
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 17px 30px;

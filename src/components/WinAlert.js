@@ -6,6 +6,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Fab from '@mui/material/Fab';
+import Button from '@mui/material/Button';
 
 const WinAlert = (handleStartClick, replay) => {
   const [open, setOpen] = useState(false);
@@ -56,25 +57,28 @@ const WinAlert = (handleStartClick, replay) => {
             id="alert-dialog-description"
             sx={{
               fontSize: '1.25rem',
-              paddingTop: '1rem',
             }}>
             Would you like to play again?
           </DialogContentText>
-            <Fab 
-              variant="extended"
-              color="green" 
+            <Button 
+              variant="contained"
+              color="teal" 
               aria-label="Start button"
               className="animate__animated animate__pulse animate__delay-1s"
               onClick={handleClose} 
               autoFocus
               sx={{
-                fontSize: '1rem',
-                marginTop: '2rem',
                 color: 'white',
+                marginTop: '30px',
+                padding: '5%',
+                borderRadius: '10px',
+                fontSize: '1rem',
+                fontFamily: 'Futura Heavy',
+                letterSpacing: '1px',
               }}
               >
               On your mark, get set, PLAY!
-            </Fab>
+            </Button>
         </DialogContent>
       </Dialog>
     </>
