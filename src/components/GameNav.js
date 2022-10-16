@@ -2,20 +2,23 @@ import Button from '@mui/material/Button';
 import { useContext } from 'react';
 import { PrintModeContext } from '../context/PrintModeContext';
 
-const GameNav = ({handleStartClick}) => {
+const GameNav = ( {handleShuffleClick} ) => {
+
+// For print functionality
   const {print, setPrint} = useContext(PrintModeContext)
+
+    const handlePrintClick = () => {
+    setPrint(true)
+    setTimeout(openPrint, 250)
+    // ^ (timeout for conditional styling on components to re-render)
+  }
 
   const openPrint = () => {
     window.print()
-    // changes stylings back to normal
     setPrint(false)
+    // ^ changes stylings back to normal from printmode once the print window has been opened
   }
 
-  const handlePrintClick = () => {
-    setPrint(true)
-  // timeout for conditional styling on components to re-render
-    setTimeout(openPrint, 250)
-  }
 
   return (
     <nav>
@@ -37,8 +40,8 @@ const GameNav = ({handleStartClick}) => {
         className="restart-btn"
         color="red"
         variant="contained"
-        onClick={handleStartClick}
-        onTouchStart={handleStartClick}>
+        onClick={handleShuffleClick}
+        onTouchStart={handleShuffleClick}>
           Shuffle
       </Button>
     </nav>

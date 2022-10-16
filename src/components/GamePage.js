@@ -1,25 +1,37 @@
 import React, { useState, useEffect} from 'react';
 import { MarkedArrContext } from '../context/MarkedArrContext'; 
-import { MarkedContext } from '../context/MarkedContext';
 import { PrintModeContext } from '../context/PrintModeContext';
-import { WinContext } from '../context/WinContext'; 
 import { RestartContext } from '../context/RestartContext';
+import { WinContext } from '../context/WinContext'; 
 import jsonArr from '../data/promptList';
 import GameNav from './GameNav';
 import Square from './Square';
 import WinAlert from "./WinAlert";
 
 const GamePage = () => {
-  const [newPrompts, setNewPrompts] = useState([])
-  const [marked, setMarked] = useState()
+// STATE TO PASS AS CONTEXT
+  // MarkedArrContext
   const [markedArr, setMarkedArr] = useState([])
+  // WinContext
   const [win, setWin] = useState(false)
+  // RestartContext
   const [restartBoard, setRestartBoard] = useState(false)
+  // PrintModeContext
   const [print, setPrint] = useState(false)
+
+// LOCAL STATE
+  const [newPrompts, setNewPrompts] = useState([])
 
   useEffect(() => {
     renderNewGame()
+    console.log('in useEffect on load')
+  }, [])
+
+  // Uses RestartContext when play again is selected in WinAlert
+  useEffect(() => {
+    renderNewGame()
   }, [restartBoard])
+
 
   let shuffledArr = []
 
@@ -27,35 +39,34 @@ const GamePage = () => {
     shuffledArr = jsonArr.sort(() => Math.random() - 0.5)
     let slicedPrompts = shuffledArr.slice(0, 25)
     setNewPrompts(slicedPrompts)
+    // ^ newPrompts then gets mapped into Squares
   }
 
   function renderNewGame() {
     setPrint(false)
-    shuffleSlicePrompts()
-    // Include 12 (squareid of "free square")
-    setMarked(false)
-    setMarkedArr([12])
-    setRestartBoard(false)
     setWin(false)
+    setMarkedArr([12])
+    shuffleSlicePrompts()
   }
   
-  const handleStartClick = () => {
-    renderNewGame()
+  // function to pass to GameNav component to use for shuffle button
+  const handleShuffleClick = () => { 
+    renderNewGame() 
   }
 
   return (
     <>
-    <WinContext.Provider value={{win, setWin}}>
+    
     <MarkedArrContext.Provider value={{markedArr, setMarkedArr}}>
-    <MarkedContext.Provider value={{marked, setMarked}}>
-    <RestartContext.Provider value={{restartBoard, setRestartBoard}}>
     <PrintModeContext.Provider value={{print, setPrint}}>
+    <RestartContext.Provider value={{restartBoard, setRestartBoard}}>
+    <WinContext.Provider value={{win, setWin}}>
 
       <WinAlert />
 
       {!print &&
         <GameNav 
-        handleStartClick={handleStartClick} />}
+        handleShuffleClick={handleShuffleClick} />}
       
       <div className='bingoCard 
         animate__animated animate__fadeInUp'
@@ -72,11 +83,11 @@ const GamePage = () => {
               id={v.id}/>
           )})}    
       </div>
-    </PrintModeContext.Provider>
-    </RestartContext.Provider>
-    </MarkedContext.Provider> 
-    </MarkedArrContext.Provider>
     </WinContext.Provider>
+    </RestartContext.Provider>
+    </PrintModeContext.Provider>
+    </MarkedArrContext.Provider>
+    
   </>
   );
 };

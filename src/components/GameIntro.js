@@ -11,22 +11,21 @@ const GameIntro = () => {
 
   const { openInstructions, setOpenInstructions } = useContext(InstructionsContext)
 
-  const [isDesktop, setDesktop] = useState(window.innerWidth > 650);
+  const handleInstructionsClick = () => {
+    setOpenInstructions(true)
+  }
+
+//For conditional rendering of banner images
+  const [isDesktop, setDesktop] = useState(window.innerWidth > 650)
 
   const updateMedia = () => {
     setDesktop(window.innerWidth > 650);
-  };
+  }
 
   useEffect(() => {
     window.addEventListener("resize", updateMedia);
     return () => window.removeEventListener("resize", updateMedia);
-  });
-
-  const handleInstructionsClick = () => {
-    setOpenInstructions(true)
-    console.log(openInstructions)
-  }
-
+  })
 
   return (
     <Stack spacing={2}

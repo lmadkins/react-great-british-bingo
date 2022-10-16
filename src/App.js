@@ -8,9 +8,11 @@ import { InstructionsContext } from './context/InstructionsContext';
 import 'animate.css'
 
 const App = () => {
+// STATE TO PASS AS CONTEXT
+  // InstructionsContext
   const [openInstructions, setOpenInstructions] = useState(false)
 
-  return (
+  return (  
     <>
     <InstructionsContext.Provider value={{openInstructions, setOpenInstructions}}>
       <Routes>
