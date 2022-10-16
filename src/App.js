@@ -1,6 +1,6 @@
 import './styles/index.css'
 import './styles/App.css'
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { Routes, Route} from "react-router-dom"
 import GamePage from './components/GamePage';
 import GameIntro from './components/GameIntro'
@@ -15,8 +15,8 @@ const App = () => {
     <InstructionsContext.Provider value={{openInstructions, setOpenInstructions}}>
       <Routes>
         <Route>
-        <Route path="/" element={<GameIntro />}/>
-        <Route path="/play" element={<GamePage />}/>
+          <Route path="/" element={<GameIntro />}/>
+          <Route path="/play" element={<GamePage />}/>
         </Route>
       </Routes>
     </InstructionsContext.Provider>

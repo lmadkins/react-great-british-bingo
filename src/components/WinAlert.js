@@ -22,65 +22,59 @@ const WinAlert = (handleStartClick, replay) => {
   const handleClose = () => {
     setOpen(false)
     setRestartBoard(true)
-  };
+  }
   
   return (
-    <>
-      <Dialog
+    <Dialog
+      sx={{ margin: '0 auto'}}
+      open={open}
+      onClose={handleClose}
+      aria-labelledby="Win Dialog Window"
+      aria-describedby="alert-dialog-description"
+      className={`${!open ? "animate__animated  animate__fadeOutDown animate__delay-2s" : ""}`}>
+      <DialogTitle 
+        id="alert-dialog-title"
         sx={{
-          margin: '0 auto',
-        }}
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="Win Dialog Window"
-        aria-describedby="alert-dialog-description"
-        className={`${!open ? "animate__animated  animate__fadeOutDown animate__delay-2s" : ""
-        }`}>
-          
-        <DialogTitle 
-          id="alert-dialog-title"
-          sx={{
-            textAlign: 'center',
-            paddingTop: '2.5rem',
-            fontSize: '3rem',
-            fontFamily: 'Futura Heavy',
-          }}>
+          textAlign: 'center',
+          paddingTop: '2.5rem',
+          fontSize: '3rem',
+          fontFamily: 'Futura Heavy',
+        }}>
           BINGO!
-        </DialogTitle>
-        <DialogContent
+      </DialogTitle>
+      <DialogContent
+        sx={{
+          textAlign: 'center',
+          padding: '3rem',
+        }}>
+        <DialogContentText 
+          id="alert-dialog-description"
           sx={{
-            textAlign: 'center',
-            padding: '3rem',
+            fontSize: '1.25rem',
           }}>
-          <DialogContentText 
-            id="alert-dialog-description"
-            sx={{
-              fontSize: '1.25rem',
-            }}>
             Would you like to play again?
-          </DialogContentText>
-            <Button 
-              variant="contained"
-              color="teal" 
-              aria-label="Start button"
-              className="animate__animated animate__pulse animate__delay-1s"
-              onClick={handleClose} 
-              autoFocus
-              sx={{
-                color: 'white',
-                marginTop: '30px',
-                padding: '5%',
-                borderRadius: '10px',
-                fontSize: '1rem',
-                fontFamily: 'Futura Heavy',
-                letterSpacing: '1px',
-              }}
-              >
-              On your mark, get set, PLAY!
-            </Button>
-        </DialogContent>
-      </Dialog>
-    </>
+        </DialogContentText>
+        <Button 
+          variant="contained"
+          color="teal" 
+          aria-label="Start button"
+          className="animate__animated animate__pulse animate__delay-1s"
+          onClick={handleClose} 
+          onTouchStart={handleClose}
+          autoFocus
+          sx={{
+            color: 'white',
+            marginTop: '30px',
+            padding: '5%',
+            borderRadius: '10px',
+            fontSize: '1rem',
+            fontFamily: 'Futura Heavy',
+            letterSpacing: '1px',
+          }}>
+          On your mark, get set, PLAY!
+        </Button>
+      </DialogContent>
+    </Dialog>
   );
 };
 

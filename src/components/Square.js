@@ -33,7 +33,6 @@ const handleClick = (event) => {
       let mergedArr = markedArr.concat(array)
       let duplicates = []
       let sortedArr = mergedArr.sort(function(a, b){return a - b});
-
       for (let i = 0; i < sortedArr.length; i++) {
         if (sortedArr[i] === sortedArr[i + 1]) {
           duplicates.push(sortedArr[i])
@@ -52,7 +51,7 @@ const handleClick = (event) => {
   }, [markedArr.length])
     
 
-  const BingoPrompt = styled('button')(marked ? {
+  const BingoPrompt = styled('button')( marked ? {
     backgroundColor: '#87B5B2',
     color: '#000000',
       } : {
@@ -73,7 +72,7 @@ const handleClick = (event) => {
   return (
     <> 
     { squareid === 12 ? (
-        <BingoPrompt
+      <BingoPrompt
         id={id}
         squareid={squareid}
         fixed
@@ -82,31 +81,24 @@ const handleClick = (event) => {
           backgroundColor: '#7aa3a1',
           color: 'white',
           fontSize: '1rem',
-        }}
-        >
-          <h2
-            id={id}
-            squareid={squareid}>
-              FREE
+        }}>
+          <h2 id={id} squareid={squareid}>
+            FREE
           </h2> 
-        </BingoPrompt>
-      ) : (
-        <BingoPrompt
-          id={id}
-          squareid={squareid}
-          fixed
-          onClick={handleClick}
-          onTouchStart={handleClick}
-          className="bingoSquare"
-          >
-          <p
-            id={id}
-            squareid={squareid}>
-              {prompt}
+      </BingoPrompt>
+    ) : (
+      <BingoPrompt
+        id={id}
+        squareid={squareid}
+        fixed
+        onClick={handleClick}
+        onTouchStart={handleClick}
+        className="bingoSquare">
+          <p id={id} squareid={squareid}>
+            {prompt}
           </p> 
-        </BingoPrompt>
-      )
-    }
+      </BingoPrompt>
+    )}
     </>
   );
 };

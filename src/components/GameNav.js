@@ -17,12 +17,10 @@ const GameNav = ({handleStartClick}) => {
     setTimeout(openPrint, 250)
   }
 
-
   return (
     <nav>
-        <Button 
+      <Button 
         aria-label="Print bingo card button"
-        className="print-btn"
         variant="contained"
         color="teal" 
         onClick={handlePrintClick}
@@ -32,20 +30,17 @@ const GameNav = ({handleStartClick}) => {
           marginRight: '15px'
         }}>
           Print Bingo Card
-        </Button>
+      </Button>
 
-        <Button 
+      <Button 
         aria-label="Restart game button"
         className="restart-btn"
         color="red"
         variant="contained"
         onClick={handleStartClick}
-        onTouchStart={handleStartClick}
-        sx={{
-          backgroundColor: '#b71c1c',
-        }}>
+        onTouchStart={handleStartClick}>
           Shuffle
-        </Button>
+      </Button>
     </nav>
   );
 };

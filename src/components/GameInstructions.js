@@ -22,45 +22,39 @@ const GameInstructions = () => {
   };
   
   return (
-    <>
-      <Dialog
+    <Dialog
+      sx={{margin: '0 auto'}}
+      open={open}
+      onClose={handleClose}
+      aria-labelledby="Instructions Dialog Window"
+      aria-describedby="alert-dialog-description"
+      className={`${!open ? "animate__animated  animate__fadeOutDown animate__delay-2s" : ""
+      }`}>
+      <DialogTitle 
+        id="alert-dialog-title"
         sx={{
-          margin: '0 auto',
-        }}
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="Instructions Dialog Window"
-        aria-describedby="alert-dialog-description"
-        className={`${!open ? "animate__animated  animate__fadeOutDown animate__delay-2s" : ""
-        }`}>
-          
-        <DialogTitle 
-          id="alert-dialog-title"
-          sx={{
-            textAlign: 'center',
-            paddingTop: '2.5rem',
-            fontSize: '3rem',
-            fontFamily: 'Futura Heavy',
-          }}>
+          textAlign: 'center',
+          paddingTop: '2.5rem',
+          fontSize: '3rem',
+          fontFamily: 'Futura Heavy',
+        }}>
           Instructions
-        </DialogTitle>
-        <DialogContent
+      </DialogTitle>
+      <DialogContent
+        sx={{
+          textAlign: 'center',
+          padding: '3rem',
+        }}>
+        <DialogContentText 
+          id="alert-dialog-description"
           sx={{
-            textAlign: 'center',
-            padding: '3rem',
+            fontSize: '1.25rem',
           }}>
-          <DialogContentText 
-            id="alert-dialog-description"
-            sx={{
-              fontSize: '1.25rem',
-            }}>
             While watching, keep an eye out for when something happens matching one of your card prompts. When it does, click or tap to mark it off.
             When you get 5 in a row (horizontally or vertically), you win!
-          </DialogContentText>
-      
-        </DialogContent>
-      </Dialog>
-    </>
+        </DialogContentText>
+      </DialogContent>
+    </Dialog>
   );
 };
 
