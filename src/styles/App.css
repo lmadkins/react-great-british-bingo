@@ -5,7 +5,9 @@ body {
   padding: 0;
   font-family: Futura Book;
   font-display: swap;
+  height: auto;
 }
+
 
 a {
   text-decoration: none;
@@ -20,46 +22,75 @@ h3 {
   text-transform: uppercase;
 }
 
+h4 {
+  /* margin-top: 5vh; */
+  font-family: Futura Book;
+  text-transform: uppercase;
+}
+
 p {
   font-family: Futura Book;
   font-display: swap;
   line-height: 125%;
 }
 
+.main-container {
+  background-color: black;
+}
+
 header {
-  /* background-color: #555; */
-  /* height: 60vh; */
+  /* background-color: #555;
+  height: 60vh; */
   /* height: 100%; */
   /* width: 100%; */
-  margin: 0 auto;
+  /* margin: 0 auto; */
+
+  /* background-image: url('/src/img/gbbs-title1024.png');
+  background-position: top center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;  */
+  /* background-size: contain;  */
   /* min-height: 30vh; */
 }
 .game-banner {
-  min-height: 20vh;
-  /* height: inherit; */
+  background-color: #555;
+  min-height: 40vh;
+  /* height: 300px; */
   /* max-height: inherit; */
   /* max-width: 700px; */
-  margin: 0 auto;
-  background-image: url('/src/img/gbbs-title1500.jpeg');
+  /* margin: 0 auto; */
+  /* background-image: url('/src/img/gbbs-title1500.jpeg'); */
   background-position: top center;
   background-attachment: fixed;
   background-repeat: no-repeat; 
   background-size: contain; 
+  /* animation: fadeIn;
+  animation-duration: 2s; */
   z-index: 2;
+  
 }
 
 main {
-  z-index: 2;
-  background-color: #4a4a4a;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 17px 30px;
   color: white;
-  margin: 0 auto;
-  max-width: 60%;
-  padding: 10%;
+  /* margin: 0 auto; */
+  /* max-width: 60%; */
+  /* padding: 10%; */
   text-align: center;
 }
 
+.instructions-popover {
+
+  padding: 2%;
+  /* width: 80%; */
+  max-width: 70vw;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.5rem;
+  border-radius: 10px;
+}
 
 nav {
   color: white;
@@ -68,6 +99,7 @@ nav {
   min-width: 90vw;  
   padding: 1vh;
   text-align: center;
+  /* background-color: #f4f2ed; */
 }
 
 Fab:hover, Button:hover {
@@ -84,6 +116,7 @@ Fab:hover, Button:hover {
   opacity: 1;
   transform: rotateZ(-5deg);
 }
+
 
 
 .bingoCard {
@@ -145,6 +178,28 @@ Fab:hover, Button:hover {
     /* background-size: auto; */
   }
 
+  .main-container {
+    width: 100%;
+    /* margin-bottom: 40%; */
+    /* margin-top: 40%; */
+    /* border-top: 20vh solid black; */
+    text-align: center;
+    /* color: white; */
+    background-color: #f4f2ed;
+  }
+  body {
+    /* background-color: black; */
+    border: 0;
+  }
+
+  h1 {
+    padding: 10px;
+    
+  }
+  h4 {
+    font-size: 12px;
+  }
+
   main {
     background-color: inherit;
     box-shadow: none;
@@ -154,8 +209,12 @@ Fab:hover, Button:hover {
     margin: 0 auto;
     padding: 3%;
   }
+
   .bingoCard {
-    margin: 5px auto;
+    /* margin: 5px auto; */
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
   }
   .bingoSquare {
     min-height: 17vh;
@@ -170,7 +229,11 @@ Fab:hover, Button:hover {
 
   header, .game-banner {
     height: 45vh;
+  
     /* background-size: ;  */
+  }
+  .main-container {
+    margin-top: 0%;
   }
   .bingoSquare {
     max-width: 20%;
@@ -183,8 +246,10 @@ Fab:hover, Button:hover {
   }
 }
 
-@media only screen and (min-width: 480px) and (max-width: 767px)   
-and (orientation: landscape) {
+@media only screen and (min-width: 480px) and (max-width: 767px)    {
+  h1 {
+    display: none;
+  }
 
   header, .game-banner {
     height: 45vh;
@@ -201,21 +266,30 @@ and (orientation: landscape) {
 /* TABLETS */
 
 @media only screen and (min-width: 768px) {
+
+  body {
+    background-color: #f4f2ed;
+    background-color: black;
+  }
   header, .game-banner {
-    height: 60vh;
-    background-image: url('/src/img/gbbs-title768.png');
-    margin: 0 auto;
+    /* height: 60vh; */
+    /* background-image: url('/src/img/gbbs-title768.png'); */
+    /* margin: 0 auto; */
     background-attachment: fixed;
     background-repeat: no-repeat; 
     /* background-position: top center; */
     /* background-size: ;  */
   }
-  main {
-    margin: 5vh auto;
+
+  .main-container {
+    height: 50%;
+    background-color: #f4f2ed;
+    color: white;
+    background-color: black;
   }
 
   h1 {
-    font-size: 50px;
+    display: none;
   }
 
   h3 {
@@ -245,16 +319,22 @@ and (orientation: landscape) {
 
 @media only screen and (min-width: 1024px) {
 
-  header, .game-banner {
-    /* max-height: 50vh; */
-    background-size: auto;
-    background-image: url('/src/img/gbbs-title1024.png');
-    background-attachment: fixed;
-    background-repeat: no-repeat; 
-    background-position: top center;
-    margin: 0 auto;
-    /* height: 50vh; */
-    /* background-size: ;  */
+  body {
+    background-color: black;
+  }
+  .main-container {
+    width: 80%;
+    margin: 30px auto;
+    height: auto;
+    padding-bottom: 5%;
+    /* color: white; */
+    text-align: center;
+    background-color: #f4f2ed;
+    
+    border-radius: 15px;
+  }
+  img {
+    border: 20px solid white;
   }
 
   main {
@@ -267,6 +347,12 @@ and (orientation: landscape) {
 
   h3 {
     font-size: 30px;
+  }
+
+  h4 {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
   }
 
   main p {
@@ -291,21 +377,18 @@ and (orientation: landscape) {
 }
 
 @media only screen and (min-width: 1280px) {
-  header, .game-banner {
-    /* max-height: 50vh; */
-    background-size: auto;
-    background-image: url('/src/img/gbbs-title1024.png');
-    background-attachment: fixed;
-    background-repeat: no-repeat; 
-    background-position: top center;
-    margin: 0 auto;
-    /* height: 50vh; */
-    /* background-size: ;  */
-  }
 
-  body, main, header {
-    background-color: rgb(25, 24, 24);
-    color: white;
+
+
+
+  body {
+    /* background-color: rgb(25, 24, 24);
+    color: white; */
+    /* border-left: 20vw solid black;
+    border-right: 20vw solid black;
+    border-bottom: 20vw solid black;
+    border-top: 3vw solid black;
+    padding-top: 3vw solid black; */
   }
 
   .bingoSquare p {
