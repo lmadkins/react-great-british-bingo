@@ -23,7 +23,6 @@ h3 {
 }
 
 h4 {
-  /* margin-top: 5vh; */
   font-family: Futura Book;
   text-transform: uppercase;
 }
@@ -38,52 +37,15 @@ p {
   background-color: black;
 }
 
-header {
-  /* background-color: #555;
-  height: 60vh; */
-  /* height: 100%; */
-  /* width: 100%; */
-  /* margin: 0 auto; */
-
-  /* background-image: url('/src/img/gbbs-title1024.png');
-  background-position: top center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;  */
-  /* background-size: contain;  */
-  /* min-height: 30vh; */
-}
-.game-banner {
-  background-color: #555;
-  min-height: 40vh;
-  /* height: 300px; */
-  /* max-height: inherit; */
-  /* max-width: 700px; */
-  /* margin: 0 auto; */
-  /* background-image: url('/src/img/gbbs-title1500.jpeg'); */
-  background-position: top center;
-  background-attachment: fixed;
-  background-repeat: no-repeat; 
-  background-size: contain; 
-  /* animation: fadeIn;
-  animation-duration: 2s; */
-  z-index: 2;
-  
-}
-
 main {
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 17px 30px;
   color: white;
-  /* margin: 0 auto; */
-  /* max-width: 60%; */
-  /* padding: 10%; */
   text-align: center;
 }
 
 .instructions-popover {
-
   padding: 2%;
-  /* width: 80%; */
   max-width: 70vw;
   text-align: center;
   margin: 0 auto;
@@ -99,12 +61,13 @@ nav {
   min-width: 90vw;  
   padding: 1vh;
   text-align: center;
-  /* background-color: #f4f2ed; */
 }
 
+
 Fab:hover, Button:hover {
-  color: black;
-  background-color: #8dbdba;
+  /* color: teal; */
+  background-color: #4d7473;
+  transition: all 0.20s ease-in-out;
 }
 
 .restart-btn {
@@ -115,8 +78,8 @@ Fab:hover, Button:hover {
 .restart-btn:hover {
   opacity: 1;
   transform: rotateZ(-5deg);
+  background-color: #911212;
 }
-
 
 
 .bingoCard {
@@ -133,9 +96,6 @@ Fab:hover, Button:hover {
   -ms-user-select: none;      
 }
 
-.bingoSquare p {
-  /* font-size: 12px; */
-}
 
 .bingoSquare {
   border: 1px solid white;
@@ -235,6 +195,13 @@ Fab:hover, Button:hover {
   .main-container {
     margin-top: 0%;
   }
+  main p {
+    font-size: 1.05rem;
+  }
+
+  h4 {
+    font-size: 0.9rem;
+  }
   .bingoSquare {
     max-width: 20%;
     max-width: 20%;
@@ -251,11 +218,19 @@ Fab:hover, Button:hover {
     display: none;
   }
 
+  h4 {
+    font-size: 1rem;
+  }
+
   header, .game-banner {
     height: 45vh;
   }
   main {
     margin: 0 auto;
+  }
+
+  main p {
+    font-size: 1.25rem;
   }
 
   .bingoSquare p {
@@ -269,7 +244,7 @@ Fab:hover, Button:hover {
 
   body {
     background-color: #f4f2ed;
-    background-color: black;
+    /* background-color: black; */
   }
   header, .game-banner {
     /* height: 60vh; */
@@ -284,9 +259,11 @@ Fab:hover, Button:hover {
   .main-container {
     height: 50%;
     background-color: #f4f2ed;
-    color: white;
-    background-color: black;
+    /* color: white; */
+    /* background-color: black; */
   }
+
+
 
   h1 {
     display: none;
@@ -294,6 +271,10 @@ Fab:hover, Button:hover {
 
   h3 {
     font-size: 30px;
+  }
+
+  h4 {
+    font-size: 1.05rem;
   }
 
   main p {

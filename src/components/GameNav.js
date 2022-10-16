@@ -18,7 +18,6 @@ const GameNav = ({handleStartClick}) => {
   }
 
 
-
   return (
     <nav>
         <Button 
@@ -37,15 +36,15 @@ const GameNav = ({handleStartClick}) => {
 
         <Button 
         aria-label="Restart game button"
-        // color:hover="teal"
         className="restart-btn"
+        color="red"
         variant="contained"
         onClick={handleStartClick}
         onTouchStart={handleStartClick}
         sx={{
           backgroundColor: '#b71c1c',
         }}>
-          Restart
+          Shuffle
         </Button>
     </nav>
   );

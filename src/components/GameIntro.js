@@ -2,8 +2,8 @@ import { Link } from "react-router-dom"
 import { useState, useEffect } from "react";
 import Fab from '@mui/material/Fab';
 import { Popover } from "@mui/material";
-import { borderRadius } from "@mui/system";
-import Box from '@mui/material/Box';
+
+import Button from "@mui/material/Button";
 import Stack from '@mui/material/Stack';
 import gameBanner from '../img/gbbs-title1280.png'
 import gameBannerCrop from '../img/gbbs-title-crop.png'
@@ -53,20 +53,24 @@ const GameIntro = () => {
       animate__animated 
       animate__slideInDown">
       <Link to="/play">
-        <Fab 
-          variant="extended"
+        <Button 
+          variant="contained"
+          color="teal"
           autoFocus
           aria-label="Start button"
           className="
           animate__animated animate__pulse animate__delay-3s"
           sx={{
-            backgroundColor: '#169235',
+            // backgroundColor: '#169235',
+            // background: 'rgb(22,146,53)',
+            // background: 'radial-gradient(circle, rgba(22,146,53,1) 0%, rgba(15,108,39,0.9990371148459384) 100%)',
             color: 'white',
-            padding: '5%',
+            padding: '2%',
+            borderRadius: '10px',
           }}>
           <p>Ready?
           On your mark, get set, PLAY!</p>
-        </Fab>
+        </Button>
       </Link> 
     </main>
     </span>
@@ -90,10 +94,10 @@ const GameIntro = () => {
         open={open}
         anchorEl={anchorEl}
         onClose={handleClose}
-      style={{
-        opacity: '95%',
-        borderRadius: '20px',
-      }}
+        style={{
+          opacity: '95%',
+          borderRadius: '20px',
+        }}
       >
         <p
         className='instructions-popover'>
