@@ -1,15 +1,18 @@
 import { Link } from "react-router-dom"
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Fab from '@mui/material/Fab';
 import { Popover } from "@mui/material";
-
+import { InstructionsContext } from "../context/InstructionsContext";
 import Button from "@mui/material/Button";
 import Stack from '@mui/material/Stack';
 import gameBanner from '../img/gbbs-title1280.png'
 import gameBannerCrop from '../img/gbbs-title-crop.png'
+import GameInstructions from "./GameInstructions";
 
 const GameIntro = () => {
-  const [anchorEl, setAnchorEl] = useState(null)
+
+  const { openInstructions, setOpenInstructions } = useContext(InstructionsContext)
+
   const [isDesktop, setDesktop] = useState(window.innerWidth > 650);
 
   const updateMedia = () => {
@@ -21,16 +24,15 @@ const GameIntro = () => {
     return () => window.removeEventListener("resize", updateMedia);
   });
 
-  const handleClick = (event) => {
-    setAnchorEl(event.target);
+  const handleInstructionsClick = () => {
+    setOpenInstructions(true)
+    console.log(openInstructions)
   }
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
-  const open = Boolean(anchorEl);
-  const id = open ? 'simple-popover' : undefined;
+
+  // const open = Boolean(anchorEl);
+  // const id = open ? 'simple-popover' : undefined;
 
   return (
     <div className="main-container">
@@ -76,45 +78,21 @@ const GameIntro = () => {
       </Link> 
     </main>
     </span>
-      <span>
-        <h4
-        aria-label="Open game instructions"
-        aria-describedby={id} variant="contained" onClick={handleClick}
-        >
-        Wait, how do I play?</h4>
-      <Popover 
-        aria-label="Popup showing game instructions"
-        anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'center',
-        }}
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'center',
-        }}
-        id={id}
-        open={open}
-        anchorEl={anchorEl}
-        onClose={handleClose}
+      <span
+      // onClick={handleInstructionsClick}
         style={{
-          opacity: '95%',
-          borderRadius: '20px',
+          cursor: 'pointer'
         }}
       >
-        <p
-        className='instructions-popover'>
-        While watching, keep an eye out for when something happens matching one of your card prompts. When it does, click or tap to mark it off. 
-        <br></br>
-        When you get 5 in a row (horizontally or vertically), you win! 
-        <h6>(Click anywhere outside this box to close.)</h6>
-        </p>  
-      </Popover>
+      <GameInstructions />
+      <h4
+        aria-label="Open game instructions"
+        onClick={handleInstructionsClick}
+        >
+        Wait, how do I play?</h4>
     </span>
       </Stack>
-    {/* </Box> */}
-      
-      
-    
+
     </div>
   );
 };
