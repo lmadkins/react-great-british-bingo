@@ -5,16 +5,16 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { InstructionsContext } from '../context/InstructionsContext';
 
-const GameInstructions = () => {
+const GameInstructions = ({open, setOpen, handleInstructionsClick}) => {
 
   const { openInstructions, setOpenInstructions } = useContext(InstructionsContext)
 
-// For opening/closing Dialog
-  const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    setOpen(true)
-  }, [openInstructions])
+
+  // useEffect(() => {
+  //   setOpen(true)
+  // }, [open])
+
 
   const handleClose = () => {
     setOpen(false)

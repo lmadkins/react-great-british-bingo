@@ -11,11 +11,16 @@ import WinAlert from "./WinAlert";
 const GamePage = () => {
 // STATE TO PASS AS CONTEXT
   // MarkedArrContext
-  const [markedArr, setMarkedArr] = useState([])
+  const initialMarkedArrState = [12]
+
+  const [markedArr, setMarkedArr] = useState(initialMarkedArrState)
+
   // WinContext
   const [win, setWin] = useState(false)
+
   // RestartContext
   const [restartBoard, setRestartBoard] = useState(false)
+
   // PrintModeContext
   const [print, setPrint] = useState(false)
 
@@ -24,7 +29,6 @@ const GamePage = () => {
 
   useEffect(() => {
     renderNewGame()
-    console.log('in useEffect on load')
   }, [])
 
   // Uses RestartContext when play again is selected in WinAlert
@@ -45,8 +49,9 @@ const GamePage = () => {
   function renderNewGame() {
     setPrint(false)
     setWin(false)
-    setMarkedArr([12])
+    setMarkedArr(initialMarkedArrState)
     shuffleSlicePrompts()
+    setRestartBoard(false)
   }
   
   // function to pass to GameNav component to use for shuffle button
@@ -56,12 +61,11 @@ const GamePage = () => {
 
   return (
     <>
-    
-    <MarkedArrContext.Provider value={{markedArr, setMarkedArr}}>
-    <PrintModeContext.Provider value={{print, setPrint}}>
-    <RestartContext.Provider value={{restartBoard, setRestartBoard}}>
     <WinContext.Provider value={{win, setWin}}>
-
+    <MarkedArrContext.Provider value={{markedArr, setMarkedArr}}>
+    <RestartContext.Provider value={{restartBoard, setRestartBoard}}>
+    <PrintModeContext.Provider value={{print, setPrint}}>
+    
       <WinAlert />
 
       {!print &&
@@ -83,11 +87,10 @@ const GamePage = () => {
               id={v.id}/>
           )})}    
       </div>
-    </WinContext.Provider>
-    </RestartContext.Provider>
     </PrintModeContext.Provider>
+    </RestartContext.Provider>
     </MarkedArrContext.Provider>
-    
+    </WinContext.Provider>
   </>
   );
 };

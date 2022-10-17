@@ -15,6 +15,9 @@ const GameIntro = () => {
     setOpenInstructions(true)
   }
 
+  // For opening/closing Dialog
+  const [open, setOpen] = useState(false);
+
 //For conditional rendering of banner images
   const [isDesktop, setDesktop] = useState(window.innerWidth > 650)
 
@@ -60,7 +63,8 @@ const GameIntro = () => {
         </main>
       </span>
       <span style={{cursor: 'pointer'}}>
-        <GameInstructions />
+        <GameInstructions open={open} setOpen={setOpen}
+        handleInstructionsClick={handleInstructionsClick}/>
           <h4
           onClick={handleInstructionsClick}
           onTouchStart={handleInstructionsClick}
