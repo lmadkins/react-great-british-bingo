@@ -1,7 +1,6 @@
 import React, {useEffect, useState, useContext} from 'react';
 import { MarkedArrContext } from '../context/MarkedArrContext';
 import { PrintModeContext } from '../context/PrintModeContext';
-import { RestartContext } from '../context/RestartContext';
 import { WinContext } from '../context/WinContext';
 import '../styles/App.css'
 import { styled } from '@mui/material/styles';
@@ -17,9 +16,6 @@ const { markedArr, setMarkedArr } = useContext(MarkedArrContext)
 
 const { print, setPrint } = useContext(PrintModeContext)
 
-const { restartBoard, setRestartBoard } = useContext(RestartContext)
-
-
 // LOCAL STATE
   // marked state of individual Square component (not to be confused with markedArr!)
   const [marked, setMarked] = useState(false)
@@ -32,7 +28,6 @@ const { restartBoard, setRestartBoard } = useContext(RestartContext)
   // ^ Sets square as unmarked if win
 
 
-
   function checkBingo () {
       winningCombos.forEach((array) => {
         let mergedArr = markedArr.concat(array)
@@ -41,7 +36,6 @@ const { restartBoard, setRestartBoard } = useContext(RestartContext)
         let sortedArr = mergedArr.sort(function(a, b){return a - b})
         // console.log(sortedArr)
         // Sort that merged array in numerical order
-     
         for (let i = 0; i < sortedArr.length; i++) {
           // Iterate through the sorted array
           if (sortedArr[i] === sortedArr[i + 1]) {

@@ -22,7 +22,7 @@ const GameInstructions = ({open, setOpen, handleInstructionsClick}) => {
         id="alert-dialog-title"
         sx={{
           textAlign: 'center',
-          paddingTop: '2.5rem',
+          paddingTop: '1.5rem',
           fontSize: '3rem',
           fontFamily: 'Futura Heavy',
         }}>
