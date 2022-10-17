@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { MarkedArrContext } from '../context/MarkedArrContext';
 import { RestartContext } from '../context/RestartContext';
 import { WinContext } from '../context/WinContext';
 import Dialog from '@mui/material/Dialog';
@@ -8,16 +7,14 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Button from '@mui/material/Button';
 
-const WinAlert = (handleStartClick, replay) => {
+const WinAlert = () => {
 
 // CONTEXT STATE USED
-  // const { markedArr, setMarkedArr } = useContext(RestartContext)
   const { restartBoard, setRestartBoard } = useContext(RestartContext)
   const { win, setWin } = useContext(WinContext)
 
 // LOCAL STATE 
   const [open, setOpen] = useState(false);
-  // const initialMarkedArrState = [12]
 
   useEffect(() => {
     if (win) {
@@ -27,10 +24,7 @@ const WinAlert = (handleStartClick, replay) => {
 
   const handleClose = () => {
     setOpen(false)
-    // setMarkedArr(initialMarkedArrState)
-    // console.log(markedArr)
     setRestartBoard(true)
-    // setWin(false)
   }
   
   return (

@@ -4,9 +4,9 @@ import Button from "@mui/material/Button";
 import Stack from '@mui/material/Stack';
 import gameBanner from '../img/gbbs-title1280.png'
 import gameBannerCrop from '../img/gbbs-title-crop.png'
-import GameInstructions from "./GameInstructions";
+import Instructions from "./Instructions";
 
-const GameIntro = () => {
+const Home = () => {
 
   const handleInstructionsClick = () => { setOpen(true)}
 
@@ -60,7 +60,7 @@ const GameIntro = () => {
         </main>
       </span>
       <span style={{cursor: 'pointer'}}>
-        <GameInstructions open={open} setOpen={setOpen}
+        <Instructions open={open} setOpen={setOpen}
         handleInstructionsClick={handleInstructionsClick}/>
           <h4
           onClick={handleInstructionsClick}
@@ -73,4 +73,4 @@ const GameIntro = () => {
   );
 };
 
-export default GameIntro;
+export default Home;

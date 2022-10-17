@@ -4,7 +4,7 @@ import { PrintModeContext } from '../context/PrintModeContext';
 import { RestartContext } from '../context/RestartContext';
 import { WinContext } from '../context/WinContext'; 
 import jsonArr from '../data/promptList';
-import GameNav from './GameNav';
+import Nav from './Nav';
 import Square from './Square';
 import PrintModeSquare from './PrintModeSquare';
 import WinAlert from "./WinAlert";
@@ -86,7 +86,7 @@ const GamePage = () => {
     <>
       <WinAlert />
 
-      <GameNav 
+      <Nav 
       handleShuffleClick={handleShuffleClick} />
     
       <div className='bingoCard 

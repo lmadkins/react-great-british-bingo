@@ -3,7 +3,7 @@ import './styles/App.css'
 import { useState } from 'react';
 import { Routes, Route} from "react-router-dom"
 import GamePage from './components/GamePage';
-import GameIntro from './components/GameIntro'
+import Home from './components/Home'
 import { InstructionsContext } from './context/InstructionsContext';
 import 'animate.css'
 
@@ -17,7 +17,7 @@ const App = () => {
     <InstructionsContext.Provider value={{openInstructions, setOpenInstructions}}>
       <Routes>
         <Route>
-          <Route path="/" element={<GameIntro />}/>
+          <Route path="/" element={<Home />}/>
           <Route path="/play" element={<GamePage />}/>
         </Route>
       </Routes>

@@ -1,8 +1,6 @@
 import React, { useContext } from 'react';
 import { PrintModeContext } from '../context/PrintModeContext';
-import '../styles/App.css'
 import { styled } from '@mui/material/styles';
-
 
 const PrintModeSquare = ({prompt, id, squareid}) => {
 // CONTEXT STATE USED
