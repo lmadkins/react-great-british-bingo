@@ -6,6 +6,7 @@ import { WinContext } from '../context/WinContext';
 import jsonArr from '../data/promptList';
 import GameNav from './GameNav';
 import Square from './Square';
+import PrintModeSquare from './PrintModeSquare';
 import WinAlert from "./WinAlert";
 
 const GamePage = () => {
@@ -60,38 +61,60 @@ const GamePage = () => {
   }
 
   return (
-    <>
     <WinContext.Provider value={{win, setWin}}>
     <MarkedArrContext.Provider value={{markedArr, setMarkedArr}}>
     <RestartContext.Provider value={{restartBoard, setRestartBoard}}>
     <PrintModeContext.Provider value={{print, setPrint}}>
-    
-      <WinAlert />
 
-      {!print &&
-        <GameNav 
-        handleShuffleClick={handleShuffleClick} />}
-      
-      <div className='bingoCard 
-        animate__animated animate__fadeInUp'
+    { print ? (
+      <>
+      <div className='bingoCard '
+
+        // animate__animated animate__fadeInUp
+        
         style={{
           height: print ? '95vh' : '',
           boxShadow: print ? '' : 'rgba(0, 0, 0, 0.3) 0px 17px 30px'
         }}>
           {newPrompts.map((v, k) => {
             return (
-            <Square 
+            <PrintModeSquare 
               key={`${k}`} 
               squareid={k} 
               prompt={v.prompt} 
               id={v.id}/>
           )})}    
       </div>
+      </>
+    ) : (
+      <>
+      <WinAlert />
+
+      <GameNav 
+      handleShuffleClick={handleShuffleClick} />
+    
+    <div className='bingoCard 
+      animate__animated animate__fadeInUp'
+      style={{
+        height: print ? '95vh' : '',
+        boxShadow: print ? '' : 'rgba(0, 0, 0, 0.3) 0px 17px 30px'
+      }}>
+        {newPrompts.map((v, k) => {
+          return (
+          <Square 
+            key={`${k}`} 
+            squareid={k} 
+            prompt={v.prompt} 
+            id={v.id}/>
+        )})}    
+    </div>
+    </>
+    )}
+
     </PrintModeContext.Provider>
     </RestartContext.Provider>
     </MarkedArrContext.Provider>
     </WinContext.Provider>
-  </>
   );
 };
 

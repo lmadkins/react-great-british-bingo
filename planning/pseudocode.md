@@ -1,3 +1,13 @@
+Print mode:
+print mode square
+print context
+
+game page has print context, gets true from nav, game page condit renders printmode square component
+
+printmodesquare has its specific styles
+
+
+
 Rendering New Board:
 Import & set state:
 - set state for new prompts this game will use (empty initially)

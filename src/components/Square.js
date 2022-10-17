@@ -1,6 +1,5 @@
 import React, {useEffect, useState, useContext} from 'react';
 import { MarkedArrContext } from '../context/MarkedArrContext';
-import { PrintModeContext } from '../context/PrintModeContext';
 import { WinContext } from '../context/WinContext';
 import '../styles/App.css'
 import { styled } from '@mui/material/styles';
@@ -13,8 +12,6 @@ const Square = ( {prompt, id, squareid} ) => {
 const { win, setWin } = useContext(WinContext)
 
 const { markedArr, setMarkedArr } = useContext(MarkedArrContext)
-
-const { print, setPrint } = useContext(PrintModeContext)
 
 // LOCAL STATE
   // marked state of individual Square component (not to be confused with markedArr!)
@@ -80,16 +77,7 @@ const { print, setPrint } = useContext(PrintModeContext)
     backgroundColor: '#edebe7',
     transition: 'background-color .3s',
     color: '#55555',
-    }, print ? {
-      color: 'black',
-      backgroundColor: 'white',
-      border: '2px solid black', 
-      fontSize: '1.15rem',
-      padding: '1%',
-      minWidth: '20%',
-      minHeight: '20%',
-      } : {  transition: 'background-color .9s',}
-    )
+    })
 
   return (
     <> 
@@ -103,7 +91,7 @@ const { print, setPrint } = useContext(PrintModeContext)
         style={{    
           backgroundColor: '#7aa3a1',
           color: 'white',
-          fontSize: '1rem',
+          fontSize: '1.25 rem',
         }}>
           <h2 id={id} squareid={squareid}>
             FREE

@@ -133,9 +133,6 @@ Fab:active, Button:active {
   transition: background-color .3s; 
 }
 
-/* set default to landscape */
-@media print{@page { size: landscape }}
-
 /* /* /* /* /* /* /* /* /* /* 
 /*  MEDIA QUERIES  */
 
