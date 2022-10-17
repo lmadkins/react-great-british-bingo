@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom"
-import { useState, useEffect, useContext } from "react";
-import { InstructionsContext } from "../context/InstructionsContext";
+import { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 import Stack from '@mui/material/Stack';
 import gameBanner from '../img/gbbs-title1280.png'
@@ -9,10 +8,8 @@ import GameInstructions from "./GameInstructions";
 
 const GameIntro = () => {
 
-  const { openInstructions, setOpenInstructions } = useContext(InstructionsContext)
-
   const handleInstructionsClick = () => {
-    setOpenInstructions(true)
+    setOpen(true)
   }
 
   // For opening/closing Dialog

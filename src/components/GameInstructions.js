@@ -1,24 +1,12 @@
-import React, { useState, useEffect, useContext } from 'react';
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import { InstructionsContext } from '../context/InstructionsContext';
 
 const GameInstructions = ({open, setOpen, handleInstructionsClick}) => {
 
-  const { openInstructions, setOpenInstructions } = useContext(InstructionsContext)
-
-
-
-  // useEffect(() => {
-  //   setOpen(true)
-  // }, [open])
-
-
   const handleClose = () => {
     setOpen(false)
-    setOpenInstructions(false)
   }
   
   return (
