@@ -169,7 +169,7 @@ const jsonArr = [
 },
 {
   "id": 43,
-  "prompt": "Attempting a signature or showstopper bake for the first time"
+  "prompt": "Host makes a joke about themselves"
 },
 {
   "id": 44,
@@ -177,15 +177,11 @@ const jsonArr = [
 },
 {
   "id": 45,
-  "prompt": "Contestant's bake didn't go well in practice"
+  "prompt": "Someone's bake didn't go well in practice"
 },
 {
   "id": 46,
   "prompt": "Unusual flavor combination"
-},
-{
-  "id": 47,
-  "prompt": "Host makes a joke about themselves"
 },
 ]
 

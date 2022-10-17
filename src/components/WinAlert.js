@@ -45,9 +45,9 @@ const WinAlert = (handleStartClick, replay) => {
         id="alert-dialog-title"
         sx={{
           textAlign: 'center',
-          paddingTop: '2.5rem',
-          fontSize: '3rem',
+          fontSize: '2.5rem',
           fontFamily: 'Futura Heavy',
+          fontDisplay: 'swap',
         }}>
           BINGO!
       </DialogTitle>
@@ -73,12 +73,14 @@ const WinAlert = (handleStartClick, replay) => {
           autoFocus
           sx={{
             color: 'white',
-            marginTop: '30px',
+            marginTop: '20px',
             padding: '5%',
             borderRadius: '10px',
             fontSize: '1rem',
             fontFamily: 'Futura Heavy',
+            fontDisplay: 'swap',
             letterSpacing: '1px',
+            // hover and active pseudoclass styling in App.css
           }}>
           On your mark, get set, PLAY!
         </Button>

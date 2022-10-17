@@ -1,10 +1,7 @@
-import React, {useEffect, useState, useContext} from 'react';
-import { MarkedArrContext } from '../context/MarkedArrContext';
+import React, { useContext } from 'react';
 import { PrintModeContext } from '../context/PrintModeContext';
-import { WinContext } from '../context/WinContext';
 import '../styles/App.css'
 import { styled } from '@mui/material/styles';
-import winningCombos from '../data/winningCombos';
 
 
 const PrintModeSquare = ({prompt, id, squareid}) => {

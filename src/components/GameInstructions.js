@@ -18,27 +18,18 @@ const GameInstructions = ({open, setOpen, handleInstructionsClick}) => {
       aria-describedby="alert-dialog-description"
       className={`${!open ? "animate__animated  animate__fadeOutDown animate__delay-2s" : ""
       }`}>
-      <DialogTitle 
-        id="alert-dialog-title"
-        sx={{
-          textAlign: 'center',
-          paddingTop: '1.5rem',
-          fontSize: '3rem',
-          fontFamily: 'Futura Heavy',
-        }}>
-          Instructions
-      </DialogTitle>
-      <DialogContent
-        sx={{
-          textAlign: 'center',
-          padding: '3rem',
-        }}>
-        <DialogContentText 
-          id="alert-dialog-description"
-          sx={{ fontSize: '1.25rem' }}>
-            While watching, keep an eye out for when something happens matching one of your card prompts. When it does, click or tap to mark it off.
+
+      <h2 className="instructions-header">
+        Instructions
+        </h2>
+      <DialogContent>
+        <p className="instructions-text">
+            While watching, keep an eye out for when something happens matching one of your card prompts. 
+            <br></br>
+            When it does, click or tap to mark it off.
+            <br></br>
             When you get 5 in a row (horizontally or vertically), you win!
-        </DialogContentText>
+        </p>
       </DialogContent>
     </Dialog>
   );

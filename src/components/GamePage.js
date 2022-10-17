@@ -67,11 +67,8 @@ const GamePage = () => {
     <PrintModeContext.Provider value={{print, setPrint}}>
 
     { print ? (
-      <>
-      <div className='bingoCard '
-
-        // animate__animated animate__fadeInUp
-        
+      // (Print condition excludes Win Alert and nav buttons to print or shuffle)
+      <div className='bingoCard'
         style={{
           height: print ? '95vh' : '',
           boxShadow: print ? '' : 'rgba(0, 0, 0, 0.3) 0px 17px 30px'
@@ -85,29 +82,24 @@ const GamePage = () => {
               id={v.id}/>
           )})}    
       </div>
-      </>
     ) : (
-      <>
+    <>
       <WinAlert />
 
       <GameNav 
       handleShuffleClick={handleShuffleClick} />
     
-    <div className='bingoCard 
-      animate__animated animate__fadeInUp'
-      style={{
-        height: print ? '95vh' : '',
-        boxShadow: print ? '' : 'rgba(0, 0, 0, 0.3) 0px 17px 30px'
-      }}>
-        {newPrompts.map((v, k) => {
-          return (
-          <Square 
-            key={`${k}`} 
-            squareid={k} 
-            prompt={v.prompt} 
-            id={v.id}/>
-        )})}    
-    </div>
+      <div className='bingoCard 
+        animate__animated animate__fadeInUp'>
+          {newPrompts.map((v, k) => {
+            return (
+            <Square 
+              key={`${k}`} 
+              squareid={k} 
+              prompt={v.prompt} 
+              id={v.id}/>
+          )})}    
+      </div>
     </>
     )}
 

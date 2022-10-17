@@ -71,12 +71,12 @@ const { markedArr, setMarkedArr } = useContext(MarkedArrContext)
   }
 
   const BingoPrompt = styled('button')( marked ? {
-    backgroundColor: '#87B5B2',
+    backgroundColor: '#9dbebc',
     color: '#000000',
       } : {
     backgroundColor: '#edebe7',
-    transition: 'background-color .3s',
     color: '#55555',
+    transition: 'all 0.30s ease-in-out',
     })
 
   return (
@@ -91,7 +91,6 @@ const { markedArr, setMarkedArr } = useContext(MarkedArrContext)
         style={{    
           backgroundColor: '#7aa3a1',
           color: 'white',
-          fontSize: '1.25 rem',
         }}>
           <h2 id={id} squareid={squareid}>
             FREE

@@ -8,28 +8,27 @@ import GameInstructions from "./GameInstructions";
 
 const GameIntro = () => {
 
-  const handleInstructionsClick = () => {
-    setOpen(true)
-  }
+  const handleInstructionsClick = () => { setOpen(true)}
 
   // For opening/closing Dialog
   const [open, setOpen] = useState(false);
 
 //For conditional rendering of banner images
-  const [isDesktop, setDesktop] = useState(window.innerWidth > 650)
+  const [isDesktop, setDesktop] = useState(window.innerWidth > 539)
 
   const updateMedia = () => {
-    setDesktop(window.innerWidth > 650);
+    setDesktop(window.innerWidth > 539)
   }
 
   useEffect(() => {
-    window.addEventListener("resize", updateMedia);
-    return () => window.removeEventListener("resize", updateMedia);
+    window.addEventListener("resize", updateMedia)
+    return () => window.removeEventListener("resize", updateMedia)
   })
 
   return (
     <Stack spacing={2}
       className="main-container">
+
       {isDesktop ? (
         <img src={gameBanner} alt="Banner with the text: 'Welcome to The Great British Baking Show Bingo' in the style of main credit title card from the show"/>
       ) : (
@@ -49,12 +48,13 @@ const GameIntro = () => {
               animate__animated animate__pulse animate__delay-3s"
               sx={{
                 color: 'white',
-                padding: '2%',
+                padding: '3%',
                 borderRadius: '10px',
                 letterSpacing: '1px',
+                lineHeight: '125%',
                 fontFamily: 'Futura Heavy',
               }}>
-              <p>Ready? On your mark, get set, PLAY!</p>
+              Ready? On your mark, get set, PLAY!
             </Button>
           </Link> 
         </main>
