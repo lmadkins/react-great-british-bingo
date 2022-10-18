@@ -1,7 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import { MarkedArrContext } from '../context/MarkedArrContext'; 
 import { PrintModeContext } from '../context/PrintModeContext';
-import { RestartContext } from '../context/RestartContext';
 import { WinContext } from '../context/WinContext'; 
 import jsonArr from '../data/promptList';
 import Nav from './Nav';
@@ -19,28 +18,28 @@ const GamePage = () => {
   // WinContext
   const [win, setWin] = useState(false)
 
-  // RestartContext
-  const [restartBoard, setRestartBoard] = useState(false)
-
   // PrintModeContext
   const [print, setPrint] = useState(false)
 
 // LOCAL STATE
   const [newPrompts, setNewPrompts] = useState([])
 
+  const [restartBoard, setRestartBoard] = useState(false)
+
+
   useEffect(() => {
     renderNewGame()
   }, [])
+  // ^ renders new game on load
 
-  // Uses RestartContext when play again is selected in WinAlert
   useEffect(() => {
     renderNewGame()
+    setRestartBoard(false)
   }, [restartBoard])
-
-
-  let shuffledArr = []
+  // ^renders new game when shuffle button is pressed
 
   function shuffleSlicePrompts() {
+    let shuffledArr = []
     shuffledArr = jsonArr.sort(() => Math.random() - 0.5)
     let slicedPrompts = shuffledArr.slice(0, 25)
     setNewPrompts(slicedPrompts)
@@ -52,18 +51,16 @@ const GamePage = () => {
     setWin(false)
     setMarkedArr(initialMarkedArrState)
     shuffleSlicePrompts()
-    setRestartBoard(false)
   }
   
   // function to pass to GameNav component to use for shuffle button
   const handleShuffleClick = () => { 
-    renderNewGame() 
+    setRestartBoard(true)
   }
 
   return (
     <WinContext.Provider value={{win, setWin}}>
     <MarkedArrContext.Provider value={{markedArr, setMarkedArr}}>
-    <RestartContext.Provider value={{restartBoard, setRestartBoard}}>
     <PrintModeContext.Provider value={{print, setPrint}}>
 
     { print ? (
@@ -84,7 +81,8 @@ const GamePage = () => {
       </div>
     ) : (
     <>
-      <WinAlert />
+      <WinAlert 
+      renderNewGame={renderNewGame}/>
 
       <Nav 
       handleShuffleClick={handleShuffleClick} />
@@ -104,7 +102,6 @@ const GamePage = () => {
     )}
 
     </PrintModeContext.Provider>
-    </RestartContext.Provider>
     </MarkedArrContext.Provider>
     </WinContext.Provider>
   );
