@@ -1,3 +1,5 @@
+// import './fonts/Futura-Book.ttf';
+// import './fonts/Futura-Heavy.ttf';
 import './styles/index.css'
 import './styles/App.css'
 import { useState } from 'react';
@@ -9,7 +11,6 @@ import 'animate.css'
 
 const App = () => {
 // STATE TO PASS AS CONTEXT
-  // InstructionsContext
   const [openInstructions, setOpenInstructions] = useState(false)
 
   return (  
