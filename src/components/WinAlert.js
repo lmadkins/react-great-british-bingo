@@ -32,7 +32,7 @@ const WinAlert = ({renderNewGame}) => {
       onClose={handleClose}
       aria-labelledby="Win Dialog Window"
       aria-describedby="alert-dialog-description"
-      className={`${!open ? "animate__animated  animate__fadeOutDown animate__delay-2s" : ""}`}>
+      className={`${!open ? "animate__animated  animate__fadeOutDown animate__delay-4s" : ""}`}>
       <DialogTitle 
         id="alert-dialog-title"
         sx={{
@@ -59,7 +59,7 @@ const WinAlert = ({renderNewGame}) => {
           variant="contained"
           color="teal" 
           aria-label="Start button"
-          className="animate__animated animate__pulse animate__delay-1s"
+          className="animate__animated animate__pulse animate__delay-3s"
           onClick={handleClose} 
           onTouchStart={handleClose}
           autoFocus

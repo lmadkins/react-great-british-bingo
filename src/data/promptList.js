@@ -17,19 +17,19 @@ const jsonArr = [
 },
 {
   "id": 5,
-  "prompt": "'Even layering'",
+  "prompt": "Even layering",
 },
 {
   "id": 6,
-  "prompt":"'Flavors are not coming through'",
+  "prompt":"Flavors are not coming through",
 },
 {
   "id": 7,
-  "prompt": "'Flavors are too strong'",
+  "prompt": "Flavors are too strong",
 },
 {
   "id": 8,
-  "prompt": "'Beautiful ___'",
+  "prompt": "'Beautiful'",
 },
 {
   "id": 9,
@@ -53,11 +53,11 @@ const jsonArr = [
 },
 {
   "id": 14,
-  "prompt": "'It looks a mess'/'It could be neater'", 
+  "prompt": "'It looks a mess'", 
 },
 {
   "id": 15,
-  "prompt": "'It looks bad but the flavors are good'", 
+  "prompt": "It looks bad but the flavors are good", 
 },
 {
   "id": 16,
@@ -182,6 +182,106 @@ const jsonArr = [
 {
   "id": 46,
   "prompt": "Unusual flavor combination"
+},
+{
+  "id": 47,
+  "prompt": "Joke about Paul's eyes"
+},
+{
+  "id": 48,
+  "prompt": "Paul watching a baker"
+},
+{
+  "id": 49,
+  "prompt": "'Step away from your bakes'"
+},
+{
+  "id": 50,
+  "prompt": "'It's a bit disappointing'"
+},
+{
+  "id": 51,
+  "prompt": "'Neat as a pin'"
+},
+{
+  "id": 52,
+  "prompt": "'Lovely sponge'"
+},
+{
+  "id": 53,
+  "prompt": "Fanning to cool off bake"
+},
+{
+  "id": 54,
+  "prompt": "'Dense'"
+},
+{
+  "id": 55,
+  "prompt": "Bakers doing math"
+},
+{
+  "id": 56,
+  "prompt": "Paul says 'interesting'"
+},
+{
+  "id": 57,
+  "prompt": "Swearing"
+},
+{
+  "id": 58,
+  "prompt": "'Overkill'"
+},
+{
+  "id": 59,
+  "prompt": "Mention of last week's Star Baker"
+},
+{
+  "id": 60,
+  "prompt": "Someone says they want a handshake"
+},
+{
+  "id": 61,
+  "prompt": "Over-decorated"
+},
+{
+  "id": 61,
+  "prompt": "'Works beautifully together'"
+},
+{
+  "id": 62,
+  "prompt": "'I'm just going to wing it'"
+},
+{
+  "id": 63,
+  "prompt": "'Rough and ready'"
+},
+{
+  "id": 64,
+  "prompt": "Forgetting to turn on timer"
+},
+{
+  "id": 65,
+  "prompt": "Made the wrong quantity"
+},
+{
+  "id": 66,
+  "prompt": "'It looks simple but it's quite tricky'"
+},
+{
+  "id": 67,
+  "prompt": "'Claggy'"
+},
+{
+  "id": 68,
+  "prompt": "Doesn't look identical"
+},
+{
+  "id": 69,
+  "prompt": "Use of chili"
+},
+{
+  "id": 70,
+  "prompt": "Use of coffee"
 },
 ]
 
