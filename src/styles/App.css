@@ -3,7 +3,7 @@ body {
   border: 0; 
   margin: 0; 
   padding: 0;
-  font-family: Futura Book, Arial, Helvetica, sans-serif;
+  font-family: Futura Book, Roboto;
   text-align: center;
   font-display: swap;
   height: auto;
@@ -14,7 +14,7 @@ a {
 }
 
 h1, h2 {
-  font-family: Futura Heavy;
+  font-family: Futura Heavy, Roboto;
   font-display: swap;
 }
 /* ^ instructions dialog header */
@@ -30,7 +30,7 @@ h4:hover {
 /* ^  "Wait how do I play" */
 
 p {
-  font-family: Futura Book;
+  font-family: Futura Book, Roboto;
   font-display: swap;
   line-height: 125%;
 }
@@ -41,7 +41,7 @@ p {
 /* /* /* /* /* /* /* /*  */ 
 nav {
   color: white;
-  font-family: Futura Heavy;
+  font-family: Futura Heavy, Roboto;
   max-width: 100vw;
   min-width: 90vw;  
   padding: 1vh;
@@ -370,5 +370,4 @@ Button:active {
     padding-bottom: 10%;
     max-height:100vh;
   }
-
 }

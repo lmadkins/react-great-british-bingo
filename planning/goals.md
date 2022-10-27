@@ -33,6 +33,4 @@ Gameplay functionality:
 
 Stretch
 - different UI for desktop view
-- multiplayer options?
-- options for hosts/sandy/noel/prue/paul
 - styling/fonts on theme of show
