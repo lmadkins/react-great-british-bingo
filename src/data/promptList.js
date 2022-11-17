@@ -283,6 +283,22 @@ const jsonArr = [
   "id": 70,
   "prompt": "Use of coffee"
 },
+{
+  "id": 71,
+  "prompt": "'A triumph'"
+},
+{
+  "id": 72,
+  "prompt": "'It's all down to the Showstopper'"
+},
+{
+  "id": 73,
+  "prompt": "'It's a shame'"
+},
+{
+  "id": 74,
+  "prompt": "'Stunning'"
+},
 ]
 
 export default jsonArr;
