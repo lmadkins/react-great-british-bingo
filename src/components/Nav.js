@@ -14,7 +14,7 @@ const GameNav = ( {handleShuffleClick} ) => {
   }
 
   const openPrint = () => {
-    window.print()
+    // window.print()
     setPrint(false)
     // ^ changes stylings back to normal from printmode once the print window has been opened
   }
@@ -36,8 +36,8 @@ const GameNav = ( {handleShuffleClick} ) => {
       </Button>
 
       <Button 
-        aria-label="Restart game button"
-        className="restart-btn"
+        aria-label="Shuffle game button"
+        className="shuffle-btn"
         color="red"
         variant="contained"
         onClick={handleShuffleClick}
