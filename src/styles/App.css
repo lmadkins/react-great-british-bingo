@@ -124,7 +124,7 @@ Button:active {
 /*  PHONES  */
 /* Extra small, e.g. Galaxy Fold */
 @media only screen 
-  and (min-device-width: 280px) {
+  and (min-device-width: 280px) and (orientation: portrait)  {
 
   .main-container {
     width: 100%;
@@ -172,15 +172,19 @@ Button:active {
   /* ^ free square */
 }
 
-@media only screen and (min-width: 280px) and (max-width: 479px) {
+
+
+/* @media only screen and (min-width: 280px) and (max-width: 479px) {
 
   .main-container img {
     margin-top: 10vh;
   }
-}
+} */
 
 @media only screen 
   and (min-device-width: 320px) { 
+
+
 
   .main-container Button {
     font-size: 1.25rem;
@@ -211,10 +215,6 @@ Button:active {
 }
 
 @media only screen and (min-width: 480px) {
-
-  .main-container img {
-    margin-top: 0;
-  }
 
   .main-container Button {
     font-size: 1.45rem;

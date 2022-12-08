@@ -35,9 +35,7 @@ const Home = () => {
         <img src={gameBannerCrop} alt="Banner with the text: 'Welcome to The Great British Baking Show Bingo' in the style of main credit title card from the show"/>
       )}  
       <span>
-        <main className="
-          animate__animated 
-          animate__slideInDown">
+        <main>
           <Link to="/play">
             <Button 
               variant="contained"

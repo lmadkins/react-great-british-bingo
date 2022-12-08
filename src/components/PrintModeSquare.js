@@ -11,10 +11,11 @@ const { print, setPrint } = useContext(PrintModeContext)
     color: 'black',
     backgroundColor: 'white',
     border: '2px solid black', 
+    margin: '0',
     fontSize: '1.15rem',
     padding: '1%',
-    minWidth: '20%',
-    minHeight: '20%',
+    maxWidth: '20%',
+    maxHeight: '20%',
       } : {  
       transition: 'background-color .4s',
     })

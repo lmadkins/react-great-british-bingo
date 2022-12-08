@@ -64,12 +64,14 @@ const GamePage = () => {
     <PrintModeContext.Provider value={{print, setPrint}}>
 
     { print ? (
+      
       // (Print condition excludes Win Alert and nav buttons to print or shuffle)
       <div className='bingoCard'
         style={{
           height: print ? '95vh' : '',
           boxShadow: print ? '' : 'rgba(0, 0, 0, 0.3) 0px 17px 30px'
         }}>
+  
           {newPrompts.map((v, k) => {
             return (
             <PrintModeSquare 
@@ -83,7 +85,6 @@ const GamePage = () => {
     <>
       <WinAlert 
       renderNewGame={renderNewGame}/>
-
       <Nav 
       handleShuffleClick={handleShuffleClick} />
     

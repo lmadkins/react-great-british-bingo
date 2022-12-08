@@ -9,12 +9,12 @@ const GameNav = ( {handleShuffleClick} ) => {
 
     const handlePrintClick = () => {
     setPrint(true)
-    setTimeout(openPrint, 250)
+    setTimeout(openPrint, 400)
     // ^ (timeout for conditional styling on components to re-render)
   }
 
   const openPrint = () => {
-    // window.print()
+    window.print()
     setPrint(false)
     // ^ changes stylings back to normal from printmode once the print window has been opened
   }
@@ -24,6 +24,7 @@ const GameNav = ( {handleShuffleClick} ) => {
     <nav>
       <Button 
         aria-label="Print bingo card button"
+        className="print-btn"
         variant="contained"
         color="teal" 
         onClick={handlePrintClick}
