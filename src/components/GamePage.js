@@ -5,7 +5,6 @@ import { WinContext } from '../context/WinContext';
 import jsonArr from '../data/promptList';
 import Nav from './Nav';
 import Square from './Square';
-import PrintModeSquare from './PrintModeSquare';
 import WinAlert from "./WinAlert";
 
 const GamePage = () => {
@@ -62,26 +61,6 @@ const GamePage = () => {
     <WinContext.Provider value={{win, setWin}}>
     <MarkedArrContext.Provider value={{markedArr, setMarkedArr}}>
     <PrintModeContext.Provider value={{print, setPrint}}>
-
-    { print ? (
-      
-      // (Print condition excludes Win Alert and nav buttons to print or shuffle)
-      <div className='bingoCard'
-        style={{
-          height: print ? '95vh' : '',
-          boxShadow: print ? '' : 'rgba(0, 0, 0, 0.3) 0px 17px 30px'
-        }}>
-  
-          {newPrompts.map((v, k) => {
-            return (
-            <PrintModeSquare 
-              key={`${k}`} 
-              squareid={k} 
-              prompt={v.prompt} 
-              id={v.id}/>
-          )})}    
-      </div>
-    ) : (
     <>
       <WinAlert 
       renderNewGame={renderNewGame}/>
@@ -100,7 +79,7 @@ const GamePage = () => {
           )})}    
       </div>
     </>
-    )}
+    
 
     </PrintModeContext.Provider>
     </MarkedArrContext.Provider>

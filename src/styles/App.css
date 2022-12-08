@@ -121,6 +121,25 @@ Button:active {
 /*  MEDIA QUERIES  */
 
 /* /* /* /* /* /* /* /*  */ 
+
+/* Print mode styles */
+@media print {
+  nav {
+    display: none;
+  }
+
+  .bingoSquare {
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    padding: 1%;
+    font-size: 1.15rem;
+    transition: .4s;
+    min-height: 20%;
+    min-width: 20%;
+  }
+}
+
 /*  PHONES  */
 /* Extra small, e.g. Galaxy Fold */
 @media only screen 
@@ -183,8 +202,6 @@ Button:active {
 
 @media only screen 
   and (min-device-width: 320px) { 
-
-
 
   .main-container Button {
     font-size: 1.25rem;
