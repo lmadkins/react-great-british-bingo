@@ -192,14 +192,6 @@ Button:active {
 }
 
 
-
-/* @media only screen and (min-width: 280px) and (max-width: 479px) {
-
-  .main-container img {
-    margin-top: 10vh;
-  }
-} */
-
 @media only screen 
   and (min-device-width: 320px) { 
 
@@ -227,6 +219,7 @@ Button:active {
   /* ^ prompt text */
 
   .bingoSquare h2 {
+    margin: auto;
     font-size: 1.65rem;
   }
 }
@@ -241,7 +234,6 @@ Button:active {
     font-size: 3rem;
     margin: 4% 0 1% 0;
   }
-  /* ^ instructions dialog header */
   
   .instructions-text {
     font-size: 1.10rem;

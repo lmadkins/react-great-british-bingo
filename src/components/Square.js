@@ -87,7 +87,7 @@ const { markedArr, setMarkedArr } = useContext(MarkedArrContext)
         id={id}
         squareid={squareid}
         fixed
-        className="bingoSquare"
+        className="bingoSquare marked"
         style={{    
           backgroundColor: '#7aa3a1',
           color: 'white',
