@@ -26,7 +26,7 @@ const Instructions = ({open, setOpen, handleInstructionsClick}) => {
             <br></br>
             When it does, click or tap to mark it off.
             <br></br>
-            When you get 5 in a row (horizontally or vertically), you win!
+            When you mark off an entire row or column, you win!
         </p>
       </DialogContent>
     </Dialog>

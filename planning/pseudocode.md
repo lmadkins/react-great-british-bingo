@@ -19,7 +19,27 @@ if click again to unmark,
 check if marked, remove from markedarr array, set marked to false
 
 
+DIFFERENT SIZE MODES
+button in nav to switch between easy mode and hard mode 
 
+conditional rendering for state 
+challenge mode state
+
+Normal 3x3 Mode
+  gamepage component:
+    initial markedarr state [4]
+    slice 0-9
+  square component:
+    check bingo after markedArr length is >=3
+    free sq is 4
+
+Challenge 5x5 Mode:
+  gamepage component:
+    initial markedarr state [12]
+    slice 0-25
+  square component:
+    check bingo after markedArr length is >=5
+    free sq is 12
 
 
 

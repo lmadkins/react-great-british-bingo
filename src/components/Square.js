@@ -1,4 +1,5 @@
 import React, {useEffect, useState, useContext} from 'react';
+import { ChallengeModeContext } from '../context/ChallengeModeContext';
 import { MarkedArrContext } from '../context/MarkedArrContext';
 import { WinContext } from '../context/WinContext';
 import '../styles/App.css'
@@ -8,6 +9,8 @@ import winningCombos from '../data/winningCombos';
 
 const Square = ( {prompt, id, squareid} ) => {
 // CONTEXT STATE USED
+
+const { challengeMode, setChallengeMode } = useContext(ChallengeModeContext)
 
 const { win, setWin } = useContext(WinContext)
 

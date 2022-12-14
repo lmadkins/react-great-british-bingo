@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from 'react';
+import { ChallengeModeContext } from '../context/ChallengeModeContext';
 import { MarkedArrContext } from '../context/MarkedArrContext'; 
 import { PrintModeContext } from '../context/PrintModeContext';
 import { WinContext } from '../context/WinContext'; 
@@ -14,6 +15,9 @@ const GamePage = () => {
   const initialMarkedArrState = [12]
 
   const [markedArr, setMarkedArr] = useState(initialMarkedArrState)
+
+  // ChallengeMode Context
+  const [challengeMode, setChallengeMode] = useState(false)
 
   // WinContext
   const [win, setWin] = useState(false)
@@ -59,6 +63,7 @@ const GamePage = () => {
   }
 
   return (
+    <ChallengeModeContext.Provider value={{challengeMode, setChallengeMode}}>
     <WinContext.Provider value={{win, setWin}}>
     <MarkedArrContext.Provider value={{markedArr, setMarkedArr}}>
     <PrintModeContext.Provider value={{print, setPrint}}>
@@ -86,6 +91,7 @@ const GamePage = () => {
     </PrintModeContext.Provider>
     </MarkedArrContext.Provider>
     </WinContext.Provider>
+    </ChallengeModeContext.Provider>
   );
 };
 
