@@ -1,11 +1,23 @@
 import Button from '@mui/material/Button';
 import { useContext, useEffect, useState } from 'react';
 import { PrintModeContext } from '../context/PrintModeContext';
+import PrintAlert from './PrintAlert';
 
 const GameNav = ( {handleShuffleClick} ) => {
 
-// For print functionality
   const {print, setPrint} = useContext(PrintModeContext)
+  
+  // detect if screen res is 767px or higher (e.g. tablet or bigger)
+  const [isDesktop, setDesktop] = useState(window.innerWidth > 767)
+
+  const updateMedia = () => {
+    setDesktop(window.innerWidth > 767)
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", updateMedia)
+    return () => window.removeEventListener("resize", updateMedia)
+  })
 
     const handlePrintClick = () => {
     setPrint(true)
@@ -14,7 +26,9 @@ const GameNav = ( {handleShuffleClick} ) => {
   }
 
   const openPrint = () => {
-      window.print()
+      if (isDesktop) {
+        window.print()
+      }
       setPrint(false)
   }
 
@@ -45,6 +59,8 @@ const GameNav = ( {handleShuffleClick} ) => {
       onTouchStart={handleShuffleClick}>
         Shuffle
     </Button>
+
+    <PrintAlert />
   </nav>
   );
 };

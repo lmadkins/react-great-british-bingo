@@ -7,6 +7,7 @@ import Nav from './Nav';
 import Square from './Square';
 import WinAlert from "./WinAlert";
 
+
 const GamePage = () => {
 // STATE TO PASS AS CONTEXT
   // MarkedArrContext
@@ -64,6 +65,7 @@ const GamePage = () => {
     <>
       <WinAlert 
       renderNewGame={renderNewGame}/>
+      
       <Nav 
       handleShuffleClick={handleShuffleClick} />
     

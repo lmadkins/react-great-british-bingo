@@ -1,3 +1,25 @@
+Printing
+in mobile, tablet
+detect resolution of screen
+
+if 
+laptop/desktop, print dialog opens for sure
+
+< 1280
+if less than that have a dialog that says
+If you have a keyboard on your device: type ctrl+p to open print dialog
+If not, you can find a 'Print' option in the menu of most web browser apps.
+
+
+
+
+
+
+
+
+
+
+
 Print mode:
 print mode square
 print context
