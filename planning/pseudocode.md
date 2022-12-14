@@ -12,7 +12,11 @@ If not, you can find a 'Print' option in the menu of most web browser apps.
 
 
 
+UNDO
+if removing last move, pop from end of markedArr array
 
+if click again to unmark, 
+check if marked, remove from markedarr array, set marked to false
 
 
 

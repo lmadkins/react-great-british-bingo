@@ -17,12 +17,18 @@ const { markedArr, setMarkedArr } = useContext(MarkedArrContext)
   // marked state of individual Square component (not to be confused with markedArr!)
   const [marked, setMarked] = useState(false)
 
+  const [undoMarked, setUndoMarked] = useState(false)
+
   useEffect(() => {
     setMarked(false)
     setWin(false)
   }, [win])
+    // ^ Sets square as unmarked if win
 
-  // ^ Sets square as unmarked if win
+  useEffect(() => {
+    setMarked(false)
+  }, [undoMarked])
+  // ^ Changes marked state if square clicked again
 
 
   function checkBingo () {
@@ -60,14 +66,24 @@ const { markedArr, setMarkedArr } = useContext(MarkedArrContext)
   // ^ After 4 squares have been clicked (the 5 includes the already marked free square), runs checkbingo function each time a square is marked
 
   const handleClick = (event) => {
-    // !marked &&
-      setMarked(event.target.id)
+    let clickedSquare = event.target.id
+    if (!marked) {
+      setMarked(clickedSquare)
       // ^ Sets clicked square to 'marked', which applies 'marked' styling 
       if (!markedArr.includes(squareid)) {
         // check if markedArr doesn't already include this squareid
         markedArr.push(squareid)
         // pushed the id of the newly marked square to the array of marked squares
       }
+    } else {
+      if (markedArr.includes(squareid)) {
+        setUndoMarked(clickedSquare)
+        // sets useEffect to setMarked(false)
+        let index = markedArr.findIndex(e => e === squareid)
+        markedArr.splice(index, 1)
+        // find index in markedArr and splice it
+      }
+    }
   }
 
   const BingoPrompt = styled('button')( marked ? {
