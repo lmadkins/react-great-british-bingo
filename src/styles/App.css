@@ -63,7 +63,7 @@ nav {
 }
 
 
-/* Styles applied to start button on landing page, win dialog start button, and print button  */
+/* Bingo squares */
 Button:hover {
   background-color: #4d7473;
   transition: .2s; 
@@ -243,7 +243,7 @@ Button:active {
   }
 
   .bingoSquare p {
-    font-size: .9rem;
+    font-size: 1rem;
   } 
   /* ^ prompt text */
 }
@@ -279,17 +279,17 @@ Button:active {
   }
 
   .bingoCard {
-    height: 90vh;
+    max-height: 90vh;
     max-width: 1000px;
     margin: 0 auto;
   }
 
   .bingoSquare {
-    padding: 0 1%;
+    padding: 0 2%;
   }
 
   .bingoSquare p {
-    font-size: 1.12rem;
+    font-size: 1.35rem;
   }
   /* ^ prompt text */
 
@@ -333,6 +333,7 @@ Button:active {
     line-height: 2rem;
   }
 
+
   .shuffle-btn:hover {
     transform: rotateZ(-5deg);
   }
@@ -340,6 +341,7 @@ Button:active {
   .bingoCard {
     background-color: #f4f2ed;
     max-width: 900px;
+    max-height: 85vh;
     margin: 0 auto;
   }
 
@@ -358,13 +360,15 @@ Button:active {
     font-size: 1.75 rem;
   }
   /* ^  "Wait how do I play" */
-
+  
   .bingoSquare {
     padding: 0 1%;
+    /* width: 15vw;
+    height: 20vh; */
   }
 
   .bingoSquare p {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
     /* ^ prompt text */
 
@@ -382,5 +386,10 @@ Button:active {
     margin: 5vh auto; 
     padding-bottom: 10%;
     max-height:100vh;
+  }
+
+  .print-btn, .shuffle-btn {
+    height: 3.5rem;
+    width: 10rem;
   }
 }
