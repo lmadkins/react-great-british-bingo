@@ -20,16 +20,22 @@ check if marked, remove from markedarr array, set marked to false
 
 
 DIFFERENT SIZE MODES
-button in nav to switch between easy mode and hard mode 
+button in nav to switch between normal mode and challenge mode 
+
+challenge mode context, 
+declare in gamepage component, initially false
+export to components within gamepage
+update imports
 
 conditional rendering for state 
-challenge mode state
 
 Normal 3x3 Mode
   gamepage component:
     initial markedarr state [4]
     slice 0-9
+    
   square component:
+  duplicates length >=3
     check bingo after markedArr length is >=3
     free sq is 4
 
@@ -39,6 +45,7 @@ Challenge 5x5 Mode:
     slice 0-25
   square component:
     check bingo after markedArr length is >=5
+     duplicates length >=5
     free sq is 12
 
 

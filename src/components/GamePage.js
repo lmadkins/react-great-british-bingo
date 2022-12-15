@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import { ChallengeModeContext } from '../context/ChallengeModeContext';
+import { NormalModeContext } from '../context/NormalModeContext';
 import { MarkedArrContext } from '../context/MarkedArrContext'; 
 import { PrintModeContext } from '../context/PrintModeContext';
 import { WinContext } from '../context/WinContext'; 
@@ -16,9 +17,9 @@ const GamePage = () => {
 
   const [markedArr, setMarkedArr] = useState(initialMarkedArrState)
 
-  // ChallengeMode Context
+  // Normal & ChallengeMode Context
   const [challengeMode, setChallengeMode] = useState(false)
-
+  const [normalMode, setNormalMode] = useState(true)
   // WinContext
   const [win, setWin] = useState(false)
 
@@ -33,19 +34,24 @@ const GamePage = () => {
 
   useEffect(() => {
     renderNewGame()
+    console.log('normal mode is on? ' + normalMode)
+    console.log('challenge mode is on? ' 
++ challengeMode)
   }, [])
   // ^ renders new game on load
 
   useEffect(() => {
     renderNewGame()
     setRestartBoard(false)
+ 
   }, [restartBoard])
   // ^renders new game when shuffle button is pressed
 
   function shuffleSlicePrompts() {
     let shuffledArr = []
     shuffledArr = jsonArr.sort(() => Math.random() - 0.5)
-    let slicedPrompts = shuffledArr.slice(0, 25)
+    let slicedPrompts = 
+    challengeMode ? shuffledArr.slice(0, 25) : shuffledArr.slice(0, 9) 
     setNewPrompts(slicedPrompts)
     // ^ newPrompts then gets mapped into Squares
   }
@@ -64,6 +70,7 @@ const GamePage = () => {
 
   return (
     <ChallengeModeContext.Provider value={{challengeMode, setChallengeMode}}>
+    <NormalModeContext.Provider value={{normalMode, setNormalMode}}>
     <WinContext.Provider value={{win, setWin}}>
     <MarkedArrContext.Provider value={{markedArr, setMarkedArr}}>
     <PrintModeContext.Provider value={{print, setPrint}}>
@@ -91,6 +98,7 @@ const GamePage = () => {
     </PrintModeContext.Provider>
     </MarkedArrContext.Provider>
     </WinContext.Provider>
+    </NormalModeContext.Provider>
     </ChallengeModeContext.Provider>
   );
 };
