@@ -11,15 +11,16 @@ import WinAlert from "./WinAlert";
 
 
 const GamePage = () => {
-// STATE TO PASS AS CONTEXT
-  // MarkedArrContext
-  const initialMarkedArrState = [12]
-
-  const [markedArr, setMarkedArr] = useState(initialMarkedArrState)
-
   // Normal & ChallengeMode Context
   const [challengeMode, setChallengeMode] = useState(false)
   const [normalMode, setNormalMode] = useState(true)
+
+// STATE TO PASS AS CONTEXT
+  // MarkedArrContext
+  const initialMarkedArrState = normalMode ? [4] : [12]
+
+  const [markedArr, setMarkedArr] = useState(initialMarkedArrState)
+  
   // WinContext
   const [win, setWin] = useState(false)
 
@@ -34,16 +35,16 @@ const GamePage = () => {
 
   useEffect(() => {
     renderNewGame()
-    console.log('normal mode is on? ' + normalMode)
-    console.log('challenge mode is on? ' 
-+ challengeMode)
+//     console.log('normal mode is on? ' + normalMode)
+//     console.log('challenge mode is on? ' 
+// + challengeMode)
   }, [])
   // ^ renders new game on load
 
   useEffect(() => {
     renderNewGame()
     setRestartBoard(false)
- 
+
   }, [restartBoard])
   // ^renders new game when shuffle button is pressed
 

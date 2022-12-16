@@ -28,6 +28,8 @@ export to components within gamepage
 update imports
 
 conditional rendering for state 
+- data for combos!
+
 
 Normal 3x3 Mode
   gamepage component:

@@ -11,9 +11,9 @@ import winningCombos from '../data/winningCombos';
 const Square = ( {prompt, id, squareid} ) => {
 // CONTEXT STATE USED
 
-// const { challengeMode, setChallengeMode } = useContext(ChallengeModeContext)
+const { challengeMode, setChallengeMode } = useContext(ChallengeModeContext)
 
-// const { normalMode, setNormalMode } = useContext(NormalModeContext)
+const { normalMode, setNormalMode } = useContext(NormalModeContext)
 
 const { win, setWin } = useContext(WinContext)
 
@@ -24,6 +24,8 @@ const { markedArr, setMarkedArr } = useContext(MarkedArrContext)
   const [marked, setMarked] = useState(false)
 
   const [undoMarked, setUndoMarked] = useState(false)
+
+  const freeSquare = normalMode ? 4 : 12
 
   useEffect(() => {
     setMarked(false)
@@ -53,11 +55,12 @@ const { markedArr, setMarkedArr } = useContext(MarkedArrContext)
             // Add that element i to the array of duplicate elements
             // console.log(duplicates)
           }
-          if (duplicates.length >= 5) {
-            // console.log(`5 duplicates: ${duplicates}`)
+          if (duplicates.length >= 5 && challengeMode) {
             setWin(true)
-            // Each of the winning combos has 5 elements, so if there are 5 or more elements in the duplicates array, that means that the marked squares match one of the winning combo arrays, and the player has marked 5 in a row
+          } else if (duplicates.length >=3 && normalMode) {
+            setWin(true)
           }
+          // Each of the winning combos has 3/5 elements, so if there are 3/5 or more elements in the duplicates array, that means that the marked squares match one of the winning combo arrays, and the player has marked 3/5 in a row
         }
       })
       // ^ end of forEach loop of winning combos
@@ -65,9 +68,11 @@ const { markedArr, setMarkedArr } = useContext(MarkedArrContext)
 
   useEffect(() => {
       checkBingo()
-      if (markedArr.length >= 5) {
+      if (markedArr.length >= 5 && challengeMode) {
         checkBingo()
-      } 
+      } else if (markedArr.length >=3 && normalMode) {
+        checkBingo()
+      }
   }, [markedArr.length])
   // ^ After 4 squares have been clicked (the 5 includes the already marked free square), runs checkbingo function each time a square is marked
 
@@ -103,35 +108,70 @@ const { markedArr, setMarkedArr } = useContext(MarkedArrContext)
 
   return (
     <> 
-    { squareid === 12 ? (
-      // If this square being mapped is the 12th, it is the FREE square, and gets different styling, and default text rather than a prompt, and doesn't offer functionality to click it and mark it (because its ID is already added to the marked array at intiialization)
-      <BingoPrompt
-        id={id}
-        squareid={squareid}
-        fixed
-        className="bingoSquare marked"
-        style={{    
-          backgroundColor: '#7aa3a1',
-          color: 'white',
-        }}>
-          <h2 id={id} squareid={squareid}>
-            FREE
-          </h2> 
-      </BingoPrompt>
-    ) : (
-      // If this square being mapped is NOT the 12th, it is a normal square that gets a prompt filled in
-      <BingoPrompt
-        id={id}
-        squareid={squareid}
-        fixed
-        onClick={handleClick}
-        onTouchStart={handleClick}
-        className="bingoSquare">
-          <p id={id} squareid={squareid}>
-            {prompt}
-          </p> 
-      </BingoPrompt>
-    )}
+    { normalMode ? 
+      ( 
+        squareid === 4 ? (
+        // free square
+        <BingoPrompt
+          id={id}
+          squareid={squareid}
+          fixed
+          className="bingoSquare marked"
+          style={{    
+            backgroundColor: '#7aa3a1',
+            color: 'white',
+          }}>
+            <h2 id={id} squareid={squareid}>
+              FREE
+            </h2> 
+        </BingoPrompt>
+      ) : (
+        // other squares
+        <BingoPrompt
+          id={id}
+          squareid={squareid}
+          fixed
+          onClick={handleClick}
+          onTouchStart={handleClick}
+          className="bingoSquare">
+            <p id={id} squareid={squareid}>
+              {prompt}
+            </p> 
+        </BingoPrompt>
+      )
+      ) : (
+      // Challenge Mode
+        squareid === 12 ? (
+          // free square
+        <BingoPrompt
+          id={id}
+          squareid={squareid}
+          fixed
+          className="bingoSquare marked"
+          style={{    
+            backgroundColor: '#7aa3a1',
+            color: 'white',
+          }}>
+            <h2 id={id} squareid={squareid}>
+              FREE
+            </h2> 
+        </BingoPrompt>
+        ) : (
+          // other squares
+        <BingoPrompt
+          id={id}
+          squareid={squareid}
+          fixed
+          onClick={handleClick}
+          onTouchStart={handleClick}
+          className="bingoSquare">
+            <p id={id} squareid={squareid}>
+              {prompt}
+            </p> 
+        </BingoPrompt>
+        ) 
+      )
+    }
     </>
   );
 };
