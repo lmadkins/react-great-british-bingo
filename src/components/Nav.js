@@ -1,5 +1,6 @@
 import Button from '@mui/material/Button';
 import { useContext, useEffect, useState } from 'react';
+import { ModeContext } from '../context/ModeContext';
 import { ChallengeModeContext } from '../context/ChallengeModeContext';
 import { NormalModeContext } from '../context/NormalModeContext';
 import { PrintModeContext } from '../context/PrintModeContext';
@@ -7,9 +8,11 @@ import PrintAlert from './PrintAlert';
 
 const GameNav = ( {handleShuffleClick} ) => {
 
+  const { mode, setMode } = useContext(ModeContext)
   const { challengeMode, setChallengeMode } = useContext(ChallengeModeContext)
 
   const { normalMode, setNormalMode } = useContext(NormalModeContext)
+
 
   const { print, setPrint } = useContext(PrintModeContext)
   
@@ -39,16 +42,19 @@ const GameNav = ( {handleShuffleClick} ) => {
   }
 
   const handleChangeToNormal = () => {
-      setNormalMode(true)
-      setChallengeMode(false)
-      console.log('normal mode is on:' + normalMode)
+    setChallengeMode(false)
+      // setNormalMode(true)
+      setMode('normal')
+      // console.log(mode)
+      // console.log('normal mode is ' + normalMode)
   }
 
   const handleChangeToChallenge = () => {
+    // setNormalMode(false)
       setChallengeMode(true)
-      setNormalMode(false)
-      console.log('challenge mode is on:' 
-      + challengeMode)
+      setMode('challenge')
+      // console.log(mode)
+      // console.log('challenge mode is ' + challengeMode)
   } 
 
 
@@ -70,9 +76,10 @@ const GameNav = ( {handleShuffleClick} ) => {
         Print Bingo Card
     </Button>
 
-    { normalMode &&
+    { !challengeMode ? 
+    (
         <Button 
-        aria-label="Print bingo card button"
+        aria-label="Change to challenge mode button"
         className="mode-btn"
         variant="contained"
         // color="teal" 
@@ -84,10 +91,9 @@ const GameNav = ( {handleShuffleClick} ) => {
         }}>
           Switch to Challenge Mode
         </Button>
-    }
-    { challengeMode &&
-        <Button 
-        aria-label="Print bingo card button"
+    ) : (
+      <Button   
+        aria-label="Change to normal mode button"
         className="mode-btn"
         variant="contained"
         // color="teal" 
@@ -99,6 +105,9 @@ const GameNav = ( {handleShuffleClick} ) => {
         }}>
           Switch to Normal Mode
         </Button>
+    )
+
+        
     }
 
   

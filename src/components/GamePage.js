@@ -1,6 +1,7 @@
 import React, { useState, useEffect} from 'react';
 import { ChallengeModeContext } from '../context/ChallengeModeContext';
 import { NormalModeContext } from '../context/NormalModeContext';
+import { ModeContext } from '../context/ModeContext';
 import { MarkedArrContext } from '../context/MarkedArrContext'; 
 import { PrintModeContext } from '../context/PrintModeContext';
 import { WinContext } from '../context/WinContext'; 
@@ -14,10 +15,11 @@ const GamePage = () => {
   // Normal & ChallengeMode Context
   const [challengeMode, setChallengeMode] = useState(false)
   const [normalMode, setNormalMode] = useState(true)
+  const [mode, setMode] = useState('normal')
 
 // STATE TO PASS AS CONTEXT
   // MarkedArrContext
-  const initialMarkedArrState = normalMode ? [4] : [12]
+  const initialMarkedArrState = !challengeMode ? [4] : [12]
 
   const [markedArr, setMarkedArr] = useState(initialMarkedArrState)
   
@@ -52,7 +54,7 @@ const GamePage = () => {
     let shuffledArr = []
     shuffledArr = jsonArr.sort(() => Math.random() - 0.5)
     let slicedPrompts = 
-    challengeMode ? shuffledArr.slice(0, 25) : shuffledArr.slice(0, 9) 
+    !challengeMode ? shuffledArr.slice(0, 9) : shuffledArr.slice(0, 25) 
     setNewPrompts(slicedPrompts)
     // ^ newPrompts then gets mapped into Squares
   }
@@ -70,6 +72,7 @@ const GamePage = () => {
   }
 
   return (
+    <ModeContext.Provider value={{mode, setMode}}>
     <ChallengeModeContext.Provider value={{challengeMode, setChallengeMode}}>
     <NormalModeContext.Provider value={{normalMode, setNormalMode}}>
     <WinContext.Provider value={{win, setWin}}>
@@ -95,12 +98,12 @@ const GamePage = () => {
       </div>
     </>
     
-
     </PrintModeContext.Provider>
     </MarkedArrContext.Provider>
     </WinContext.Provider>
     </NormalModeContext.Provider>
     </ChallengeModeContext.Provider>
+    </ModeContext.Provider>
   );
 };
 

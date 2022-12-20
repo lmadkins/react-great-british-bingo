@@ -1,11 +1,13 @@
 import React, {useEffect, useState, useContext} from 'react';
 import { ChallengeModeContext } from '../context/ChallengeModeContext';
 import { NormalModeContext } from '../context/NormalModeContext';
+import { ModeContext } from '../context/ModeContext';
 import { MarkedArrContext } from '../context/MarkedArrContext';
 import { WinContext } from '../context/WinContext';
 import '../styles/App.css'
 import { styled } from '@mui/material/styles';
-import winningCombos from '../data/winningCombos';
+import challengeWinningCombos from '../data/challengeWinningCombos';
+import normalWinningCombos from '../data/normalWinningCombos';
 
 
 const Square = ( {prompt, id, squareid} ) => {
@@ -14,6 +16,8 @@ const Square = ( {prompt, id, squareid} ) => {
 const { challengeMode, setChallengeMode } = useContext(ChallengeModeContext)
 
 const { normalMode, setNormalMode } = useContext(NormalModeContext)
+
+const { mode, setMode } = useContext(ModeContext)
 
 const { win, setWin } = useContext(WinContext)
 
@@ -25,7 +29,7 @@ const { markedArr, setMarkedArr } = useContext(MarkedArrContext)
 
   const [undoMarked, setUndoMarked] = useState(false)
 
-  const freeSquare = normalMode ? 4 : 12
+  const freeSquare = !challengeMode ? 4 : 12
 
   useEffect(() => {
     setMarked(false)
@@ -40,7 +44,8 @@ const { markedArr, setMarkedArr } = useContext(MarkedArrContext)
 
 
   function checkBingo () {
-      winningCombos.forEach((array) => {
+    if (challengeMode) {
+      challengeWinningCombos.forEach((array) => {
         let mergedArr = markedArr.concat(array)
         // For each array in winning combos, merge it with the marked array
         let duplicates = []
@@ -55,26 +60,46 @@ const { markedArr, setMarkedArr } = useContext(MarkedArrContext)
             // Add that element i to the array of duplicate elements
             // console.log(duplicates)
           }
-          if (duplicates.length >= 5 && challengeMode) {
-            setWin(true)
-          } else if (duplicates.length >=3 && normalMode) {
+          if (duplicates.length >= 5) {
             setWin(true)
           }
           // Each of the winning combos has 3/5 elements, so if there are 3/5 or more elements in the duplicates array, that means that the marked squares match one of the winning combo arrays, and the player has marked 3/5 in a row
         }
       })
-      // ^ end of forEach loop of winning combos
+    } else  {
+      normalWinningCombos.forEach((array) => {
+        let mergedArr = markedArr.concat(array)
+        // For each array in winning combos, merge it with the marked array
+        let duplicates = []
+        let sortedArr = mergedArr.sort(function(a, b){return a - b})
+        // console.log(sortedArr)
+        // Sort that merged array in numerical order
+        for (let i = 0; i < sortedArr.length; i++) {
+          // Iterate through the sorted array
+          if (sortedArr[i] === sortedArr[i + 1]) {
+            // If the element (i) is the same as the element after it (i + 1), there are two in a row, and it's a duplicate
+            duplicates.push(sortedArr[i])
+            // Add that element i to the array of duplicate elements
+            // console.log(duplicates)
+          }
+          if (duplicates.length >= 3) {
+            setWin(true)
+          }
+          // Each of the winning combos has 3/5 elements, so if there are 3/5 or more elements in the duplicates array, that means that the marked squares match one of the winning combo arrays, and the player has marked 3/5 in a row
+        }
+      })
+    }
   }
 
   useEffect(() => {
       checkBingo()
       if (markedArr.length >= 5 && challengeMode) {
         checkBingo()
-      } else if (markedArr.length >=3 && normalMode) {
+      } else if (markedArr.length >=3 && !challengeMode) {
         checkBingo()
       }
   }, [markedArr.length])
-  // ^ After 4 squares have been clicked (the 5 includes the already marked free square), runs checkbingo function each time a square is marked
+  // ^ After 4/2 squares have been clicked (the 3/5 includes the already marked free square), runs checkbingo function each time a square is marked
 
   const handleClick = (event) => {
     let clickedSquare = event.target.id
@@ -108,7 +133,7 @@ const { markedArr, setMarkedArr } = useContext(MarkedArrContext)
 
   return (
     <> 
-    { normalMode ? 
+    { !challengeMode ? 
       ( 
         squareid === 4 ? (
         // free square
