@@ -53,7 +53,7 @@ const GamePage = () => {
   function renderNewGame() {
     setPrint(false)
     setWin(false)
-    setMarkedArr(initialMarkedArrState)
+    setMarkedArr([initialMarkedArrState])
     shuffleSlicePrompts()
   }
   

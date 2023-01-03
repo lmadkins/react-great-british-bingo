@@ -1,5 +1,5 @@
 import React, {useEffect, useState, useContext} from 'react';
-import { ChallengeModeContext } from '../context/ChallengeModeContext';
+// import { ChallengeModeContext } from '../context/ChallengeModeContext';
 import { MarkedArrContext } from '../context/MarkedArrContext';
 import { WinContext } from '../context/WinContext';
 import '../styles/App.css'
@@ -10,7 +10,7 @@ import winningCombos from '../data/winningCombos';
 const Square = ( {prompt, id, squareid} ) => {
 // CONTEXT STATE USED
 
-const { challengeMode, setChallengeMode } = useContext(ChallengeModeContext)
+// const { challengeMode, setChallengeMode } = useContext(ChallengeModeContext)
 
 const { win, setWin } = useContext(WinContext)
 
@@ -30,8 +30,8 @@ const { markedArr, setMarkedArr } = useContext(MarkedArrContext)
 
   useEffect(() => {
     setMarked(false)
-  }, [undoMarked])
-  // ^ Changes marked state if square clicked again
+  }, [undoMarked, markedArr])
+  // ^ Changes marked state if square clicked again, and if board is shuffled
 
 
   function checkBingo () {

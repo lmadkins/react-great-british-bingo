@@ -1,12 +1,12 @@
 import Button from '@mui/material/Button';
 import { useContext, useEffect, useState } from 'react';
-import { ChallengeModeContext } from '../context/ChallengeModeContext';
+// import { ChallengeModeContext } from '../context/ChallengeModeContext';
 import { PrintModeContext } from '../context/PrintModeContext';
 import PrintAlert from './PrintAlert';
 
 const GameNav = ( {handleShuffleClick} ) => {
 
-  const { challengeMode, seChallengeMode } = useContext(ChallengeModeContext)
+  // const { challengeMode, setChallengeMode } = useContext(ChallengeModeContext)
   const { print, setPrint } = useContext(PrintModeContext)
   
   // detect if screen res is 767px or higher (e.g. tablet or bigger)
