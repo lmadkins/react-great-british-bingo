@@ -286,6 +286,7 @@ Button:active {
 
   .bingoSquare {
     padding: 0 2%;
+    height: 10rem;
   }
 
   .bingoSquare p {
@@ -340,9 +341,10 @@ Button:active {
 
   .bingoCard {
     background-color: #f4f2ed;
-    max-width: 900px;
-    max-height: 85vh;
+    height: 800px;
     margin: 0 auto;
+    padding: 0.5%;
+    overflow: scroll;
   }
 
   .bingoSquare {
@@ -373,7 +375,10 @@ Button:active {
     /* ^ prompt text */
 
   .bingoCard {
-    max-width: 1000px;
+    min-height: 70vh;
+    min-width: 50vw;
+    border-radius: 10px;
+    padding: 1%;
   }
 }
 
@@ -387,9 +392,9 @@ Button:active {
     padding-bottom: 10%;
     max-height:100vh;
   }
-
-  .print-btn, .shuffle-btn {
-    height: 3.5rem;
-    width: 10rem;
+  
+  .bingoCard {
+    min-height: 70vh;
+    min-width: 50vw;
   }
 }
